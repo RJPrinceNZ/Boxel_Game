@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/robot_player_all_animations.png-03d3e970ae5950b668cda7e755ce3408.stex"
+path="res://.import/Shockwave Gun.png-7a963e0946122cbc8560cbd06782da0c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://robot_player_all_animations.png"
-dest_files=[ "res://.import/robot_player_all_animations.png-03d3e970ae5950b668cda7e755ce3408.stex" ]
+source_file="res://sprites/Shockwave Gun.png"
+dest_files=[ "res://.import/Shockwave Gun.png-7a963e0946122cbc8560cbd06782da0c.stex" ]
 
 [params]
 

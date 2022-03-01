@@ -1,11 +1,10 @@
 extends KinematicBody2D
-var animation_timer_fin = true
 export (int) var speed = 120
 export (int) var jump_speed = -180
 export (int) var gravity = 400
 export (float) var friction = 10
 export (float) var acceration = 25
-
+var has_gun = true
 
 var velocity = Vector2.ZERO
 
@@ -16,23 +15,34 @@ onready var player_state = state.IDLE
 func _ready():
 	$AnimationPlayer.play("Idle")
 
-func _on_Animation_timer_timeout():
-	animation_timer_fin = true
 
 func update_animation(anim):
 	if velocity.x > 0:
 		$Sprite.flip_h = false
+		
 	if velocity.x < 0:
 		$Sprite.flip_h = true
-	match(anim):
-		state.FALL:
-			$AnimationPlayer.play("FALL")
-		state.IDLE:
-			$AnimationPlayer.play("IDLE")
-		state.WALKING:
-			$AnimationPlayer.play("WALK")
-		state.JUMP:
-			$AnimationPlayer.play("JUMP")
+	
+	if has_gun == false:
+		match(anim):
+			state.FALL:
+				$AnimationPlayer.play("FALL")
+			state.IDLE:
+				$AnimationPlayer.play("IDLE")
+			state.WALKING:
+				$AnimationPlayer.play("WALK")
+			state.JUMP:
+				$AnimationPlayer.play("JUMP")
+	elif has_gun == true:
+		match(anim):
+			state.FALL:
+				$AnimationPlayer.play("FALL_ARMLESS")
+			state.IDLE:
+				$AnimationPlayer.play("IDLE_ARMLESS")
+			state.WALKING:
+				$AnimationPlayer.play("WALK_ARMLESS")
+			state.JUMP:
+				$AnimationPlayer.play("JUMP_ARMLESS")
 	
 func handle_state(player_state):
 	match(player_state):
