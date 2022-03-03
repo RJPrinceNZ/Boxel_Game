@@ -1,6 +1,6 @@
 extends Sprite
 
-var v = 10
+var v = 250
 var is_fired = true
 var angle
 var disappearing = false
