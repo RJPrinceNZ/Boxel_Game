@@ -189,7 +189,7 @@ scale = Vector2( 5, 5 )
 texture = ExtResource( 1 )
 hframes = 6
 vframes = 7
-frame = 34
+frame = 19
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -0.5 )
@@ -212,5 +212,5 @@ anims/WALK_ARMLESS = SubResource( 13 )
 position = Vector2( 0, 2.5 )
 
 [node name="shockwave" parent="." instance=ExtResource( 3 )]
-position = Vector2( 0, 2 )
+position = Vector2( 9.53674e-07, 3 )
 scale = Vector2( 5, 5 )

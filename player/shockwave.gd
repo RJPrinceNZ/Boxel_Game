@@ -15,11 +15,16 @@ func _physics_process(delta):
 		$ShockwaveGun.flip_v = true
 	if Input.is_action_just_pressed("fire") and on_cool_down == false:
 		on_cool_down = true
+		$AnimationPlayer.play("FIRE")
 		var new_bullet = bullet.instance()
 		new_bullet.global_transform = $ShockwaveGun/Position2D.global_transform
 		root_node.add_child(new_bullet)
 		$Gun_Timer.start()
+	if on_cool_down == false:
+		$AnimationPlayer.play("IDLE")
 
+		
 
 func _on_Gun_Timer_timeout():
 	on_cool_down = false
+	$AnimationPlayer.play("IDLE")
