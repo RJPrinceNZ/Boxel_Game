@@ -1,10 +1,10 @@
 extends KinematicBody2D
-export (int) var speed = 120
-export (int) var jump_speed = -180
-export (int) var gravity = 400
+export (int) var speed = 360
+export (int) var jump_speed = -480
+export (int) var gravity = 800
 export (float) var friction = 10
 export (float) var acceration = 25
-var has_gun = true
+
 
 var velocity = Vector2.ZERO
 
@@ -23,7 +23,7 @@ func update_animation(anim):
 	if velocity.x < 0:
 		$Sprite.flip_h = true
 	
-	if has_gun == false:
+	if PlayerStats.has_gun == false:
 		match(anim):
 			state.FALL:
 				$AnimationPlayer.play("FALL")
@@ -33,7 +33,7 @@ func update_animation(anim):
 				$AnimationPlayer.play("WALK")
 			state.JUMP:
 				$AnimationPlayer.play("JUMP")
-	elif has_gun == true:
+	elif PlayerStats.has_gun == true:
 		match(anim):
 			state.FALL:
 				$AnimationPlayer.play("FALL_ARMLESS")

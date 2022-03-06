@@ -4,6 +4,9 @@ onready var bullet = preload("res://player/Wave.tscn")
 var on_cool_down = false
 onready var root_node = get_tree().root.get_child(0)
 
+func _ready():
+	if PlayerStats.has_gun == false:
+		queue_free()
 
 func _physics_process(delta):
 	var mouse = get_global_mouse_position()
