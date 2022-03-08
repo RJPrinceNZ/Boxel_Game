@@ -1,4 +1,4 @@
-extends Sprite
+extends KinematicBody2D
 
 var v = 200
 var is_fired = true
@@ -14,7 +14,11 @@ func _ready():
 	
 func _physics_process(delta):
 	position += transform.x * v * delta
-
+	for index in get_slide_count():
+		var collision = get_slide_collision(index)
+		if collision.collider.is_in_group("Box"):
+			collision.collider.apply_central_impluse(-collision.normal)
+		
 
 func _on_Life_time_timeout():
 	var disappearing = true
