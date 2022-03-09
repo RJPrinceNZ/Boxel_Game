@@ -50,6 +50,7 @@ tracks/0/keys = {
 }
 
 [node name="Explosion" type="Node2D" groups=["Explosion"]]
+scale = Vector2( 0.8, 0.8 )
 script = ExtResource( 2 )
 
 [node name="WaveExplosion" type="Sprite" parent="."]
