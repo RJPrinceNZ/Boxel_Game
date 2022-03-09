@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+onready var root_node = get_tree().root.get_child(0)
+onready var explosion = preload("res://player/Explosion.tscn")
 var v = 200
 var is_fired = true
 var angle
@@ -30,6 +32,9 @@ func _on_Death_timeout():
 
 func _on_Area2D_body_entered(body):
 	if not body.is_in_group("Player") and not body.is_in_group("Wave"):
+		var new_explosion = explosion.instance()
+		new_explosion.global_transform = $Position2D.global_transform
+		root_node.add_child(explosion)
 		queue_free()
 
 
