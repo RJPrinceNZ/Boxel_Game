@@ -4,7 +4,7 @@ export (int) var jump_speed = -480
 export (int) var gravity = 800
 export (float) var friction = 10
 export (float) var acceration = 25
-
+export (int, 0, 200) var push = 100
 
 var velocity = Vector2.ZERO
 
@@ -75,5 +75,12 @@ func _physics_process(delta):
 	update_animation(player_state)
 	
 	velocity.y += gravity * delta
-	velocity = move_and_slide(velocity, Vector2.UP)
+	velocity = move_and_slide(velocity, Vector2.UP, false, 4, PI/4, false)
+	
+	for index in get_slide_count():
+		var collision = get_slide_collision(index)
+		if collision.collider.is_in_group("Bodies"):
+			collision.collider.apply_central_impulse(-collision.normal * push)
+	
+	
 

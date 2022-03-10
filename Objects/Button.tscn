@@ -1,0 +1,69 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Objects/Button.gd" type="Script" id=1]
+[ext_resource path="res://sprites/Pixel Art Tile Set Game-1.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 16, 2 )
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 6.0
+height = 14.0
+
+[sub_resource type="Animation" id=3]
+resource_name = "OFF"
+tracks/0/type = "value"
+tracks/0/path = NodePath("PixelArtTileSetGame-1:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 21 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "PRESSED"
+tracks/0/type = "value"
+tracks/0/path = NodePath("PixelArtTileSetGame-1:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 22 ]
+}
+
+[node name="Button" type="StaticBody2D"]
+script = ExtResource( 1 )
+
+[node name="PixelArtTileSetGame-1" type="Sprite" parent="."]
+position = Vector2( 0, -8 )
+texture = ExtResource( 2 )
+hframes = 9
+vframes = 9
+frame = 21
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 6 )
+shape = SubResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 0, -2 )
+rotation = 1.5708
+shape = SubResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/OFF = SubResource( 3 )
+anims/PRESSED = SubResource( 4 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]

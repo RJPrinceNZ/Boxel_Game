@@ -4,12 +4,14 @@
 [ext_resource path="res://Objects/Box.gd" type="Script" id=2]
 
 [sub_resource type="PhysicsMaterial" id=3]
+rough = true
 bounce = 0.25
+absorbent = true
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 12.0
 
-[node name="Box" type="RigidBody2D" groups=["Box"]]
+[node name="Box" type="RigidBody2D" groups=["Bodies", "Box"]]
 physics_material_override = SubResource( 3 )
 gravity_scale = 30.0
 script = ExtResource( 2 )
