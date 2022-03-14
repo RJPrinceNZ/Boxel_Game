@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://sprites/Door-1.png.png" type="Texture" id=1]
 [ext_resource path="res://Objects/Door.gd" type="Script" id=2]
 [ext_resource path="res://sprites/Pixel Art Tile Set Game-1.png" type="Texture" id=3]
 [ext_resource path="res://Objects/Button.gd" type="Script" id=4]
+[ext_resource path="res://sprites/Door_Open_Icon-1.png.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 2 )
@@ -15,8 +16,118 @@ height = 14.0
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 8, 280 )
 
+[sub_resource type="Animation" id=9]
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Door-1png:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Closing"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("Door-1png:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 7, 6, 5, 4, 3, 2, 1, 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=10]
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Door-1png:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 7 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "Opening"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("Door-1png:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
 [sub_resource type="Animation" id=11]
-resource_name = "Button_Oof"
+resource_name = "Button_Off"
 tracks/0/type = "value"
 tracks/0/path = NodePath("../Button/PixelArtTileSetGame-1:frame")
 tracks/0/interp = 1
@@ -45,112 +156,44 @@ tracks/0/keys = {
 "values": [ 22 ]
 }
 
-[sub_resource type="Animation" id=9]
-tracks/0/type = "value"
-tracks/0/path = NodePath("Door-1png:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("CollisionShape2D:disabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
+[sub_resource type="AnimationNodeAnimation" id=15]
+animation = "Closed"
 
-[sub_resource type="Animation" id=6]
-resource_name = "Closing"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Door-1png:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 7, 6, 5, 4, 3, 2, 1, 0 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("CollisionShape2D:disabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
+[sub_resource type="AnimationNodeAnimation" id=28]
+animation = "Closing"
 
-[sub_resource type="Animation" id=10]
-tracks/0/type = "value"
-tracks/0/path = NodePath("Door-1png:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 7 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("CollisionShape2D:disabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
+[sub_resource type="AnimationNodeAnimation" id=17]
+animation = "Open"
 
-[sub_resource type="Animation" id=5]
-resource_name = "Opening"
-length = 0.9
-tracks/0/type = "value"
-tracks/0/path = NodePath("Door-1png:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("CollisionShape2D:disabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
+[sub_resource type="AnimationNodeAnimation" id=29]
+animation = "Opening"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=30]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=31]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=32]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=33]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachine" id=26]
+states/Closed/node = SubResource( 15 )
+states/Closed/position = Vector2( 332, 193 )
+states/Closing/node = SubResource( 28 )
+states/Closing/position = Vector2( 475, 285 )
+states/Open/node = SubResource( 17 )
+states/Open/position = Vector2( 324, 387 )
+states/Opening/node = SubResource( 29 )
+states/Opening/position = Vector2( 164, 285 )
+transitions = [ "Open", "Closing", SubResource( 30 ), "Closing", "Closed", SubResource( 31 ), "Closed", "Opening", SubResource( 32 ), "Opening", "Open", SubResource( 33 ) ]
+start_node = "Closed"
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=27]
 
 [node name="Node2D" type="Node2D"]
 
@@ -163,7 +206,7 @@ position = Vector2( 0, -8 )
 texture = ExtResource( 3 )
 hframes = 9
 vframes = 9
-frame = 22
+frame = 21
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Button"]
 position = Vector2( 0, 6 )
@@ -183,19 +226,35 @@ script = ExtResource( 2 )
 texture = ExtResource( 1 )
 hframes = 4
 vframes = 2
+frame = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
 scale = Vector2( 1, 0.1 )
 shape = SubResource( 8 )
+disabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Door")
-anims/Button_Oof = SubResource( 11 )
-anims/Button_Pushed = SubResource( 12 )
 anims/Closed = SubResource( 9 )
 anims/Closing = SubResource( 6 )
 anims/Open = SubResource( 10 )
 anims/Opening = SubResource( 5 )
+
+[node name="ButtonAnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Door")
+anims/Button_Off = SubResource( 11 )
+anims/Button_Pushed = SubResource( 12 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 26 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 27 )
+
+[node name="DoorOpenIcon-1png" type="Sprite" parent="."]
+position = Vector2( 0, -48 )
+texture = ExtResource( 5 )
+hframes = 2
 
 [connection signal="body_entered" from="Button/Area2D" to="Button" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Button/Area2D" to="Button" method="_on_Area2D_body_exited"]

@@ -1,27 +1,30 @@
 extends StaticBody2D
 
-var is_pressed = false
+var num_object = 0
 onready var door = get_parent().get_node("Door")
+#onready var animation_player = get_parent().get_node("AnimationPlayer")
+onready var state_machine = get_parent().get_node("AnimationTree").get("parameters/playback")
+onready var btn_animation_player = get_parent().get_node("ButtonAnimationPlayer")
 
-
-func _process(delta):
-	if is_pressed == false:
-		$AnimationPlayer.play("OFF")
-		door.open = false
-	if is_pressed == true:
-		$AnimationPlayer.play("PRESSED")
-		door.open = true
-
-
-
+func _ready():
+	
+	btn_animation_player.play("Button_Off")
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("Box") or body.is_in_group("Player"):
-		is_pressed = true
-		
+		num_object += 1
+		if num_object >= 1:
+			btn_animation_player.play("Button_Pushed")
+			
+			state_machine.travel("Open")
+	
 
 
 func _on_Area2D_body_exited(body):
 	if body.is_in_group("Box") or body.is_in_group("Player"):
-		is_pressed = false
+		num_object -= 1
 		
+		if num_object <= 0:
+			btn_animation_player.play("Button_Off")
+			state_machine.travel("Closed")
+	
