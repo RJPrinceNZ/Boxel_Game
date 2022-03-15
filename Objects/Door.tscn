@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://sprites/Door-1.png.png" type="Texture" id=1]
 [ext_resource path="res://Objects/Door.gd" type="Script" id=2]
@@ -195,6 +195,51 @@ start_node = "Closed"
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=27]
 
+[sub_resource type="Animation" id=34]
+resource_name = "Off"
+tracks/0/type = "value"
+tracks/0/path = NodePath("DoorOpenIcon-1png:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=35]
+resource_name = "On"
+tracks/0/type = "value"
+tracks/0/path = NodePath("DoorOpenIcon-1png:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+
+[sub_resource type="Animation" id=36]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("DoorOpenIcon-1png:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Button" type="StaticBody2D" parent="."]
@@ -226,12 +271,10 @@ script = ExtResource( 2 )
 texture = ExtResource( 1 )
 hframes = 4
 vframes = 2
-frame = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
 scale = Vector2( 1, 0.1 )
 shape = SubResource( 8 )
-disabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Door")
@@ -255,6 +298,11 @@ parameters/playback = SubResource( 27 )
 position = Vector2( 0, -48 )
 texture = ExtResource( 5 )
 hframes = 2
+
+[node name="LightAnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Off = SubResource( 34 )
+anims/On = SubResource( 35 )
+anims/RESET = SubResource( 36 )
 
 [connection signal="body_entered" from="Button/Area2D" to="Button" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Button/Area2D" to="Button" method="_on_Area2D_body_exited"]
