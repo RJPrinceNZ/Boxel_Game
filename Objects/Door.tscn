@@ -296,6 +296,7 @@ parameters/playback = SubResource( 27 )
 
 [node name="DoorOpenIcon-1png" type="Sprite" parent="."]
 position = Vector2( 0, -48 )
+z_index = 1
 texture = ExtResource( 5 )
 hframes = 2
 
