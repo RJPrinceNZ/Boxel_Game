@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Title Buttons.png-9072c16d80d22924fe4e2fce26454412.stex"
+path="res://.import/Settings_highlight-1.png.png-cd7b77c0d8eec25fa5ca0cab435a0f8c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Title Buttons.png"
-dest_files=[ "res://.import/Title Buttons.png-9072c16d80d22924fe4e2fce26454412.stex" ]
+source_file="res://sprites/Settings_highlight-1.png.png"
+dest_files=[ "res://.import/Settings_highlight-1.png.png-cd7b77c0d8eec25fa5ca0cab435a0f8c.stex" ]
 
 [params]
 
