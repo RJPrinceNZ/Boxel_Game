@@ -32,7 +32,7 @@ func _on_Area2D_area_entered(area):
 		if hit_recent == false:
 			hit_recent = true
 			$Collision_timer.start()
-			apply_central_impulse(hit_direction * 500)
+			apply_central_impulse(hit_direction * 750)
 		
 
 
