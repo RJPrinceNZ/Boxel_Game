@@ -6,6 +6,7 @@ var velocity = Vector2.ZERO
 var v = 0
 var hit_angle = 0
 var change_velocity = false
+var hit_recent = false
 
 func _physics_process(delta):
 	pass
@@ -28,5 +29,12 @@ func _on_Area2D_area_entered(area):
 	if area.is_in_group("Explosion"):
 		var hit_direction = (global_position - area.global_position).normalized()
 		print(hit_direction)
-		apply_central_impulse(hit_direction * 500)
+		if hit_recent == false:
+			hit_recent = true
+			$Collision_timer.start()
+			apply_central_impulse(hit_direction * 500)
 		
+
+
+func _on_Collision_timer_timeout():
+	hit_recent = false
