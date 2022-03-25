@@ -3,12 +3,16 @@ extends Sprite
 onready var bullet = preload("res://player/Wave.tscn")
 var on_cool_down = false
 onready var root_node = get_tree().root.get_child(0)
+var can_fire = true
 
-func _ready():
-	if PlayerStats.has_gun == false:
-		queue_free()
 
 func _physics_process(delta):
+	if PlayerStats.has_gun == false:
+		$ShockwaveGun.set_visible(false)
+		can_fire = false
+	if PlayerStats.has_gun == true:
+		$ShockwaveGun.set_visible(true)
+		can_fire = true
 	var mouse = get_global_mouse_position()
 	var angle = get_angle_to(mouse)
 	$ShockwaveGun.set_rotation(angle)
@@ -16,7 +20,7 @@ func _physics_process(delta):
 		$ShockwaveGun.flip_v = false
 	else:
 		$ShockwaveGun.flip_v = true
-	if Input.is_action_just_pressed("fire") and on_cool_down == false:
+	if Input.is_action_just_pressed("fire") and on_cool_down == false and can_fire == true:
 		on_cool_down = true
 		$AnimationPlayer.play("FIRE")
 		var new_bullet = bullet.instance()
