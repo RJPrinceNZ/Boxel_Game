@@ -13,7 +13,7 @@ radius = 12.0
 
 [node name="Box" type="RigidBody2D" groups=["Bodies", "Box"]]
 physics_material_override = SubResource( 3 )
-gravity_scale = 30.0
+gravity_scale = 10.0
 script = ExtResource( 2 )
 
 [node name="Box" type="Sprite" parent="."]

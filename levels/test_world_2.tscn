@@ -26,7 +26,6 @@ tile_data = PoolIntArray( 131076, 0, 0, 131077, 0, 0, 131078, 2, 0, 131082, 0, 0
 
 [node name="Box" parent="." instance=ExtResource( 3 )]
 position = Vector2( 366, 273 )
-gravity_scale = 10.0
 contact_monitor = true
 
 [node name="Node2D" parent="." instance=ExtResource( 5 )]
