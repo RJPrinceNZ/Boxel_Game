@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://levels/Land_tiles.tscn" type="PackedScene" id=1]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://levels/Background.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Objects/Enter_Exit_Doors.tscn" type="PackedScene" id=7]
 [ext_resource path="res://levels/test_world_2.gd" type="Script" id=8]
+[ext_resource path="res://UI and Camera/Game_Ui.tscn" type="PackedScene" id=9]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=1]
 
@@ -53,6 +54,8 @@ position = Vector2( 1128, 410 )
 
 [node name="EnterExitDoor-1png-1png2" parent="Enter_Exit_Doors" index="1"]
 position = Vector2( 118, 602 )
+
+[node name="Game_Ui" parent="." instance=ExtResource( 9 )]
 
 [editable path="Node2D"]
 [editable path="Enter_Exit_Doors"]

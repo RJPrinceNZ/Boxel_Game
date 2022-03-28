@@ -11,3 +11,7 @@ func change_level():
 		get_tree().change_scene("res://Levels/game_levels/Level_" +str(current_level)+".tscn")
 	else:
 		get_tree().quit()
+
+func level_reset():
+	get_tree().change_scene("res://Levels/game_levels/Level_" +str(current_level)+".tscn")
+	
