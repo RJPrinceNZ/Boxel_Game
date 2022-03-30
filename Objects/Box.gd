@@ -7,24 +7,24 @@ var v = 0
 var hit_angle = 0
 var change_velocity = false
 var hit_recent = false
+var picked = false
 
 func _physics_process(delta):
-	pass
-#	if is_on_floor():
-#		velocity.x = move_toward(velocity.x, 0, friction)
+	if picked == true:
+		self.position = get_node("../Player/Shockwave/Position2D").global_position
 
-#	velocity.y += gravity * delta
-#	velocity = move_and_slide(velocity, Vector2.UP)
+func input(event):
+	if Input.is_action_just_pressed("pick_up"):
+		var Areas = $Area2D.get_overlapping_areas()
+		for Area in Areas:
+			if Area.is_in_group("Player") and get_node("../Player").can_pick == true:
+				picked = true
+				get_node("../Player").can_pick = false
+	if Input.is_action_just_released("pick_up") and picked == true:
+		picked = false
+		get_node("../Player").can_pick = true
 
-func _on_Area2D_body_entered(body):
-	pass
-#	if body.is_in_group("Wave"):
-#		hit_angle = body.rotation_degrees
-#		v = body.velocity
-#		change_velocity = true
 
-
-	
 func _on_Area2D_area_entered(area):
 	if area.is_in_group("Explosion"):
 		var hit_direction = (global_position - area.global_position).normalized()

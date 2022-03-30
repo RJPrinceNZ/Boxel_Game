@@ -7,6 +7,7 @@ export (float) var acceration = 25
 export (int, 0, 200) var push = 100
 
 var velocity = Vector2.ZERO
+var can_pick = true
 
 enum state {IDLE, WALKING, STARTJUMP, JUMP_MID, FALL, JUMP, JUMPFINISH}
 
