@@ -7,11 +7,11 @@ export (float) var acceration = 25
 export (int, 0, 200) var push = 100
 
 var velocity = Vector2.ZERO
-var can_pick = true
 
 enum state {IDLE, WALKING, STARTJUMP, JUMP_MID, FALL, JUMP, JUMPFINISH}
 
 onready var player_state = state.IDLE
+onready var box = "res://Objects/Box.tscn"
 
 func _ready():
 	$AnimationPlayer.play("Idle")
@@ -56,6 +56,9 @@ func get_input():
 		velocity.x = move_toward(velocity.x, dir*speed, acceration)
 	else:
 		velocity.x = move_toward(velocity.x, 0, friction)
+
+
+
 func _physics_process(delta):
 	get_input()
 	if velocity == Vector2.ZERO:

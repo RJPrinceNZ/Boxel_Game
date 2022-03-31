@@ -8,21 +8,29 @@ var hit_angle = 0
 var change_velocity = false
 var hit_recent = false
 var picked = false
+onready var point = get_node("../Player/shockwave/ShockwaveGun/Position2D")
 
 func _physics_process(delta):
+	print(PlayerStats.number_held)
 	if picked == true:
-		self.position = get_node("../Player/Shockwave/Position2D").global_position
+		velocity = Vector2.ZERO
+		self.position = point.global_position
 
-func input(event):
+func _input(event):
 	if Input.is_action_just_pressed("pick_up"):
-		var Areas = $Area2D.get_overlapping_areas()
-		for Area in Areas:
-			if Area.is_in_group("Player") and get_node("../Player").can_pick == true:
+		var bodies = $Detect.get_overlapping_bodies()
+		for body in bodies:
+			print(body)
+			print("pick_up?")
+			if body.is_in_group("Player") and PlayerStats.number_held <1:
+				PlayerStats.number_held +=1
+				print("yes")
 				picked = true
-				get_node("../Player").can_pick = false
+			else:
+				print("no")
 	if Input.is_action_just_released("pick_up") and picked == true:
+		PlayerStats.number_held += -1
 		picked = false
-		get_node("../Player").can_pick = true
 
 
 func _on_Area2D_area_entered(area):

@@ -57,5 +57,7 @@ position = Vector2( 118, 602 )
 
 [node name="Game_Ui" parent="." instance=ExtResource( 9 )]
 
+[editable path="Player"]
+[editable path="Player/shockwave"]
 [editable path="Node2D"]
 [editable path="Enter_Exit_Doors"]

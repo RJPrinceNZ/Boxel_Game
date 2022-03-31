@@ -2,7 +2,8 @@ extends Node
 
 var has_gun = true
 var current_level = 0
-var level_count = 2
+var level_count = 3
+var number_held = 0
 
 func change_level():
 	current_level += 1
