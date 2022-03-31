@@ -8,13 +8,19 @@ var hit_angle = 0
 var change_velocity = false
 var hit_recent = false
 var picked = false
-onready var point = get_node("../Player/shockwave/ShockwaveGun/Position2D")
+onready var point = get_node("../Player/shockwave/ShockwaveGun/Hover_point")
+onready var lowest_point = get_node("../Player/Lowest_point")
+onready var player = get_node("../Player")
 
 func _physics_process(delta):
 	print(PlayerStats.number_held)
 	if picked == true:
-		velocity = Vector2.ZERO
-		self.position = point.global_position
+		linear_velocity=Vector2.ZERO
+		angular_velocity=0
+		if point.global_position.y > lowest_point.global_position.y:
+			self.position = Vector2(point.global_position.x,lowest_point.global_position.y)
+		else:
+			self.position = point.global_position
 
 func _input(event):
 	if Input.is_action_just_pressed("pick_up"):
@@ -23,13 +29,16 @@ func _input(event):
 			print(body)
 			print("pick_up?")
 			if body.is_in_group("Player") and PlayerStats.number_held <1:
+				$CollisionShape2D.set_disabled(true)
 				PlayerStats.number_held +=1
-				print("yes")
 				picked = true
 			else:
 				print("no")
 	if Input.is_action_just_released("pick_up") and picked == true:
+		$CollisionShape2D.set_disabled(false)
 		PlayerStats.number_held += -1
+		linear_velocity=Vector2(0,1)
+		angular_velocity=0
 		picked = false
 
 
