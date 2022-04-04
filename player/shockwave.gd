@@ -7,6 +7,8 @@ var can_fire = true
 
 
 func _physics_process(delta):
+	var charge = $Gun_Timer.get_time_left()
+	PlayerStats.recharge = 100 - charge*100 + 15
 	if PlayerStats.has_gun == false:
 		$ShockwaveGun.set_visible(false)
 		can_fire = false
@@ -22,6 +24,7 @@ func _physics_process(delta):
 		$ShockwaveGun.flip_v = true
 	if Input.is_action_just_pressed("fire") and on_cool_down == false and can_fire == true:
 		on_cool_down = true
+		PlayerStats.recharge = 0
 		$AnimationPlayer.play("FIRE")
 		var new_bullet = bullet.instance()
 		new_bullet.global_transform = $ShockwaveGun/Position2D.global_transform
@@ -29,8 +32,6 @@ func _physics_process(delta):
 		$Gun_Timer.start()
 	if on_cool_down == false:
 		$AnimationPlayer.play("IDLE")
-
-		
 
 func _on_Gun_Timer_timeout():
 	on_cool_down = false

@@ -38,6 +38,6 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 
 [node name="Text_file" parent="." instance=ExtResource( 8 )]
-position = Vector2( 1119, 616 )
+position = Vector2( 266, 616 )
 
 [editable path="Enter_Exit_Doors"]

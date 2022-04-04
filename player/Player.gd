@@ -60,6 +60,11 @@ func get_input():
 
 
 func _physics_process(delta):
+	$Recharge_point/Recharge_bar.value = PlayerStats.recharge
+	if $shockwave.on_cool_down == false:
+		$Recharge_point.scale = Vector2(0,0)
+	if $shockwave.on_cool_down == true:
+		$Recharge_point.scale = Vector2(1,1)
 	get_input()
 	if velocity == Vector2.ZERO:
 		player_state = state.IDLE

@@ -231,4 +231,16 @@ shape = SubResource( 14 )
 position = Vector2( 0, 19 )
 shape = SubResource( 15 )
 
+[node name="Recharge_point" type="Position2D" parent="."]
+position = Vector2( 0, -27 )
+z_index = 2
+
+[node name="Recharge_bar" type="ProgressBar" parent="Recharge_point"]
+margin_left = -16.0
+margin_top = -7.0
+margin_right = 16.0
+margin_bottom = 7.0
+value = 100.0
+percent_visible = false
+
 [editable path="shockwave"]
