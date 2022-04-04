@@ -7,7 +7,6 @@ var number_held = 0
 
 func change_level():
 	current_level += 1
-	print (current_level)
 	if current_level <= level_count:
 		get_tree().change_scene("res://Levels/game_levels/Level_" +str(current_level)+".tscn")
 	else:

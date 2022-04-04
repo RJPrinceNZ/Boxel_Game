@@ -13,7 +13,6 @@ onready var lowest_point = get_node("../Player/Lowest_point")
 onready var player = get_node("../Player")
 
 func _physics_process(delta):
-	print(PlayerStats.number_held)
 	if picked == true:
 		linear_velocity=Vector2.ZERO
 		angular_velocity=0
@@ -26,14 +25,10 @@ func _input(event):
 	if Input.is_action_just_pressed("pick_up"):
 		var bodies = $Detect.get_overlapping_bodies()
 		for body in bodies:
-			print(body)
-			print("pick_up?")
 			if body.is_in_group("Player") and PlayerStats.number_held <1:
 				$CollisionShape2D.set_disabled(true)
 				PlayerStats.number_held +=1
 				picked = true
-			else:
-				print("no")
 	if Input.is_action_just_released("pick_up") and picked == true:
 		$CollisionShape2D.set_disabled(false)
 		PlayerStats.number_held += -1
