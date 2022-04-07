@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://levels/SupportPland_decals.tscn" type="PackedScene" id=1]
 [ext_resource path="res://levels/Land_tiles.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Objects/Door.tscn" type="PackedScene" id=8]
 [ext_resource path="res://UI and Camera/Game_Ui.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Objects/Box.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Objects/Text_file.tscn" type="PackedScene" id=11]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=1]
 
@@ -893,10 +894,6 @@ position = Vector2( 537, -1 )
 [node name="EnterExitDoor-1png-1png2" parent="Enter_Exit_Doors" index="1"]
 position = Vector2( -469, -1 )
 
-[node name="Game_Ui" parent="." instance=ExtResource( 9 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-
 [node name="Box" parent="." instance=ExtResource( 10 )]
 position = Vector2( 436, 370 )
 
@@ -911,6 +908,13 @@ position = Vector2( 849, 434 )
 
 [node name="Box5" parent="." instance=ExtResource( 10 )]
 position = Vector2( 969, 274 )
+
+[node name="Text_file" parent="." instance=ExtResource( 11 )]
+position = Vector2( 302, 616 )
+
+[node name="Game_Ui" parent="." instance=ExtResource( 9 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 
 [editable path="Door_button"]
 [editable path="Door_button2"]

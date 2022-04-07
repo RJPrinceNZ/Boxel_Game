@@ -61,13 +61,11 @@ func get_input():
 
 
 func _physics_process(delta):
-	if PlayerStats.recharge < PlayerStats.recharge_max and anim_play == true:
-		anim_play = false
-		$AnimationPlayer.play("Recharge")
-	if $shockwave.on_cool_down == false:
-		$Recharge_point.scale = Vector2(0,0)
 	if $shockwave.on_cool_down == true:
-		$Recharge_point.scale = Vector2(1,1)
+		$Recharge_point/AnimationPlayer2.play("Recharge")
+	if $shockwave.on_cool_down == false:
+		$Recharge_point/AnimationPlayer2.play("Idle")
+	
 	get_input()
 	if velocity == Vector2.ZERO:
 		player_state = state.IDLE

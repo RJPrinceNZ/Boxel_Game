@@ -11,7 +11,6 @@ func _on_Area2D_body_entered(body):
 		PlayerStats.has_gun = true
 
 func _process(delta):
-	print(current_anim)
 	if PlayerStats.has_gun == false:
 		if not current_anim == "idle" or can_play == true:
 			can_play = false
