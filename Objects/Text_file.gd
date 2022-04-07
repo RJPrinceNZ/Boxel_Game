@@ -26,7 +26,7 @@ func _process(delta):
 		if PlayerStats.current_level == 4:
 			$Position2D/Label.text = "Artifical Intelligence Devlopment Log #3, We have made progress, the AI has capablities of solving basic puzzles, Where does the square go? , What is greater, 5 or 1?, etc. I'll try to make it more intellengent for now, while I have a greater puzzle to figure out. - RJ"
 		if PlayerStats.current_level == 5:
-			$Position2D/Label.text = "Presenting, the Long Range Shockwave Projectile Launcher Gun, also know as the Shockwave gun. This thing when shot launches anything... except the user. Useful for getting things down from high places. It can also hold objects out front of it, there were some problems in testing with people firing the gun while holding objects, so we had to disable firing the gun when holding and object, don't want fast moving chunks of whatever in your face do we? - RJ"
+			$Position2D/Label.text = "Presenting, the Long Range Shockwave Projectile Launching Device, also know as the Shockwave Gun. This thing when shot launches anything... except the user, nothing is harmed when it. Useful for getting things down from high places. It can also hold objects out front of it, there were some problems in testing with people firing the gun while holding objects, so we had to disable firing the gun when holding and object, don't want fast moving chunks of whatever in your face do we? - RJ"
 			
 func _on_AnimationPlayer_animation_finished(anim_name):
 	anim_play = false
