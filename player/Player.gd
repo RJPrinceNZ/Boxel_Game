@@ -7,6 +7,7 @@ export (float) var acceration = 25
 export (int, 0, 200) var push = 100
 
 var velocity = Vector2.ZERO
+var anim_play = true
 
 enum state {IDLE, WALKING, STARTJUMP, JUMP_MID, FALL, JUMP, JUMPFINISH}
 
@@ -60,7 +61,9 @@ func get_input():
 
 
 func _physics_process(delta):
-	$Recharge_point/Recharge_bar.value = PlayerStats.recharge
+	if PlayerStats.recharge < PlayerStats.recharge_max and anim_play == true:
+		anim_play = false
+		$AnimationPlayer.play("Recharge")
 	if $shockwave.on_cool_down == false:
 		$Recharge_point.scale = Vector2(0,0)
 	if $shockwave.on_cool_down == true:

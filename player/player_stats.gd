@@ -7,6 +7,7 @@ var number_held = 0
 var recharge = 0
 var recharge_max = 100
 
+
 func change_level():
 	current_level += 1
 	if current_level <= level_count:

@@ -3,6 +3,7 @@ extends Sprite
 onready var bullet = preload("res://player/Wave.tscn")
 var on_cool_down = false
 onready var root_node = get_tree().root.get_child(0)
+onready var player = get_node("../Player")
 var can_fire = true
 
 
@@ -24,6 +25,7 @@ func _physics_process(delta):
 		$ShockwaveGun.flip_v = true
 	if Input.is_action_just_pressed("fire") and on_cool_down == false and can_fire == true:
 		on_cool_down = true
+		#player.anim_play = true
 		PlayerStats.recharge = 0
 		$AnimationPlayer.play("FIRE")
 		var new_bullet = bullet.instance()
