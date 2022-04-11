@@ -8,6 +8,8 @@ export (int, 0, 200) var push = 100
 
 var velocity = Vector2.ZERO
 var anim_play = true
+var can_walk_r = true
+var can_walk_l = true
 
 enum state {IDLE, WALKING, STARTJUMP, JUMP_MID, FALL, JUMP, JUMPFINISH}
 
@@ -53,6 +55,10 @@ func handle_state(player_state):
 
 func get_input():
 	var dir = Input.get_action_strength("right") - Input.get_action_strength("left")
+	if can_walk_r == false and PlayerStats.number_held > 0:
+		dir = - Input.get_action_strength("left")
+	elif can_walk_l == false and PlayerStats.number_held > 0:
+		dir = Input.get_action_strength("right")
 	if dir != 0:
 		velocity.x = move_toward(velocity.x, dir*speed, acceration)
 	else:
@@ -94,3 +100,24 @@ func _physics_process(delta):
 	
 	
 
+
+
+func _on_Area2D2_body_entered(body):
+	print(body.name)
+	if body.is_in_group("object_wall"):
+		can_walk_r = false
+
+
+func _on_Area2D2_body_exited(body):
+	if body.is_in_group("object_wall"):
+		can_walk_r = true
+
+
+func _on_Area2D3_body_entered(body):
+	if body.is_in_group("object_wall"):
+		can_walk_l = false
+
+
+func _on_Area2D3_body_exited(body):
+	if body.is_in_group("object_wall"):
+		can_walk_l = true
