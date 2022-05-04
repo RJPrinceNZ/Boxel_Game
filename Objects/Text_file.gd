@@ -23,6 +23,9 @@ func _process(delta):
 		max_page = 7
 	if PlayerStats.current_level == 6:
 		max_page = 4
+	if PlayerStats.current_level == 7:
+		max_page = 5
+
 	if reading == false:
 		if anim_play == false or not current_anim == "idle":
 			current_anim = "idle"
@@ -74,7 +77,7 @@ func _process(delta):
 				$Position2D/Text_box/Label.set_text("picking up boxes and putting them on buttons to open doors. Quite simple. -RJ")
 		if PlayerStats.current_level == 4:
 			if current_page == 1:
-				$Position2D/Text_box/Label.set_text("Artifical Intelligence Devlopment Log #3")
+				$Position2D/Text_box/Label.set_text("Artifical Intelligence Devlopment Log #4")
 			if current_page == 2:
 				$Position2D/Text_box/Label.set_text("We have made progress, the AI has capablities of solving basic puzzles,")
 			if current_page == 3:
@@ -100,12 +103,22 @@ func _process(delta):
 			if current_page == 1:
 				$Position2D/Text_box/Label.set_text("This is a Object Wall. It prevents inanimate objects from going through it.")
 			if current_page == 2:
-				$Position2D/Text_box/Label.set_text("Humans and robots and any objects on a whitelist, such as clothes, or any equipment, will be allowed through.")
+				$Position2D/Text_box/Label.set_text("Humans, robots, any whitelisted objects, such as clothes, any equipment, will be allowed through.")
 			if current_page == 3:
 				$Position2D/Text_box/Label.set_text("Anything unauthorized will be blocked from going past,")
 			if current_page == 4:
-				$Position2D/Text_box/Label.set_text("inculding other authorized things if with such an object. -RJ")
-
+				$Position2D/Text_box/Label.set_text("this inculdes any other authorized things if with such an object. -RJ")
+		if PlayerStats.current_level == 7:
+			if current_page == 1:
+				$Position2D/Text_box/Label.set_text("Artifical Intelligence Devlopment Log #3")
+			if current_page == 2:
+				$Position2D/Text_box/Label.set_text("Honestly, It's really hard to try to make a very smart robot in a small body, not alot of space for computing")
+			if current_page == 3:
+				$Position2D/Text_box/Label.set_text("Well, at least the reactor in the body works... can be quite dangerous though, Hydrogen Peroxide and just Hydrogen.")
+			if current_page == 4:
+				$Position2D/Text_box/Label.set_text("Thank god for the extracter that I built, this would be expensive to make that fuel otherwise.")
+			if current_page == 5:
+				$Position2D/Text_box/Label.set_text("So not much progress made for now... I'll continue working on this. -RJ")
 
 
 
