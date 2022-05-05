@@ -88,7 +88,6 @@ tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 
 position = Vector2( 202, 621 )
 
 [node name="Text_file" parent="." instance=ExtResource( 9 )]
-visible = false
 position = Vector2( 1066, 488 )
 
 [node name="Enter_Exit_Doors" parent="." instance=ExtResource( 1 )]
