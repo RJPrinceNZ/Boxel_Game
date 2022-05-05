@@ -22,7 +22,7 @@ func _physics_process(delta):
 			self.position = point.global_position
 
 func _input(event):
-	if Input.is_action_just_pressed("pick_up"):
+	if Input.is_action_just_pressed("pick_up") and PlayerStats.can_pick == true:
 		var bodies = $Detect.get_overlapping_bodies()
 		for body in bodies:
 			if body.is_in_group("Player") and PlayerStats.number_held <1:
