@@ -25,6 +25,8 @@ func _process(delta):
 		max_page = 4
 	if PlayerStats.current_level == 7:
 		max_page = 5
+	if PlayerStats.current_level == 8:
+		max_page = 6
 
 	if reading == false:
 		if anim_play == false or not current_anim == "idle":
@@ -119,8 +121,20 @@ func _process(delta):
 				$Position2D/Text_box/Label.set_text("Thank god for the extracter that I built, this would be expensive to make that fuel otherwise.")
 			if current_page == 5:
 				$Position2D/Text_box/Label.set_text("So not much progress made for now... I'll continue working on this. -RJ")
-
-
+		if PlayerStats.current_level == 8:
+			if current_page == 1:
+				$Position2D/Text_box/Label.set_text("Artifical Intelligence Devlopment Log #1")
+			if current_page == 2:
+				$Position2D/Text_box/Label.set_text("This is the first of many logs to be made relating to this project.")
+			if current_page == 3:
+				$Position2D/Text_box/Label.set_text("The uhh, aim for this project is to make a robot that can escape from, pretty much anything that doesn't kill it.")
+			if current_page == 4:
+				$Position2D/Text_box/Label.set_text("The start of this project is to, well, make an AI that can comprehend any sort of puzzle.")
+			if current_page == 5:
+				$Position2D/Text_box/Label.set_text("Human knowledge is needed to understand what is likely ask by a human, if trapped.")
+			if current_page == 6:
+				$Position2D/Text_box/Label.set_text("For now, i'll probably try to code a basic brain, I'll say any progress I've made next time. - RJ")
+			
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	anim_play = false
