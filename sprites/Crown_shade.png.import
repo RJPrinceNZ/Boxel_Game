@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Crown_shade.png-56dc8cf71c6b74b45ff9e7dc5fad3927.stex"
+path="res://.import/Crown_shade.png-7700925177fb2b455c8d70fa3fd17b14.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Crown_shade.png"
-dest_files=[ "res://.import/Crown_shade.png-56dc8cf71c6b74b45ff9e7dc5fad3927.stex" ]
+source_file="res://sprites/Crown_shade.png"
+dest_files=[ "res://.import/Crown_shade.png-7700925177fb2b455c8d70fa3fd17b14.stex" ]
 
 [params]
 
