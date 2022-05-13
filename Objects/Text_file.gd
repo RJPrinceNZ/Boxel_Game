@@ -160,3 +160,18 @@ func _on_Right_arrow_pressed():
 	current_page += 1
 	if current_page > max_page:
 		current_page = max_page
+
+
+func _on_Left_arrow_mouse_entered():
+	PlayerStats.ui_block = true
+
+
+func _on_Left_arrow_mouse_exited():
+	PlayerStats.ui_block = false
+
+func _on_Right_arrow_mouse_entered():
+	PlayerStats.ui_block = true
+
+
+func _on_Right_arrow_mouse_exited():
+	PlayerStats.ui_block = false

@@ -2,9 +2,10 @@ extends Node
 
 var has_gun = true
 var current_level = 0
-var level_count = 8
+var level_count = 9
 var number_held = 0
 var can_pick = true
+var ui_block = false
 
 
 func change_level():
@@ -12,7 +13,7 @@ func change_level():
 	if current_level <= level_count:
 		get_tree().change_scene("res://Levels/game_levels/Level_" +str(current_level)+".tscn")
 	else:
-		get_tree().quit()
+		get_tree().change_scene("res://Menus/Title.tscn")
 
 func level_reset():
 	get_tree().change_scene("res://Levels/game_levels/Level_" +str(current_level)+".tscn")

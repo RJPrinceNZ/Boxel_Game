@@ -74,9 +74,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -229.5
+margin_left = -231.0
 margin_top = -102.5
-margin_right = -26.5
+margin_right = -25.0
 margin_bottom = -25.5
 custom_fonts/font = ExtResource( 5 )
 text = "Test"
@@ -103,5 +103,9 @@ flip_h = true
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
+[connection signal="mouse_entered" from="Position2D/Left_arrow" to="." method="_on_Left_arrow_mouse_entered"]
+[connection signal="mouse_exited" from="Position2D/Left_arrow" to="." method="_on_Left_arrow_mouse_exited"]
 [connection signal="pressed" from="Position2D/Left_arrow" to="." method="_on_Left_arrow_pressed"]
+[connection signal="mouse_entered" from="Position2D/Right_arrow" to="." method="_on_Right_arrow_mouse_entered"]
+[connection signal="mouse_exited" from="Position2D/Right_arrow" to="." method="_on_Right_arrow_mouse_exited"]
 [connection signal="pressed" from="Position2D/Right_arrow" to="." method="_on_Right_arrow_pressed"]
