@@ -92,13 +92,13 @@ func _process(delta):
 			if current_page == 2:
 				$Position2D/Text_box/Label.set_text("also know as the Shockwave Gun.")
 			if current_page == 3:
-				$Position2D/Text_box/Label.set_text("When this thing is shot launches anything... except the user")
+				$Position2D/Text_box/Label.set_text("When this thing shoots, the resulting explosion launches anything... except the user")
 			if current_page == 4:
 				$Position2D/Text_box/Label.set_text("Nothing is harmed when hit. Useful for getting things down from high places.")
 			if current_page == 5:
-				$Position2D/Text_box/Label.set_text("It can also hold objects out front of it, there were some problems in testing,")
+				$Position2D/Text_box/Label.set_text("It can also hold objects out front of it, though, there were some problems in testing,")
 			if current_page == 6:
-				$Position2D/Text_box/Label.set_text("with people firing the gun while holding objects, so we had to disable firing the gun when holding an object.")
+				$Position2D/Text_box/Label.set_text("people were firing the gun while holding objects, so we had to disable firing the gun when holding an object.")
 			if current_page == 7:
 				$Position2D/Text_box/Label.set_text("Don't want fast moving chunks of whatever in your face do we? - RJ")
 		if PlayerStats.current_level == 6:

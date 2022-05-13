@@ -272,6 +272,9 @@ position = Vector2( 1072, 608 )
 [node name="Button" parent="Door_button" index="0"]
 position = Vector2( 64, -100 )
 
+[node name="CollisionShape2D" parent="Door_button/Door" index="1"]
+disabled = false
+
 [node name="AnimationPlayer" parent="Door_button" index="2"]
 anims/Closed = SubResource( 3 )
 anims/Closing = SubResource( 4 )
