@@ -17,6 +17,8 @@ func _process(delta):
 				get_tree().change_scene("res://Menus/Credits.tscn")
 			if changing_tree == "Settings":
 				get_tree().change_scene("res://Menus/Settings.tscn")
+			if changing_tree == "Achievements":
+				get_tree().change_scene("res://Menus/Achivements.tscn")
 		
 
 func _on_Settings_pressed():
@@ -47,4 +49,8 @@ func _on_Quit_pressed():
 	get_tree().quit()
 
 
-
+func _on_TextureButton_pressed():
+	ShadowAnimation.new_animation = "Closing"
+	ShadowAnimation.change_animation()
+	changing_tree = "Achievements"
+	changing = true

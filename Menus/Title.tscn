@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://sprites/Settings.png" type="Texture" id=1]
 [ext_resource path="res://Menus/Title.gd" type="Script" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://sprites/Quit_highlight-1.png.png" type="Texture" id=8]
 [ext_resource path="res://sprites/Credits_highlight-1.png.png" type="Texture" id=9]
 [ext_resource path="res://sprites/Settings_highlight-1.png.png" type="Texture" id=10]
+[ext_resource path="res://sprites/Icon_Achivement.png" type="Texture" id=11]
+[ext_resource path="res://sprites/Icon_Achievement_highlight.png" type="Texture" id=12]
 
 [sub_resource type="Theme" id=1]
 
@@ -82,7 +84,29 @@ margin_bottom = 524.0
 texture_normal = ExtResource( 6 )
 texture_hover = ExtResource( 8 )
 
+[node name="CenterContainer2" type="CenterContainer" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -104.0
+margin_right = 104.0
+
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer2"]
+margin_left = 52.0
+margin_top = 52.0
+margin_right = 52.0
+margin_bottom = 52.0
+use_top_left = true
+
+[node name="TextureButton" type="TextureButton" parent="CenterContainer2/CenterContainer"]
+margin_left = -45.0
+margin_top = -45.0
+margin_right = 45.0
+margin_bottom = 45.0
+texture_normal = ExtResource( 11 )
+texture_hover = ExtResource( 12 )
+
 [connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer/CenterContainer/VBoxContainer/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer/CenterContainer/VBoxContainer/Settings" to="." method="_on_Settings_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer/CenterContainer/VBoxContainer/Credits" to="." method="_on_Credits_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer/CenterContainer/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="CenterContainer2/CenterContainer/TextureButton" to="." method="_on_TextureButton_pressed"]
