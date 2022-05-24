@@ -9,52 +9,19 @@
 [node name="Achivements" type="Node"]
 script = ExtResource( 1 )
 
-[node name="Label" type="Label" parent="."]
-margin_left = 300.0
-margin_top = 300.0
-margin_right = 454.0
-margin_bottom = 392.0
-rect_rotation = -13.2
-custom_fonts/font = ExtResource( 5 )
-text = "Note that these have not been coded in yet and are just ideas, there may be more added to this list"
-align = 1
-valign = 1
-autowrap = true
-
-[node name="CenterContainer2" type="CenterContainer" parent="."]
-margin_right = 181.0
-margin_bottom = 82.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer2"]
-margin_left = 9.0
-margin_top = 10.0
-margin_right = 172.0
-margin_bottom = 72.0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer2/VBoxContainer"]
-margin_right = 163.0
-margin_bottom = 62.0
-
-[node name="Button" type="Button" parent="CenterContainer2/VBoxContainer/HBoxContainer"]
-margin_right = 163.0
-margin_bottom = 62.0
-custom_fonts/font = ExtResource( 2 )
-text = "< Back"
-flat = true
-
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
 margin_left = 276.0
-margin_top = 133.0
+margin_top = 163.0
 margin_right = 1004.0
-margin_bottom = 587.0
+margin_bottom = 557.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
 margin_right = 728.0
-margin_bottom = 454.0
+margin_bottom = 394.0
 
 [node name="Label" type="Label" parent="CenterContainer/HBoxContainer/VBoxContainer"]
 margin_right = 728.0
@@ -92,6 +59,7 @@ custom_fonts/font = ExtResource( 2 )
 text = "Escaped"
 
 [node name="Label2" type="Label" parent="CenterContainer/HBoxContainer/VBoxContainer"]
+visible = false
 margin_top = 210.0
 margin_right = 728.0
 margin_bottom = 226.0
@@ -101,9 +69,9 @@ align = 1
 valign = 1
 
 [node name="CenterContainer3" type="CenterContainer" parent="CenterContainer/HBoxContainer/VBoxContainer"]
-margin_top = 230.0
+margin_top = 210.0
 margin_right = 728.0
-margin_bottom = 320.0
+margin_bottom = 300.0
 
 [node name="Potato" type="HBoxContainer" parent="CenterContainer/HBoxContainer/VBoxContainer/CenterContainer3"]
 margin_left = 233.0
@@ -112,10 +80,10 @@ margin_bottom = 90.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="CenterContainer/HBoxContainer/VBoxContainer/CenterContainer3/Potato"]
+[node name="TextureButton" type="TextureButton" parent="CenterContainer/HBoxContainer/VBoxContainer/CenterContainer3/Potato"]
 margin_right = 90.0
 margin_bottom = 90.0
-texture = ExtResource( 3 )
+texture_normal = ExtResource( 3 )
 
 [node name="Label" type="Label" parent="CenterContainer/HBoxContainer/VBoxContainer/CenterContainer3/Potato"]
 margin_left = 94.0
@@ -126,18 +94,19 @@ custom_fonts/font = ExtResource( 2 )
 text = "Potato"
 
 [node name="Label3" type="Label" parent="CenterContainer/HBoxContainer/VBoxContainer"]
-margin_top = 324.0
+visible = false
+margin_top = 304.0
 margin_right = 728.0
-margin_bottom = 340.0
+margin_bottom = 320.0
 custom_fonts/font = ExtResource( 5 )
 text = "Find the hidden potato"
 align = 1
 valign = 1
 
 [node name="CenterContainer2" type="CenterContainer" parent="CenterContainer/HBoxContainer/VBoxContainer"]
-margin_top = 344.0
+margin_top = 304.0
 margin_right = 728.0
-margin_bottom = 434.0
+margin_bottom = 394.0
 
 [node name="You_missed" type="HBoxContainer" parent="CenterContainer/HBoxContainer/VBoxContainer/CenterContainer2"]
 margin_left = 185.0
@@ -158,13 +127,54 @@ custom_fonts/font = ExtResource( 2 )
 text = "You Missed"
 
 [node name="Label4" type="Label" parent="CenterContainer/HBoxContainer/VBoxContainer"]
-margin_top = 438.0
+visible = false
+margin_top = 398.0
 margin_right = 728.0
-margin_bottom = 454.0
+margin_bottom = 414.0
 custom_fonts/font = ExtResource( 5 )
-text = "Click the achievement above this achievement"
+text = "Click the achievement icon above this achievement"
 align = 1
 valign = 1
 
-[connection signal="pressed" from="CenterContainer2/VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_pressed"]
+[node name="Label" type="Label" parent="."]
+margin_left = 300.0
+margin_top = 300.0
+margin_right = 454.0
+margin_bottom = 392.0
+rect_rotation = -13.2
+custom_fonts/font = ExtResource( 5 )
+text = "Note that these have not been coded in yet and are just ideas, there may be more added to this list"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="CenterContainer2" type="CenterContainer" parent="."]
+margin_right = 177.0
+margin_bottom = 74.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer2"]
+margin_left = 7.0
+margin_top = 6.0
+margin_right = 170.0
+margin_bottom = 68.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer2/VBoxContainer"]
+margin_right = 163.0
+margin_bottom = 62.0
+
+[node name="Button" type="Button" parent="CenterContainer2/VBoxContainer/HBoxContainer"]
+margin_right = 163.0
+margin_bottom = 62.0
+custom_fonts/font = ExtResource( 2 )
+shortcut_in_tooltip = false
+text = "< Back"
+flat = true
+
 [connection signal="mouse_entered" from="CenterContainer/HBoxContainer/VBoxContainer/CenterContainer/Escaped" to="." method="_on_Escaped_mouse_entered"]
+[connection signal="mouse_exited" from="CenterContainer/HBoxContainer/VBoxContainer/CenterContainer/Escaped" to="." method="_on_Escaped_mouse_exited"]
+[connection signal="mouse_entered" from="CenterContainer/HBoxContainer/VBoxContainer/CenterContainer3/Potato" to="." method="_on_Potato_mouse_entered"]
+[connection signal="mouse_exited" from="CenterContainer/HBoxContainer/VBoxContainer/CenterContainer3/Potato" to="." method="_on_Potato_mouse_exited"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer/CenterContainer3/Potato/TextureButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="mouse_entered" from="CenterContainer/HBoxContainer/VBoxContainer/CenterContainer2/You_missed" to="." method="_on_You_missed_mouse_entered"]
+[connection signal="mouse_exited" from="CenterContainer/HBoxContainer/VBoxContainer/CenterContainer2/You_missed" to="." method="_on_You_missed_mouse_exited"]
+[connection signal="pressed" from="CenterContainer2/VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_pressed"]
