@@ -12,7 +12,7 @@ func _process(delta):
 	if changing == true:
 		if ShadowAnimation.finished_anim == true:
 			if changing_tree == "Play":
-				get_tree().change_scene("res://levels/game_levels/Level_0.tscn")
+				get_tree().change_scene("res://Menus/Level_Selection.tscn")
 			if changing_tree == "Credits":
 				get_tree().change_scene("res://Menus/Credits.tscn")
 			if changing_tree == "Settings":
