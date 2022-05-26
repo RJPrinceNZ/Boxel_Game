@@ -4,7 +4,7 @@ var has_gun = true
 var current_level = 0
 var level_count = 9
 var number_held = 0
-var highest_level = 0
+var highest_level = 9
 var can_pick = true
 var ui_block = false
 
