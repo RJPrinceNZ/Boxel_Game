@@ -27,7 +27,7 @@ margin_top = 163.0
 margin_right = 1258.0
 margin_bottom = 557.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 scroll_horizontal_enabled = false
 scroll_vertical_enabled = false
 
