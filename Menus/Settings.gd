@@ -10,6 +10,7 @@ func _process(delta):
 func _ready():
 	ShadowAnimation.new_animation = "Opening"
 	ShadowAnimation.change_animation()
+	GameMenu.active = false
 
 func _on_Button_pressed():
 	ShadowAnimation.new_animation = "Closing"

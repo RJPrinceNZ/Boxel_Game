@@ -4,7 +4,7 @@ extends Node
 var changing_tree = "idle"
 var changing = false
 var level = 0
-var level_array = "Level_container/levels_Array"
+var level_array = "CenterContainer/Level_container/levels_Array"
 var Locked = preload("res://sprites/Icon_Locked.png")
 
 func _ready():
@@ -12,10 +12,12 @@ func _ready():
 	changing = false
 	ShadowAnimation.new_animation = "Opening"
 	ShadowAnimation.change_animation()
+	#disable ingame menu
+	GameMenu.active = false
 
 func _process(delta):
 	if PlayerStats.highest_level < 1:
-		var Button_1 = get_node(level_array + "?Level_0_3/Level_1/Button_1")
+		var Button_1 = get_node(level_array + "/Level_0_3/Level_1/Button_1")
 		Button_1.set_disabled(true)
 		var Icon_1 = get_node(level_array + "/Level_0_3/Level_1/TextureRect_1")
 		Icon_1.set_texture(Locked)

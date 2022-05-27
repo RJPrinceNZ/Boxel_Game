@@ -5,3 +5,4 @@ func _ready():
 	ShadowAnimation.change_animation()
 	PlayerStats.current_level = 6
 	PlayerStats.has_gun = true
+	GameMenu.active = true

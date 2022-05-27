@@ -44,23 +44,23 @@ text = "Levels"
 align = 1
 valign = 1
 
-[node name="level_0_3" type="HBoxContainer" parent="CenterContainer/Level_container/levels_Array"]
+[node name="Level_0_3" type="HBoxContainer" parent="CenterContainer/Level_container/levels_Array"]
 margin_top = 116.0
 margin_right = 1236.0
 margin_bottom = 206.0
 alignment = 1
 
-[node name="Level_0" type="HBoxContainer" parent="CenterContainer/Level_container/levels_Array/level_0_3"]
+[node name="Level_0" type="HBoxContainer" parent="CenterContainer/Level_container/levels_Array/Level_0_3"]
 margin_right = 306.0
 margin_bottom = 90.0
 alignment = 1
 
-[node name="TextureRect_0" type="TextureRect" parent="CenterContainer/Level_container/levels_Array/level_0_3/Level_0"]
+[node name="TextureRect_0" type="TextureRect" parent="CenterContainer/Level_container/levels_Array/Level_0_3/Level_0"]
 margin_right = 90.0
 margin_bottom = 90.0
 texture = ExtResource( 5 )
 
-[node name="Button_0" type="Button" parent="CenterContainer/Level_container/levels_Array/level_0_3/Level_0"]
+[node name="Button_0" type="Button" parent="CenterContainer/Level_container/levels_Array/Level_0_3/Level_0"]
 margin_left = 94.0
 margin_right = 306.0
 margin_bottom = 90.0
@@ -68,18 +68,18 @@ custom_fonts/font = ExtResource( 2 )
 text = "Level 0>"
 flat = true
 
-[node name="Level_1" type="HBoxContainer" parent="CenterContainer/Level_container/levels_Array/level_0_3"]
+[node name="Level_1" type="HBoxContainer" parent="CenterContainer/Level_container/levels_Array/Level_0_3"]
 margin_left = 310.0
 margin_right = 616.0
 margin_bottom = 90.0
 alignment = 1
 
-[node name="TextureRect_1" type="TextureRect" parent="CenterContainer/Level_container/levels_Array/level_0_3/Level_1"]
+[node name="TextureRect_1" type="TextureRect" parent="CenterContainer/Level_container/levels_Array/Level_0_3/Level_1"]
 margin_right = 90.0
 margin_bottom = 90.0
 texture = ExtResource( 3 )
 
-[node name="Button_1" type="Button" parent="CenterContainer/Level_container/levels_Array/level_0_3/Level_1"]
+[node name="Button_1" type="Button" parent="CenterContainer/Level_container/levels_Array/Level_0_3/Level_1"]
 margin_left = 94.0
 margin_right = 306.0
 margin_bottom = 90.0
@@ -87,18 +87,18 @@ custom_fonts/font = ExtResource( 2 )
 text = "Level 1>"
 flat = true
 
-[node name="Level_2" type="HBoxContainer" parent="CenterContainer/Level_container/levels_Array/level_0_3"]
+[node name="Level_2" type="HBoxContainer" parent="CenterContainer/Level_container/levels_Array/Level_0_3"]
 margin_left = 620.0
 margin_right = 926.0
 margin_bottom = 90.0
 alignment = 1
 
-[node name="TextureRect_2" type="TextureRect" parent="CenterContainer/Level_container/levels_Array/level_0_3/Level_2"]
+[node name="TextureRect_2" type="TextureRect" parent="CenterContainer/Level_container/levels_Array/Level_0_3/Level_2"]
 margin_right = 90.0
 margin_bottom = 90.0
 texture = ExtResource( 6 )
 
-[node name="Button_2" type="Button" parent="CenterContainer/Level_container/levels_Array/level_0_3/Level_2"]
+[node name="Button_2" type="Button" parent="CenterContainer/Level_container/levels_Array/Level_0_3/Level_2"]
 margin_left = 94.0
 margin_right = 306.0
 margin_bottom = 90.0
@@ -106,18 +106,18 @@ custom_fonts/font = ExtResource( 2 )
 text = "Level 2>"
 flat = true
 
-[node name="Level_3" type="HBoxContainer" parent="CenterContainer/Level_container/levels_Array/level_0_3"]
+[node name="Level_3" type="HBoxContainer" parent="CenterContainer/Level_container/levels_Array/Level_0_3"]
 margin_left = 930.0
 margin_right = 1236.0
 margin_bottom = 90.0
 alignment = 1
 
-[node name="TextureRect_3" type="TextureRect" parent="CenterContainer/Level_container/levels_Array/level_0_3/Level_3"]
+[node name="TextureRect_3" type="TextureRect" parent="CenterContainer/Level_container/levels_Array/Level_0_3/Level_3"]
 margin_right = 90.0
 margin_bottom = 90.0
 texture = ExtResource( 7 )
 
-[node name="Button_3" type="Button" parent="CenterContainer/Level_container/levels_Array/level_0_3/Level_3"]
+[node name="Button_3" type="Button" parent="CenterContainer/Level_container/levels_Array/Level_0_3/Level_3"]
 margin_left = 94.0
 margin_right = 306.0
 margin_bottom = 90.0
@@ -271,10 +271,10 @@ custom_fonts/font = ExtResource( 2 )
 text = "< Back"
 flat = true
 
-[connection signal="pressed" from="CenterContainer/Level_container/levels_Array/level_0_3/Level_0/Button_0" to="." method="_on_Button_0_pressed"]
-[connection signal="pressed" from="CenterContainer/Level_container/levels_Array/level_0_3/Level_1/Button_1" to="." method="_on_Button_1_pressed"]
-[connection signal="pressed" from="CenterContainer/Level_container/levels_Array/level_0_3/Level_2/Button_2" to="." method="_on_Button_2_pressed"]
-[connection signal="pressed" from="CenterContainer/Level_container/levels_Array/level_0_3/Level_3/Button_3" to="." method="_on_Button_3_pressed"]
+[connection signal="pressed" from="CenterContainer/Level_container/levels_Array/Level_0_3/Level_0/Button_0" to="." method="_on_Button_0_pressed"]
+[connection signal="pressed" from="CenterContainer/Level_container/levels_Array/Level_0_3/Level_1/Button_1" to="." method="_on_Button_1_pressed"]
+[connection signal="pressed" from="CenterContainer/Level_container/levels_Array/Level_0_3/Level_2/Button_2" to="." method="_on_Button_2_pressed"]
+[connection signal="pressed" from="CenterContainer/Level_container/levels_Array/Level_0_3/Level_3/Button_3" to="." method="_on_Button_3_pressed"]
 [connection signal="pressed" from="CenterContainer/Level_container/levels_Array/Level_4_7/Level_4/Button_4" to="." method="_on_Button_4_pressed"]
 [connection signal="pressed" from="CenterContainer/Level_container/levels_Array/Level_4_7/Level_5/Button_5" to="." method="_on_Button_5_pressed"]
 [connection signal="pressed" from="CenterContainer/Level_container/levels_Array/Level_4_7/Level_6/Button_6" to="." method="_on_Button_6_pressed"]

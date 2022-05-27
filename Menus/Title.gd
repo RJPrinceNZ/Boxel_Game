@@ -7,6 +7,7 @@ func _ready():
 	changing = false
 	ShadowAnimation.new_animation = "Opening"
 	ShadowAnimation.change_animation()
+	GameMenu.active = false
 	
 func _process(delta):
 	if changing == true:
