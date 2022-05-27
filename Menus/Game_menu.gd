@@ -1,7 +1,6 @@
 extends Control
 
-var current_animation = "Closed"
-var new_animation = "Closed"
+#Variables
 var can_change_animation = true
 var opened = false
 var active = false
@@ -12,10 +11,11 @@ func _ready():
 	$AnimationPlayer.play("Closed")
 
 func _process(delta):
-	print(ShadowAnimation.finished_anim)
+	#Disabled if active variable is false, which is is only true if in a level
 	if active == false:
 		$AnimationPlayer.play("Closed")
 		opened = false
+	#Escape key toggles the menu on or off.
 	elif Input.is_action_just_pressed("in_game_menu") and can_change_animation == true:
 		if opened == false:
 			can_change_animation = true
@@ -25,6 +25,7 @@ func _process(delta):
 			$AnimationPlayer.play("Closing")
 			can_change_animation = true
 			opened = false
+#To change scenes after transition is complete
 	if changing == true:
 		$AnimationPlayer.play("Closed")
 		if ShadowAnimation.finished_anim == true:
@@ -35,10 +36,12 @@ func _process(delta):
 				changing = false
 				get_tree().change_scene("res://Menus/Level_Selection.tscn")
 
+#Detect when animation is completed
 func _on_AnimationPlayer_animation_finished(anim_name):
 	can_change_animation = true
 
 
+#Buttons to quit and start transitions
 func _on_Quit_Level_pressed():
 	ShadowAnimation.new_animation = "Closing"
 	ShadowAnimation.change_animation()
