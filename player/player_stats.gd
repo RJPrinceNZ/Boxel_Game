@@ -22,6 +22,7 @@ func change_level():
 		get_tree().change_scene("res://Levels/game_levels/Level_" +str(current_level)+".tscn")
 	else:
 		escaped = true
+		AchivementPopup.achievement_get("Missed")
 		get_tree().change_scene("res://Menus/Title.tscn")
 
 func level_reset():
