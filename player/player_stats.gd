@@ -7,7 +7,7 @@ var number_held = 0
 var highest_level = 0
 var can_pick = true
 var ui_block = false
-
+var opened_before = false
 
 var escaped = false
 var potato = false
@@ -21,8 +21,9 @@ func change_level():
 	if current_level <= level_count:
 		get_tree().change_scene("res://Levels/game_levels/Level_" +str(current_level)+".tscn")
 	else:
-		escaped = true
-		AchivementPopup.achievement_get("Missed")
+		if escaped == false:
+			escaped = true
+			AchivementPopup.achievement_get("Missed")
 		get_tree().change_scene("res://Menus/Title.tscn")
 
 func level_reset():

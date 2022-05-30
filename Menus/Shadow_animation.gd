@@ -18,7 +18,12 @@ func change_animation():
 			$AnimationPlayer.play("Open")
 		if current_animation == "Closing":
 			$AnimationPlayer.play("Closing")
+		if current_animation == "Title_Opening":
+			$AnimationPlayer.play("Title_Opening")
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	can_change_animation = true
 	finished_anim = true
+	if anim_name == "Title_Opening":
+		new_animation = "Opening"
+		change_animation()

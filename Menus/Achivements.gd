@@ -53,5 +53,7 @@ func _on_You_missed_mouse_exited():
 
 
 func _on_TextureButton_pressed():
-	AchivementPopup.achievement_get("Missed")
-	PlayerStats.missed = true
+	if PlayerStats.missed == false:
+		PlayerStats.missed = true
+		AchivementPopup.achievement_get("Missed")
+	
