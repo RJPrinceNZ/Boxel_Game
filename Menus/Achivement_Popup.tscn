@@ -106,10 +106,12 @@ alignment = 1
 
 [node name="AchivementPopUp" type="Sprite" parent="CenterContainer/HBoxContainer"]
 scale = Vector2( 0.5, 0.5 )
+z_index = 15
 texture = ExtResource( 1 )
 
 [node name="Position2D" type="Position2D" parent="CenterContainer/HBoxContainer/AchivementPopUp"]
 scale = Vector2( 2, 2 )
+z_index = 16
 
 [node name="Label" type="Label" parent="CenterContainer/HBoxContainer/AchivementPopUp/Position2D"]
 margin_left = -509.0
@@ -132,6 +134,7 @@ stretch_mode = 6
 
 [node name="Position2D" type="Position2D" parent="CenterContainer/HBoxContainer/AchivementPopUp/Position2D"]
 scale = Vector2( 1.5, 1.5 )
+z_index = 16
 
 [node name="Label2" type="Label" parent="CenterContainer/HBoxContainer/AchivementPopUp/Position2D/Position2D"]
 anchor_right = 1.0
