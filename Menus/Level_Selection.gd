@@ -9,6 +9,7 @@ var Locked = preload("res://sprites/Icon_Locked.png")
 
 func _ready():
 	#opening transition
+	print("hello world")
 	changing = false
 	ShadowAnimation.new_animation = "Opening"
 	ShadowAnimation.change_animation()

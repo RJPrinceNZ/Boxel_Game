@@ -5,6 +5,7 @@ var new_animation = "Closed"
 var can_change_animation = true
 var finished_anim = false
 
+
 func change_animation():
 	if not current_animation == new_animation:
 		can_change_animation = false
@@ -26,4 +27,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	finished_anim = true
 	if anim_name == "Title_Opening":
 		new_animation = "Opening"
+		change_animation()
+	if anim_name == "Opening":
+		new_animation = "Open"
 		change_animation()
