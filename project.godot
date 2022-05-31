@@ -11,6 +11,7 @@ config_version=4
 [application]
 
 config/name="Boxel"
+run/main_scene="res://Menus/Title.tscn"
 config/icon="res://icon.png"
 
 [autoload]

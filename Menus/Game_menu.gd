@@ -6,6 +6,8 @@ var opened = false
 var active = false
 var changing = false
 var changing_tree = "idle"
+
+onready var confirm = preload("res://Menus/Confirmation_ui.tscn")
 #
 #func _ready():
 #	$AnimationPlayer.play("Closed")
@@ -49,11 +51,13 @@ func _ready():
 
 #Buttons to quit and start transitions
 func _on_Quit_Level_pressed():
-	print("hello")
-	ShadowAnimation.new_animation = "Closing"
-	ShadowAnimation.change_animation()
-	changing_tree = "Level"
-	changing = true
+	#ShadowAnimation.new_animation = "Closing"
+	#ShadowAnimation.change_animation()
+	#changing_tree = "Level"
+	#changing = true
+	var new_confirm = confirm.instance()
+	new_confirm.global_transform = $CenterContainer/Position2D.global_transform
+	add_child(new_confirm)
 
 
 func _on_Quit_Menu_pressed():
