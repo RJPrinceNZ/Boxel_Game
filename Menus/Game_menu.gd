@@ -6,6 +6,7 @@ var opened = false
 var active = false
 var changing = false
 var changing_tree = "idle"
+var has_menu_open = false
 
 onready var confirm = preload("res://Menus/Confirmation_ui.tscn")
 #
@@ -55,9 +56,13 @@ func _on_Quit_Level_pressed():
 	#ShadowAnimation.change_animation()
 	#changing_tree = "Level"
 	#changing = true
-	var new_confirm = confirm.instance()
-	new_confirm.global_transform = $CenterContainer/Position2D.global_transform
-	add_child(new_confirm)
+	if has_menu_open == false:
+		has_menu_open = true
+		var new_confirm = confirm.instance()
+		new_confirm.global_transform = $CenterContainer/Position2D.global_transform
+		add_child(new_confirm)
+		changing_tree = "Level"
+
 
 
 func _on_Quit_Menu_pressed():

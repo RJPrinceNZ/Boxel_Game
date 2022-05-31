@@ -3,6 +3,7 @@ extends Node
 var changing_tree = "idle"
 var changing = false
 
+
 func _ready():
 	changing = false
 	if PlayerStats.opened_before == false:
