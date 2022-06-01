@@ -236,7 +236,7 @@ margin_left = -101.0
 margin_right = 211.0
 margin_bottom = 115.0
 custom_fonts/font = ExtResource( 3 )
-text = "Produced by;
+text = "Produced by:
 RJPrinceNZ"
 align = 1
 valign = 1
