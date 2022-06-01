@@ -18,13 +18,13 @@ __meta__ = {
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
 margin_left = 276.0
-margin_top = 163.0
+margin_top = 116.0
 margin_right = 1004.0
-margin_bottom = 557.0
+margin_bottom = 604.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
 margin_right = 728.0
-margin_bottom = 394.0
+margin_bottom = 488.0
 
 [node name="Label" type="Label" parent="CenterContainer/HBoxContainer/VBoxContainer"]
 margin_right = 728.0
@@ -139,6 +139,42 @@ text = "Click the achievement icon above this achievement"
 align = 1
 valign = 1
 
+[node name="CenterContainer4" type="CenterContainer" parent="CenterContainer/HBoxContainer/VBoxContainer"]
+margin_top = 398.0
+margin_right = 728.0
+margin_bottom = 488.0
+
+[node name="Firepower" type="HBoxContainer" parent="CenterContainer/HBoxContainer/VBoxContainer/CenterContainer4"]
+margin_left = 191.0
+margin_right = 537.0
+margin_bottom = 90.0
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/HBoxContainer/VBoxContainer/CenterContainer4/Firepower"]
+margin_right = 90.0
+margin_bottom = 90.0
+texture = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/VBoxContainer/CenterContainer4/Firepower"]
+margin_left = 94.0
+margin_top = 17.0
+margin_right = 346.0
+margin_bottom = 73.0
+custom_fonts/font = ExtResource( 2 )
+text = "Firepower"
+align = 1
+valign = 1
+
+[node name="Label5" type="Label" parent="CenterContainer/HBoxContainer/VBoxContainer"]
+visible = false
+margin_top = 492.0
+margin_right = 728.0
+margin_bottom = 508.0
+custom_fonts/font = ExtResource( 5 )
+text = "Unlock the Long Range Shockwave Projectile Launching Device"
+align = 1
+valign = 1
+
 [node name="CenterContainer2" type="CenterContainer" parent="."]
 margin_right = 177.0
 margin_bottom = 74.0
@@ -168,4 +204,6 @@ flat = true
 [connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer/CenterContainer3/Potato/TextureButton" to="." method="_on_TextureButton_pressed"]
 [connection signal="mouse_entered" from="CenterContainer/HBoxContainer/VBoxContainer/CenterContainer2/You_missed" to="." method="_on_You_missed_mouse_entered"]
 [connection signal="mouse_exited" from="CenterContainer/HBoxContainer/VBoxContainer/CenterContainer2/You_missed" to="." method="_on_You_missed_mouse_exited"]
+[connection signal="mouse_entered" from="CenterContainer/HBoxContainer/VBoxContainer/CenterContainer4/Firepower" to="." method="_on_Firepower_mouse_entered"]
+[connection signal="mouse_exited" from="CenterContainer/HBoxContainer/VBoxContainer/CenterContainer4/Firepower" to="." method="_on_Firepower_mouse_exited"]
 [connection signal="pressed" from="CenterContainer2/VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_pressed"]

@@ -4,6 +4,7 @@ var changing = false
 var Escaped = preload("res://sprites/Icon_Achivement_Escape.png")
 var Potato = preload("res://sprites/Icon_Achivement_Potato.png")
 var Missed = preload("res://sprites/Icon_Achivement_You_Missed.png")
+var Firepower = preload("res://sprites/Icon_Achivement_Firepower.png")
 
 func _process(delta):
 	if changing == true:
@@ -15,7 +16,9 @@ func _process(delta):
 		$CenterContainer/HBoxContainer/VBoxContainer/CenterContainer3/Potato/TextureButton.set_normal_texture(Potato)
 	if PlayerStats.missed == true:
 		$CenterContainer/HBoxContainer/VBoxContainer/CenterContainer2/You_missed/TextureRect.set_texture(Missed)
-
+	if PlayerStats.firepower == true:
+		$CenterContainer/HBoxContainer/VBoxContainer/CenterContainer2/You_missed/TextureRect.set_texture(Firepower)
+		
 func _ready():
 	ShadowAnimation.new_animation = "Opening"
 	ShadowAnimation.change_animation()
@@ -57,3 +60,11 @@ func _on_TextureButton_pressed():
 		PlayerStats.missed = true
 		AchivementPopup.achievement_get("Missed")
 	
+
+
+func _on_Firepower_mouse_entered():
+	$CenterContainer/HBoxContainer/VBoxContainer/Label5.set_visible(true)
+
+
+func _on_Firepower_mouse_exited():
+	$CenterContainer/HBoxContainer/VBoxContainer/Label5.set_visible(false)

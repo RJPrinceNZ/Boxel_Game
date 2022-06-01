@@ -9,6 +9,9 @@ func _ready():
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("Player"):
 		PlayerStats.has_gun = true
+		PlayerStats.firepower = true
+		AchivementPopup.achievement_get("Firepower")
+		
 
 func _process(delta):
 	if PlayerStats.has_gun == false:

@@ -28,19 +28,20 @@ func _process(delta):
 			$AnimationPlayer.play("Closing")
 			can_change_animation = true
 			opened = false
-##To change scenes after transition is complete
+#To hide when changing scenes
 	if changing == true:
 		$AnimationPlayer.play("Closed")
 	if ShadowAnimation.finished_anim == true:
 		if ShadowAnimation.current_animation == "Closing":
-			if changing_tree == "Title":
+			if GameMenu.changing_tree == "Title":
 				changing = false
-				changing_tree == "idle"
+				GameMenu.changing_tree == "idle"
 				get_tree().change_scene("res://Menus/Title.tscn")
-			if changing_tree == "Level":
+			if GameMenu.changing_tree == "Level":
 				changing = false
-				changing_tree == "idle"
+				GameMenu.changing_tree == "idle"
 				get_tree().change_scene("res://Menus/Level_Selection.tscn")
+
 
 #Detect when animation is completed
 func _on_AnimationPlayer_animation_finished(anim_name):
@@ -66,7 +67,13 @@ func _on_Quit_Level_pressed():
 
 
 func _on_Quit_Menu_pressed():
-	ShadowAnimation.new_animation = "Closing"
-	ShadowAnimation.change_animation()
-	changing_tree = "Title"
-	changing = true
+	#ShadowAnimation.new_animation = "Closing"
+	#ShadowAnimation.change_animation()
+	#changing_tree = "Title"
+	#changing = true
+	if has_menu_open == false:
+		has_menu_open = true
+		var new_confirm = confirm.instance()
+		new_confirm.global_transform = $CenterContainer/Position2D.global_transform
+		add_child(new_confirm)
+		changing_tree = "Title"

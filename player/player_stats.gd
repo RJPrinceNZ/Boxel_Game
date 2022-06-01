@@ -12,6 +12,7 @@ var opened_before = false
 var escaped = false
 var potato = false
 var missed = false
+var firepower = false
 
 
 func change_level():
@@ -23,7 +24,7 @@ func change_level():
 	else:
 		if escaped == false:
 			escaped = true
-			AchivementPopup.achievement_get("Missed")
+			AchivementPopup.achievement_get("Escaped")
 		get_tree().change_scene("res://Menus/Title.tscn")
 
 func level_reset():
