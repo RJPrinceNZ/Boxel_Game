@@ -17,7 +17,7 @@ func _process(delta):
 	if PlayerStats.missed == true:
 		$CenterContainer/HBoxContainer/VBoxContainer/CenterContainer2/You_missed/TextureRect.set_texture(Missed)
 	if PlayerStats.firepower == true:
-		$CenterContainer/HBoxContainer/VBoxContainer/CenterContainer2/You_missed/TextureRect.set_texture(Firepower)
+		$CenterContainer/HBoxContainer/VBoxContainer/CenterContainer4/Firepower/TextureRect.set_texture(Firepower)
 		
 func _ready():
 	ShadowAnimation.new_animation = "Opening"
