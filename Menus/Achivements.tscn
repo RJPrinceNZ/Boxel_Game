@@ -180,22 +180,22 @@ margin_right = 177.0
 margin_bottom = 74.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer2"]
-margin_left = 7.0
-margin_top = 6.0
-margin_right = 170.0
-margin_bottom = 68.0
+margin_left = 13.0
+margin_top = 9.0
+margin_right = 164.0
+margin_bottom = 65.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer2/VBoxContainer"]
-margin_right = 163.0
-margin_bottom = 62.0
+margin_right = 151.0
+margin_bottom = 56.0
 
-[node name="Button" type="Button" parent="CenterContainer2/VBoxContainer/HBoxContainer"]
-margin_right = 163.0
-margin_bottom = 62.0
+[node name="Button" type="LinkButton" parent="CenterContainer2/VBoxContainer/HBoxContainer"]
+margin_right = 151.0
+margin_bottom = 56.0
 custom_fonts/font = ExtResource( 2 )
 shortcut_in_tooltip = false
 text = "< Back"
-flat = true
+underline = 2
 
 [connection signal="mouse_entered" from="CenterContainer/HBoxContainer/VBoxContainer/CenterContainer/Escaped" to="." method="_on_Escaped_mouse_entered"]
 [connection signal="mouse_exited" from="CenterContainer/HBoxContainer/VBoxContainer/CenterContainer/Escaped" to="." method="_on_Escaped_mouse_exited"]

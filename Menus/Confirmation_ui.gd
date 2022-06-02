@@ -4,6 +4,7 @@ var changing = false
 onready var text_label = $CanvasLayer/CenterContainer/CenterContainer/Position2D/VBoxContainer/Label
 
 func _ready():
+	PlayerStats.game_menus_open += 1
 	$AnimationPlayer.play("Open")
 
 func _process(delta):
@@ -17,8 +18,10 @@ func _on_Do_no_quit_pressed():
 	$AnimationPlayer.play("Close")
 
 func _on_quit_pressed():
+	
 	GameMenu.has_menu_open = false
 	GameMenu.changing = true
+	PlayerStats.game_menus_open += -1
 	ShadowAnimation.new_animation = "Closing"
 	ShadowAnimation.change_animation()
 	$AnimationPlayer.play("Close")
@@ -38,5 +41,6 @@ func _on_quit_pressed():
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "Close":
+		PlayerStats.game_menus_open += -1
 		queue_free()
 

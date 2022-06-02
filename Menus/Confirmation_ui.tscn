@@ -7,6 +7,7 @@
 
 [sub_resource type="Animation" id=1]
 resource_name = "Close"
+length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer/CenterContainer/CenterContainer:rect_scale")
 tracks/0/interp = 1
@@ -34,6 +35,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=2]
 resource_name = "Open"
+length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer/CenterContainer2/CenterContainer:rect_scale")
 tracks/0/interp = 1

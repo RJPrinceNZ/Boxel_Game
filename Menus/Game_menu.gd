@@ -23,14 +23,16 @@ func _process(delta):
 		if opened == false:
 			can_change_animation = true
 			$AnimationPlayer.play("Opening")
+			PlayerStats.game_menus_open += 1
 			opened = true
 		elif opened == true:
-			$AnimationPlayer.play("Closing")
 			can_change_animation = true
+			$AnimationPlayer.play("Closing")
+			PlayerStats.game_menus_open += -1
 			opened = false
 #To hide when changing scenes
 	if changing == true:
-		$AnimationPlayer.play("Closed")
+		$AnimationPlayer.play("Closing")
 	if ShadowAnimation.finished_anim == true:
 		if ShadowAnimation.current_animation == "Closing":
 			if GameMenu.changing_tree == "Title":

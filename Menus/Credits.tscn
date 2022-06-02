@@ -69,21 +69,21 @@ margin_right = 181.0
 margin_bottom = 82.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer2"]
-margin_left = 9.0
-margin_top = 10.0
-margin_right = 172.0
-margin_bottom = 72.0
+margin_left = 15.0
+margin_top = 13.0
+margin_right = 166.0
+margin_bottom = 69.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer2/VBoxContainer"]
-margin_right = 163.0
-margin_bottom = 62.0
+margin_right = 151.0
+margin_bottom = 56.0
 
-[node name="Button" type="Button" parent="CenterContainer2/VBoxContainer/HBoxContainer"]
-margin_right = 163.0
-margin_bottom = 62.0
+[node name="Button" type="LinkButton" parent="CenterContainer2/VBoxContainer/HBoxContainer"]
+margin_right = 151.0
+margin_bottom = 56.0
 custom_fonts/font = ExtResource( 2 )
 text = "< Back"
-flat = true
+underline = 2
 
 [connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer/CenterContainer/LinkButton" to="." method="_on_LinkButton_pressed"]
 [connection signal="pressed" from="CenterContainer2/VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_pressed"]

@@ -8,6 +8,7 @@ var highest_level = 0
 var can_pick = true
 var ui_block = false
 var opened_before = false
+var game_menus_open = 0
 
 var escaped = false
 var potato = false
