@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://levels/Land_tiles.tscn" type="PackedScene" id=1]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Objects/Enter_Exit_Doors.tscn" type="PackedScene" id=7]
 [ext_resource path="res://levels/test_world_2.gd" type="Script" id=8]
 [ext_resource path="res://UI and Camera/Game_Ui.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Objects/Launcher.tscn" type="PackedScene" id=10]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=1]
 
@@ -27,7 +28,6 @@ tile_data = PoolIntArray( 131076, 0, 0, 131077, 0, 0, 131078, 2, 0, 131082, 0, 0
 
 [node name="Box" parent="." instance=ExtResource( 3 )]
 position = Vector2( 366, 273 )
-contact_monitor = true
 
 [node name="Node2D" parent="." instance=ExtResource( 5 )]
 position = Vector2( 626, 512 )
@@ -56,6 +56,9 @@ position = Vector2( 1128, 410 )
 position = Vector2( 118, 602 )
 
 [node name="Game_Ui" parent="." instance=ExtResource( 9 )]
+
+[node name="Launcher" parent="." instance=ExtResource( 10 )]
+position = Vector2( 528, 640 )
 
 [editable path="Player"]
 [editable path="Player/shockwave"]

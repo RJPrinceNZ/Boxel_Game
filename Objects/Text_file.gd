@@ -90,7 +90,7 @@ func _process(delta):
 			if current_page == 1:
 				$Position2D/Text_box/Label.set_text("Presenting, the Long Range Shockwave Projectile Launching Device!")
 			if current_page == 2:
-				$Position2D/Text_box/Label.set_text("also know as the Shockwave Gun.")
+				$Position2D/Text_box/Label.set_text("also known as the Shockwave Gun.")
 			if current_page == 3:
 				$Position2D/Text_box/Label.set_text("When this thing shoots, the resulting explosion launches anything... except the user")
 			if current_page == 4:
