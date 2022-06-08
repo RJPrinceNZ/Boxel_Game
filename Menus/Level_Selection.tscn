@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Menus/Level_Selection.gd" type="Script" id=1]
 [ext_resource path="res://Font/Medium.tres" type="DynamicFont" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://sprites/Level_Icons/Level_Button_7.png" type="Texture" id=11]
 [ext_resource path="res://sprites/Level_Icons/Level_Button_8.png" type="Texture" id=12]
 [ext_resource path="res://sprites/Level_Icons/Level_Button_9.png" type="Texture" id=13]
+[ext_resource path="res://sprites/Level_Icons/Level_Button_10.png" type="Texture" id=14]
 
 [node name="Level_Selection" type="Node"]
 script = ExtResource( 1 )
@@ -254,8 +255,8 @@ margin_bottom = 394.0
 alignment = 1
 
 [node name="Level_8" type="HBoxContainer" parent="CenterContainer/Level_container/levels_Array/Level_8_11"]
-margin_left = 298.0
-margin_right = 592.0
+margin_left = 131.0
+margin_right = 425.0
 margin_bottom = 90.0
 alignment = 1
 
@@ -278,8 +279,8 @@ text = "Level 8>"
 underline = 2
 
 [node name="Level_9" type="HBoxContainer" parent="CenterContainer/Level_container/levels_Array/Level_8_11"]
-margin_left = 596.0
-margin_right = 890.0
+margin_left = 429.0
+margin_right = 723.0
 margin_bottom = 90.0
 alignment = 1
 
@@ -299,6 +300,29 @@ margin_right = 200.0
 margin_bottom = 73.0
 custom_fonts/font = ExtResource( 2 )
 text = "Level 9>"
+underline = 2
+
+[node name="Level_10" type="HBoxContainer" parent="CenterContainer/Level_container/levels_Array/Level_8_11"]
+margin_left = 727.0
+margin_right = 1056.0
+margin_bottom = 90.0
+
+[node name="TextureRect_10" type="TextureRect" parent="CenterContainer/Level_container/levels_Array/Level_8_11/Level_10"]
+margin_right = 90.0
+margin_bottom = 90.0
+texture = ExtResource( 14 )
+
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/Level_container/levels_Array/Level_8_11/Level_10"]
+margin_left = 94.0
+margin_right = 329.0
+margin_bottom = 90.0
+
+[node name="Button_10" type="LinkButton" parent="CenterContainer/Level_container/levels_Array/Level_8_11/Level_10/CenterContainer"]
+margin_top = 17.0
+margin_right = 235.0
+margin_bottom = 73.0
+custom_fonts/font = ExtResource( 2 )
+text = "Level 10>"
 underline = 2
 
 [node name="CenterContainer2" type="CenterContainer" parent="."]
@@ -334,4 +358,5 @@ underline = 2
 [connection signal="pressed" from="CenterContainer/Level_container/levels_Array/Level_4_7/Level_7/CenterContainer/Button_7" to="." method="_on_Button_7_pressed"]
 [connection signal="pressed" from="CenterContainer/Level_container/levels_Array/Level_8_11/Level_8/CenterContainer/Button_8" to="." method="_on_Button_8_pressed"]
 [connection signal="pressed" from="CenterContainer/Level_container/levels_Array/Level_8_11/Level_9/CenterContainer/Button_9" to="." method="_on_Button_9_pressed"]
+[connection signal="pressed" from="CenterContainer/Level_container/levels_Array/Level_8_11/Level_10/CenterContainer/Button_10" to="." method="_on_Button_10_pressed"]
 [connection signal="pressed" from="CenterContainer2/VBoxContainer/HBoxContainer/Button_Exit" to="." method="_on_Button_Exit_pressed"]
