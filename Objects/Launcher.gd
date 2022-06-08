@@ -1,11 +1,29 @@
 extends Node2D
 
-
+var current_anim = "Idle"
+var x_value = 0.5
 func _ready():
-	pass # Replace with function body.
-
+	current_anim = "Idle"
+	$AnimationPlayer.play("Idle")
+	if $Launcher_Sprite.flip_h == false:
+		x_value = 0.5
+	if $Launcher_Sprite.flip_h == true:
+		x_value = -0.5
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("Box") or body.is_in_group("Player"):
-		$AnimationPlayer.play("Launch")
-		print(body)
+		if current_anim == "Idle":
+			current_anim = "Launch"
+			$AnimationPlayer.play("Launch")
+			print(body)
+			if body.is_in_group("Box"):
+				body.apply_central_impulse(Vector2(0.5,-1) * 1200)
+			if body.is_in_group("Player"):
+				pass
+			
+
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if anim_name == "Launch":
+		current_anim = "Idle"
+		$AnimationPlayer.play("Idle")
