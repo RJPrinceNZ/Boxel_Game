@@ -9,6 +9,7 @@ var can_pick = true
 var ui_block = false
 var opened_before = false
 var game_menus_open = 0
+var is_launched = false
 
 var escaped = false
 var potato = false

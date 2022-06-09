@@ -55,18 +55,23 @@ func handle_state(player_state):
 
 func get_input():
 	var dir = Input.get_action_strength("right") - Input.get_action_strength("left")
-	if can_walk_r == false and PlayerStats.number_held > 0:
-		dir = - Input.get_action_strength("left")
-	elif can_walk_l == false and PlayerStats.number_held > 0:
-		dir = Input.get_action_strength("right")
-	if dir != 0:
-		velocity.x = move_toward(velocity.x, dir*speed, acceration)
-	else:
-		velocity.x = move_toward(velocity.x, 0, friction)
+	if !PlayerStats.is_launched:
+		if can_walk_r == false and PlayerStats.number_held > 0:
+			dir = - Input.get_action_strength("left")
+		elif can_walk_l == false and PlayerStats.number_held > 0:
+			dir = Input.get_action_strength("right")
+
+		if dir != 0:
+			velocity.x = move_toward(velocity.x, dir*speed, acceration)
+		else:
+			velocity.x = move_toward(velocity.x, 0, friction)
 
 
 
 func _physics_process(delta):
+	if is_on_wall() == true or is_on_floor() == true and $LaunchTimer.is_stopped():
+		PlayerStats.is_launched = false
+	
 	if $shockwave.on_cool_down == true:
 		$Recharge_point/AnimationPlayer2.play("Recharge")
 	if $shockwave.on_cool_down == false:
