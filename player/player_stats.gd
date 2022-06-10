@@ -2,7 +2,7 @@ extends Node
 
 var has_gun = true
 var current_level = 0
-var level_count = 10
+var level_count = 11
 var number_held = 0
 var highest_level = 0
 var can_pick = true
