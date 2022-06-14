@@ -82,6 +82,7 @@ func _physics_process(delta):
 		player_state = state.IDLE
 	if Input.is_action_just_pressed("up") and is_on_floor():
 		player_state = state.STARTJUMP
+		SoundPlayer.play_sound_effect("Jump")
 	elif velocity.x != 0:
 		player_state = state.WALKING
 

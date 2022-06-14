@@ -15,6 +15,7 @@ func _on_Area2D_body_entered(body):
 		if current_anim == "Idle":
 			current_anim = "Launch"
 			$AnimationPlayer.play("Launch")
+			SoundPlayer.play_sound_effect("Fling")
 			print(body)
 			if body.is_in_group("Box"):
 				body.apply_central_impulse(Vector2(x_value*0.5,-1) * 1200)

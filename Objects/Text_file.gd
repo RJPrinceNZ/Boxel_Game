@@ -27,6 +27,8 @@ func _process(delta):
 		max_page = 5
 	if PlayerStats.current_level == 8:
 		max_page = 6
+	if PlayerStats.current_level == 11:
+		max_page = 4
 
 	if reading == false:
 		if anim_play == false or not current_anim == "idle":
@@ -134,6 +136,15 @@ func _process(delta):
 				$Position2D/Text_box/Label.set_text("Human knowledge is needed to understand what is likely ask by a human, if trapped.")
 			if current_page == 6:
 				$Position2D/Text_box/Label.set_text("For now, i'll probably try to code a basic brain, I'll say any progress I've made next time. - RJ")
+		if PlayerStats.current_level == 11:
+			if current_page == 1:
+				$Position2D/Text_box/Label.set_text("This is a launcher")
+			if current_page == 2:
+				$Position2D/Text_box/Label.set_text("This will, well. launch objects placed on it.")
+			if current_page == 3:
+				$Position2D/Text_box/Label.set_text("Our boxes are renforced so it's all good, nothing inside them or themselves are damaged from the launch.")
+			if current_page == 4:
+				$Position2D/Text_box/Label.set_text("Warning, unless you are a reinforced robot, do not stand on the launcher or you will sustain serious damage. - RJ")
 			
 
 func _on_AnimationPlayer_animation_finished(anim_name):

@@ -20,6 +20,7 @@ PlayerStats="*res://player/player_stats.gd"
 ShadowAnimation="*res://Menus/Shadow_animation.tscn"
 GameMenu="*res://Menus/Game_menu.tscn"
 AchivementPopup="*res://Menus/Achivement_Popup.tscn"
+SoundPlayer="*res://Sound/Sound_Player.gd"
 
 [display]
 

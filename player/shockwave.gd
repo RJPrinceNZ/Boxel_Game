@@ -32,6 +32,7 @@ func _physics_process(delta):
 		var new_bullet = bullet.instance()
 		new_bullet.global_transform = $ShockwaveGun/Position2D.global_transform
 		root_node.add_child(new_bullet)
+		SoundPlayer.play_sound_effect("Gun_fire")
 		$Gun_Timer.start()
 	if on_cool_down == false:
 		$AnimationPlayer.play("IDLE")

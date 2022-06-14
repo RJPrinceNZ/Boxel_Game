@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Flinged.wav-0271e2ae78cd5ba77d5578dd73b45197.sample"
+
+[deps]
+
+source_file="res://Sound/Flinged.wav"
+dest_files=[ "res://.import/Flinged.wav-0271e2ae78cd5ba77d5578dd73b45197.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

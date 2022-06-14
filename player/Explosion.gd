@@ -2,6 +2,7 @@ extends Node2D
 
 func _ready():
 	$AnimationPlayer.play("Explosion")
+	SoundPlayer.play_sound_effect("Explosion")
 
 
 
