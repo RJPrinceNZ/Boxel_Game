@@ -35,8 +35,8 @@ position = Vector2( 976, 160 )
 [node name="Button" parent="Door_button2" index="0"]
 position = Vector2( -700, 316 )
 
-[node name="CollisionShape2D" parent="Door_button2/Door" index="1"]
-disabled = false
+[node name="Door-1png" parent="Door_button2/Door" index="0"]
+frame = 0
 
 [node name="AnimationTree" parent="Door_button2" index="4"]
 parameters/playback = SubResource( 1 )
@@ -53,8 +53,8 @@ position = Vector2( 976, 448 )
 [node name="Button" parent="Door_button" index="0"]
 position = Vector2( -774, 28 )
 
-[node name="CollisionShape2D" parent="Door_button/Door" index="1"]
-disabled = false
+[node name="Door-1png" parent="Door_button/Door" index="0"]
+frame = 0
 
 [node name="AnimationTree" parent="Door_button" index="4"]
 parameters/playback = SubResource( 2 )
@@ -65,8 +65,8 @@ position = Vector2( 496, 192 )
 [node name="Button" parent="Door_button3" index="0"]
 position = Vector2( -148, 284 )
 
-[node name="CollisionShape2D" parent="Door_button3/Door" index="1"]
-disabled = false
+[node name="Door-1png" parent="Door_button3/Door" index="0"]
+frame = 0
 
 [node name="AnimationTree" parent="Door_button3" index="4"]
 parameters/playback = SubResource( 3 )

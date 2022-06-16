@@ -109,7 +109,6 @@ func _physics_process(delta):
 
 
 func _on_Area2D2_body_entered(body):
-	print(body.name)
 	if body.is_in_group("object_wall"):
 		PlayerStats.can_pick = false
 		can_walk_r = false
