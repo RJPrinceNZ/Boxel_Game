@@ -144,8 +144,9 @@ func _process(delta):
 			if current_page == 3:
 				$Position2D/Text_box/Label.set_text("Our boxes are renforced so it's all good, nothing inside them or themselves are damaged from the launch.")
 			if current_page == 4:
-				$Position2D/Text_box/Label.set_text("Warning, unless you are a reinforced robot, do not stand on the launcher or you will sustain serious damage. - RJ")
-			
+				$Position2D/Text_box/Label.set_text("Warning, unless you are a reinforced robot, do not stand on the launcher,")
+			if current_page == 4:
+				$Position2D/Text_box/Label.set_text("or you will sustain serious damage. - RJ")
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	anim_play = false

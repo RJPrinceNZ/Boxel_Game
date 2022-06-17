@@ -623,8 +623,8 @@ position = Vector2( 1104, 608 )
 [node name="Button" parent="Door_button" index="0"]
 position = Vector2( 58, -100 )
 
-[node name="CollisionShape2D" parent="Door_button/Door" index="1"]
-disabled = false
+[node name="Door-1png" parent="Door_button/Door" index="0"]
+frame = 0
 
 [node name="AnimationTree" parent="Door_button" index="4"]
 parameters/playback = SubResource( 3 )
@@ -638,8 +638,8 @@ position = Vector2( -998, -356 )
 [node name="Door" parent="Door_button2" index="1"]
 position = Vector2( -158, -512 )
 
-[node name="CollisionShape2D" parent="Door_button2/Door" index="1"]
-disabled = false
+[node name="Door-1png" parent="Door_button2/Door" index="0"]
+frame = 0
 
 [node name="AnimationPlayer" parent="Door_button2" index="2"]
 anims/Closed = SubResource( 4 )
@@ -653,6 +653,9 @@ anims/Button_Pushed = SubResource( 9 )
 
 [node name="AnimationTree" parent="Door_button2" index="4"]
 parameters/playback = SubResource( 10 )
+
+[node name="DoorOpenIcon-1png" parent="Door_button2" index="5"]
+position = Vector2( -158, -560 )
 
 [node name="LightAnimationPlayer" parent="Door_button2" index="6"]
 anims/Off = SubResource( 11 )
@@ -668,8 +671,8 @@ position = Vector2( -192, -484 )
 [node name="Door" parent="Door_button3" index="1"]
 position = Vector2( -902, -160 )
 
-[node name="CollisionShape2D" parent="Door_button3/Door" index="1"]
-disabled = false
+[node name="Door-1png" parent="Door_button3/Door" index="0"]
+frame = 0
 
 [node name="AnimationPlayer" parent="Door_button3" index="2"]
 anims/Closed = SubResource( 14 )
@@ -683,6 +686,9 @@ anims/Button_Pushed = SubResource( 19 )
 
 [node name="AnimationTree" parent="Door_button3" index="4"]
 parameters/playback = SubResource( 20 )
+
+[node name="DoorOpenIcon-1png" parent="Door_button3" index="5"]
+position = Vector2( -902, -208 )
 
 [node name="LightAnimationPlayer" parent="Door_button3" index="6"]
 anims/Off = SubResource( 21 )
@@ -698,8 +704,8 @@ position = Vector2( -928, -228 )
 [node name="Door" parent="Door_button4" index="1"]
 position = Vector2( -160, -256 )
 
-[node name="CollisionShape2D" parent="Door_button4/Door" index="1"]
-disabled = false
+[node name="Door-1png" parent="Door_button4/Door" index="0"]
+frame = 0
 
 [node name="AnimationPlayer" parent="Door_button4" index="2"]
 anims/Closed = SubResource( 24 )
@@ -713,6 +719,9 @@ anims/Button_Pushed = SubResource( 29 )
 
 [node name="AnimationTree" parent="Door_button4" index="4"]
 parameters/playback = SubResource( 30 )
+
+[node name="DoorOpenIcon-1png" parent="Door_button4" index="5"]
+position = Vector2( -160, -304 )
 
 [node name="LightAnimationPlayer" parent="Door_button4" index="6"]
 anims/Off = SubResource( 31 )

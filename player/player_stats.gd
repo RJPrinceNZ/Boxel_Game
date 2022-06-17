@@ -10,6 +10,7 @@ var ui_block = false
 var opened_before = false
 var game_menus_open = 0
 var is_launched = false
+var dark_background = false
 
 var escaped = false
 var potato = false

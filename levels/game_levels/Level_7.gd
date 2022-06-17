@@ -6,3 +6,6 @@ func _ready():
 	PlayerStats.current_level = 7
 	PlayerStats.has_gun = true
 	GameMenu.active = true
+	if PlayerStats.dark_background == true:
+		pass
+		

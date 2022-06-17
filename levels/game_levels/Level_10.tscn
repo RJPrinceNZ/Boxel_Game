@@ -66,6 +66,9 @@ position = Vector2( 880, 128 )
 [node name="Button" parent="Door_button" index="0"]
 position = Vector2( -560, 92 )
 
+[node name="Door-1png" parent="Door_button/Door" index="0"]
+frame = 0
+
 [node name="AnimationTree" parent="Door_button" index="4"]
 parameters/playback = SubResource( 3 )
 
@@ -91,6 +94,9 @@ position = Vector2( 304, 96 )
 [node name="Button" parent="Door_button2" index="0"]
 position = Vector2( 864, 188 )
 
+[node name="Door-1png" parent="Door_button2/Door" index="0"]
+frame = 0
+
 [node name="AnimationTree" parent="Door_button2" index="4"]
 parameters/playback = SubResource( 4 )
 
@@ -102,6 +108,9 @@ position = Vector2( -384, -52 )
 
 [node name="Door" parent="Door_button3" index="1"]
 rotation = 1.5708
+
+[node name="Door-1png" parent="Door_button3/Door" index="0"]
+frame = 0
 
 [node name="AnimationTree" parent="Door_button3" index="4"]
 parameters/playback = SubResource( 5 )

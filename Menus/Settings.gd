@@ -16,3 +16,12 @@ func _on_Button_pressed():
 	ShadowAnimation.new_animation = "Closing"
 	ShadowAnimation.change_animation()
 	changing = true
+
+
+func _on_TextureButton_toggled(button_pressed):
+	if $CenterContainer/HBoxContainer/VBoxContainer/HBoxContainer/TextureButton.pressed == true:
+		PlayerStats.dark_background = true
+		print("dark_mode")
+	if $CenterContainer/HBoxContainer/VBoxContainer/HBoxContainer/TextureButton.pressed == false:
+		PlayerStats.dark_background = false
+		print("light_mode")
