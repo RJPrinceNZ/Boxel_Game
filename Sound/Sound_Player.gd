@@ -47,6 +47,9 @@ func play_sound_effect(sfx):
 	var sound = AudioStreamPlayer.new()
 	sound.stream = load(sound_effects[sfx])
 	add_child(sound)
+	randomize()
+	var pitch_change = rand_range(0.8,1.2)
+	sound.pitch_scale = pitch_change
 	sound.play()
 	yield(sound,"finished")
 	sound.queue_free()

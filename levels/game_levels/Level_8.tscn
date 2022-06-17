@@ -13,6 +13,7 @@
 [ext_resource path="res://Objects/Text_file.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Objects/Potato.tscn" type="PackedScene" id=12]
 
+
 [sub_resource type="AnimationNodeStateMachinePlayback" id=3]
 
 [sub_resource type="Animation" id=4]
