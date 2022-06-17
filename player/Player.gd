@@ -10,6 +10,7 @@ var velocity = Vector2.ZERO
 var anim_play = true
 var can_walk_r = true
 var can_walk_l = true
+var can_walk_sound = true
 
 enum state {IDLE, WALKING, STARTJUMP, JUMP_MID, FALL, JUMP, JUMPFINISH}
 
@@ -63,8 +64,15 @@ func get_input():
 
 		if dir != 0:
 			velocity.x = move_toward(velocity.x, dir*speed, acceration)
+			if is_on_floor():
+				if can_walk_sound == true:
+					can_walk_sound = false
+					$WalkSoundTimer.start()
+					SoundPlayer.play_sound_effect("Walk")
 		else:
 			velocity.x = move_toward(velocity.x, 0, friction)
+			
+			
 
 
 
@@ -85,8 +93,8 @@ func _physics_process(delta):
 		SoundPlayer.play_sound_effect("Jump")
 	elif velocity.x != 0:
 		player_state = state.WALKING
-
-
+	
+	
 	if not is_on_floor():
 		if velocity.y < 0:
 			player_state = state.JUMP
@@ -131,3 +139,7 @@ func _on_Area2D3_body_exited(body):
 	if body.is_in_group("object_wall"):
 		PlayerStats.can_pick = true
 		can_walk_l = true
+
+
+func _on_WalkSoundTimer_timeout():
+	can_walk_sound = true

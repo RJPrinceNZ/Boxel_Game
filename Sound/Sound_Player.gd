@@ -18,7 +18,8 @@ var sound_effects = {
 	"Door_Open":"res://Sound/dooropen.wav",
 	"Door_Close":"res://Sound/doorclose.wav",
 	"Button_Press":"res://Sound/buttonclick.wav",
-	"Button_Unpress":"res://Sound/buttonclick2.wav"
+	"Button_Unpress":"res://Sound/buttonclick2.wav",
+	"Walk":"res://Sound/walk.wav"
 	
 	
 
