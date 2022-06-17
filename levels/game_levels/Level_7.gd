@@ -7,5 +7,5 @@ func _ready():
 	PlayerStats.has_gun = true
 	GameMenu.active = true
 	if PlayerStats.dark_background == true:
-		pass
+		$Background.modulate = Color(0.4,0.4,0.4)
 		
