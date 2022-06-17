@@ -8,6 +8,8 @@ func _process(delta):
 			get_tree().change_scene("res://Menus/Title.tscn")
 
 func _ready():
+	if PlayerStats.dark_background == true:
+		$CenterContainer/HBoxContainer/VBoxContainer/HBoxContainer/TextureButton.pressed = true
 	ShadowAnimation.new_animation = "Opening"
 	ShadowAnimation.change_animation()
 	GameMenu.active = false
