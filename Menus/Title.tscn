@@ -105,8 +105,18 @@ margin_bottom = 45.0
 texture_normal = ExtResource( 11 )
 texture_hover = ExtResource( 12 )
 
+[connection signal="mouse_entered" from="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer/CenterContainer/VBoxContainer/Play" to="." method="_on_Play_mouse_entered"]
+[connection signal="mouse_exited" from="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer/CenterContainer/VBoxContainer/Play" to="." method="_on_Play_mouse_exited"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer/CenterContainer/VBoxContainer/Play" to="." method="_on_Play_pressed"]
+[connection signal="mouse_entered" from="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer/CenterContainer/VBoxContainer/Settings" to="." method="_on_Settings_mouse_entered"]
+[connection signal="mouse_exited" from="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer/CenterContainer/VBoxContainer/Settings" to="." method="_on_Settings_mouse_exited"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer/CenterContainer/VBoxContainer/Settings" to="." method="_on_Settings_pressed"]
+[connection signal="mouse_entered" from="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer/CenterContainer/VBoxContainer/Credits" to="." method="_on_Credits_mouse_entered"]
+[connection signal="mouse_exited" from="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer/CenterContainer/VBoxContainer/Credits" to="." method="_on_Credits_mouse_exited"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer/CenterContainer/VBoxContainer/Credits" to="." method="_on_Credits_pressed"]
+[connection signal="mouse_entered" from="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer/CenterContainer/VBoxContainer/Quit" to="." method="_on_Quit_mouse_entered"]
+[connection signal="mouse_exited" from="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer/CenterContainer/VBoxContainer/Quit" to="." method="_on_Quit_mouse_exited"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer/CenterContainer/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="mouse_entered" from="CenterContainer2/CenterContainer/TextureButton" to="." method="_on_TextureButton_mouse_entered"]
+[connection signal="mouse_exited" from="CenterContainer2/CenterContainer/TextureButton" to="." method="_on_TextureButton_mouse_exited"]
 [connection signal="pressed" from="CenterContainer2/CenterContainer/TextureButton" to="." method="_on_TextureButton_pressed"]

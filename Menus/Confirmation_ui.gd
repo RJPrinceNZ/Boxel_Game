@@ -44,3 +44,23 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		PlayerStats.game_menus_open += -1
 		queue_free()
 
+
+
+func _on_Do_no_quit_mouse_entered():
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		SoundPlayer.play_sound_effect("Hover_Button",false)
+
+
+func _on_Do_no_quit_mouse_exited():
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		SoundPlayer.play_sound_effect("Unhover_Button",false)
+
+
+func _on_quit_mouse_entered():
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		SoundPlayer.play_sound_effect("Hover_Button",false)
+
+
+func _on_quit_mouse_exited():
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		SoundPlayer.play_sound_effect("Unhover_Button",false)

@@ -68,7 +68,7 @@ func get_input():
 				if can_walk_sound == true:
 					can_walk_sound = false
 					$WalkSoundTimer.start()
-					SoundPlayer.play_sound_effect("Walk")
+					SoundPlayer.play_sound_effect("Walk",true)
 		else:
 			velocity.x = move_toward(velocity.x, 0, friction)
 			
@@ -90,7 +90,7 @@ func _physics_process(delta):
 		player_state = state.IDLE
 	if Input.is_action_just_pressed("up") and is_on_floor():
 		player_state = state.STARTJUMP
-		SoundPlayer.play_sound_effect("Jump")
+		SoundPlayer.play_sound_effect("Jump",true)
 	elif velocity.x != 0:
 		player_state = state.WALKING
 	

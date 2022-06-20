@@ -79,3 +79,23 @@ func _on_Quit_Menu_pressed():
 		new_confirm.global_transform = $CenterContainer/Position2D.global_transform
 		add_child(new_confirm)
 		changing_tree = "Title"
+
+
+func _on_Quit_Menu_mouse_entered():
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		SoundPlayer.play_sound_effect("Hover_Button",false)
+
+
+func _on_Quit_Menu_mouse_exited():
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		SoundPlayer.play_sound_effect("Unhover_Button",false)
+
+
+func _on_Quit_Level_mouse_entered():
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		SoundPlayer.play_sound_effect("Hover_Button",false)
+
+
+func _on_Quit_Level_mouse_exited():
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		SoundPlayer.play_sound_effect("Unhover_Button",false)

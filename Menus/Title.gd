@@ -62,3 +62,44 @@ func _on_TextureButton_pressed():
 	ShadowAnimation.change_animation()
 	changing_tree = "Achievements"
 	changing = true
+
+
+func _on_Play_mouse_entered():
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		SoundPlayer.play_sound_effect("Hover_Button",false)
+
+func _on_Play_mouse_exited():
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		SoundPlayer.play_sound_effect("Unhover_Button",false)
+
+func _on_Settings_mouse_entered():
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		SoundPlayer.play_sound_effect("Hover_Button",false)
+
+func _on_Settings_mouse_exited():
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		SoundPlayer.play_sound_effect("Unhover_Button",false)
+
+func _on_Credits_mouse_entered():
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		SoundPlayer.play_sound_effect("Hover_Button",false)
+
+func _on_Credits_mouse_exited():
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		SoundPlayer.play_sound_effect("Unhover_Button",false)
+
+func _on_Quit_mouse_entered():
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		SoundPlayer.play_sound_effect("Hover_Button",false)
+
+func _on_Quit_mouse_exited():
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		SoundPlayer.play_sound_effect("Unhover_Button",false)
+
+func _on_TextureButton_mouse_entered():
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		SoundPlayer.play_sound_effect("Hover_Button",false)
+
+func _on_TextureButton_mouse_exited():
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		SoundPlayer.play_sound_effect("Unhover_Button",false)

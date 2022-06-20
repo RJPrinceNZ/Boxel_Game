@@ -206,4 +206,6 @@ underline = 2
 [connection signal="mouse_exited" from="CenterContainer/HBoxContainer/VBoxContainer/CenterContainer2/You_missed" to="." method="_on_You_missed_mouse_exited"]
 [connection signal="mouse_entered" from="CenterContainer/HBoxContainer/VBoxContainer/CenterContainer4/Firepower" to="." method="_on_Firepower_mouse_entered"]
 [connection signal="mouse_exited" from="CenterContainer/HBoxContainer/VBoxContainer/CenterContainer4/Firepower" to="." method="_on_Firepower_mouse_exited"]
+[connection signal="mouse_entered" from="CenterContainer2/VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_mouse_entered"]
+[connection signal="mouse_exited" from="CenterContainer2/VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_mouse_exited"]
 [connection signal="pressed" from="CenterContainer2/VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_pressed"]

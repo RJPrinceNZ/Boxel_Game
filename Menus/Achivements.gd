@@ -33,26 +33,37 @@ func _on_Button_pressed():
 
 func _on_Escaped_mouse_entered():
 	$CenterContainer/HBoxContainer/VBoxContainer/Label2.set_visible(true)
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		SoundPlayer.play_sound_effect("Hover_Button",false)
 
 
 func _on_Escaped_mouse_exited():
 	$CenterContainer/HBoxContainer/VBoxContainer/Label2.set_visible(false)
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		SoundPlayer.play_sound_effect("Unhover_Button",false)
 
 
 func _on_Potato_mouse_entered():
 	$CenterContainer/HBoxContainer/VBoxContainer/Label3.set_visible(true)
-
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		SoundPlayer.play_sound_effect("Hover_Button",false)
 
 func _on_Potato_mouse_exited():
 	$CenterContainer/HBoxContainer/VBoxContainer/Label3.set_visible(false)
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		SoundPlayer.play_sound_effect("Unhover_Button",false)
 
 
 func _on_You_missed_mouse_entered():
 	$CenterContainer/HBoxContainer/VBoxContainer/Label4.set_visible(true)
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		SoundPlayer.play_sound_effect("Hover_Button",false)
 
 
 func _on_You_missed_mouse_exited():
 	$CenterContainer/HBoxContainer/VBoxContainer/Label4.set_visible(false)
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		SoundPlayer.play_sound_effect("Unhover_Button",false)
 
 
 func _on_TextureButton_pressed():
@@ -64,7 +75,21 @@ func _on_TextureButton_pressed():
 
 func _on_Firepower_mouse_entered():
 	$CenterContainer/HBoxContainer/VBoxContainer/Label5.set_visible(true)
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		SoundPlayer.play_sound_effect("Hover_Button",false)
 
 
 func _on_Firepower_mouse_exited():
 	$CenterContainer/HBoxContainer/VBoxContainer/Label5.set_visible(false)
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		SoundPlayer.play_sound_effect("Unhover_Button",false)
+
+
+func _on_Button_mouse_entered():
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		SoundPlayer.play_sound_effect("Hover_Button",false)
+
+
+func _on_Button_mouse_exited():
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		SoundPlayer.play_sound_effect("Unhover_Button",false)

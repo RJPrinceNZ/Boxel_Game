@@ -23,3 +23,23 @@ func _on_Button_pressed():
 	ShadowAnimation.change_animation()
 	changing = true
 
+
+
+func _on_Button_mouse_entered():
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		SoundPlayer.play_sound_effect("Hover_Button",false)
+
+
+func _on_Button_mouse_exited():
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		SoundPlayer.play_sound_effect("Unhover_Button",false)
+
+
+func _on_LinkButton_mouse_entered():
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		SoundPlayer.play_sound_effect("Hover_Button",false)
+
+
+func _on_LinkButton_mouse_exited():
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		SoundPlayer.play_sound_effect("Unhover_Button",false)

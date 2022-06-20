@@ -413,3 +413,132 @@ func _on_Button_11_pressed():
 	ShadowAnimation.change_animation()
 	changing_tree = "Level"
 	changing = true
+
+
+func _on_Button_0_mouse_entered():
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		if get_node(level_array + "/Level_0_3/Level_0/CenterContainer/Button_0").disabled == false:
+			SoundPlayer.play_sound_effect("Hover_Button",false)
+
+func _on_Button_0_mouse_exited():
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		if get_node(level_array + "/Level_0_3/Level_0/CenterContainer/Button_0").disabled == false:
+			SoundPlayer.play_sound_effect("Unhover_Button",false)
+
+func _on_Button_1_mouse_entered():
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		if get_node(level_array + "/Level_0_3/Level_1/CenterContainer/Button_1").disabled == false:
+			SoundPlayer.play_sound_effect("Hover_Button",false)
+
+func _on_Button_1_mouse_exited():
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		if get_node(level_array + "/Level_0_3/Level_1/CenterContainer/Button_1").disabled == false:
+			SoundPlayer.play_sound_effect("Unhover_Button",false)
+
+func _on_Button_2_mouse_entered():
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		if get_node(level_array + "/Level_0_3/Level_2/CenterContainer/Button_2").disabled == false:
+			SoundPlayer.play_sound_effect("Hover_Button",false)
+
+func _on_Button_2_mouse_exited():
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		if get_node(level_array + "/Level_0_3/Level_2/CenterContainer/Button_2").disabled == false:
+			SoundPlayer.play_sound_effect("Unhover_Button",false)
+
+func _on_Button_3_mouse_entered():
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		if get_node(level_array + "/Level_0_3/Level_3/CenterContainer/Button_3").disabled == false:
+			SoundPlayer.play_sound_effect("Hover_Button",false)
+
+func _on_Button_3_mouse_exited():
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		if get_node(level_array + "/Level_0_3/Level_3/CenterContainer/Button_3").disabled == false:
+			SoundPlayer.play_sound_effect("Unhover_Button",false)
+
+func _on_Button_4_mouse_entered():
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		if get_node(level_array + "/Level_4_7/Level_4/CenterContainer/Button_4").disabled == false:
+			SoundPlayer.play_sound_effect("Hover_Button",false)
+
+func _on_Button_4_mouse_exited():
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		if get_node(level_array + "/Level_4_7/Level_4/CenterContainer/Button_4").disabled == false:
+			SoundPlayer.play_sound_effect("Unhover_Button",false)
+
+func _on_Button_5_mouse_entered():
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		if get_node(level_array + "/Level_4_7/Level_5/CenterContainer/Button_5").disabled == false:
+			SoundPlayer.play_sound_effect("Hover_Button",false)
+
+func _on_Button_5_mouse_exited():
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		if get_node(level_array + "/Level_4_7/Level_5/CenterContainer/Button_5").disabled == false:
+			SoundPlayer.play_sound_effect("Unhover_Button",false)
+
+func _on_Button_6_mouse_entered():
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		if get_node(level_array + "/Level_4_7/Level_6/CenterContainer/Button_6").disabled == false:
+			SoundPlayer.play_sound_effect("Hover_Button",false)
+
+func _on_Button_6_mouse_exited():
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		if get_node(level_array + "/Level_4_7/Level_6/CenterContainer/Button_6").disabled == false:
+			SoundPlayer.play_sound_effect("Unhover_Button",false)
+
+func _on_Button_7_mouse_entered():
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		if get_node(level_array + "/Level_4_7/Level_7/CenterContainer/Button_7").disabled == false:
+			SoundPlayer.play_sound_effect("Hover_Button",false)
+
+func _on_Button_7_mouse_exited():
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		if get_node(level_array + "/Level_4_7/Level_7/CenterContainer/Button_7").disabled == false:
+			SoundPlayer.play_sound_effect("Unhover_Button",false)
+
+func _on_Button_8_mouse_entered():
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		if get_node(level_array + "/Level_8_11/Level_8/CenterContainer/Button_8").disabled == false:
+			SoundPlayer.play_sound_effect("Hover_Button",false)
+
+func _on_Button_8_mouse_exited():
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		if get_node(level_array + "/Level_8_11/Level_8/CenterContainer/Button_8").disabled == false:
+			SoundPlayer.play_sound_effect("Unhover_Button",false)
+
+func _on_Button_9_mouse_entered():
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		if get_node(level_array + "/Level_8_11/Level_9/CenterContainer/Button_9").disabled == false:
+			SoundPlayer.play_sound_effect("Hover_Button",false)
+
+func _on_Button_9_mouse_exited():
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		if get_node(level_array + "/Level_8_11/Level_9/CenterContainer/Button_9").disabled == false:
+			SoundPlayer.play_sound_effect("Unhover_Button",false)
+
+func _on_Button_10_mouse_entered():
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		if get_node(level_array + "/Level_8_11/Level_10/CenterContainer/Button_10").disabled == false:
+			SoundPlayer.play_sound_effect("Hover_Button",false)
+
+func _on_Button_10_mouse_exited():
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		if get_node(level_array + "/Level_8_11/Level_10/CenterContainer/Button_10").disabled == false:
+			SoundPlayer.play_sound_effect("Unhover_Button",false)
+
+func _on_Button_11_mouse_entered():
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		if get_node(level_array + "/Level_8_11/Level_11/CenterContainer/Button_11").disabled == false:
+			SoundPlayer.play_sound_effect("Hover_Button",false)
+
+func _on_Button_11_mouse_exited():
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		if get_node(level_array + "/Level_8_11/Level_11/CenterContainer/Button_11").disabled == false:
+			SoundPlayer.play_sound_effect("Unhover_Button",false)
+
+func _on_Button_Exit_mouse_entered():
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		SoundPlayer.play_sound_effect("Hover_Button",false)
+
+func _on_Button_Exit_mouse_exited():
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		SoundPlayer.play_sound_effect("Unhover_Button",false)

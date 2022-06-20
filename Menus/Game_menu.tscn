@@ -143,6 +143,10 @@ margin_bottom = 20.0
 
 [node name="Position2D" type="Position2D" parent="CenterContainer"]
 
+[connection signal="mouse_entered" from="CanvasLayer/CenterContainer/VBoxContainer/CenterContainer/Quit_Menu" to="." method="_on_Quit_Menu_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/CenterContainer/VBoxContainer/CenterContainer/Quit_Menu" to="." method="_on_Quit_Menu_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/CenterContainer/Quit_Menu" to="." method="_on_Quit_Menu_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/CenterContainer/VBoxContainer/CenterContainer2/Quit_Level" to="." method="_on_Quit_Level_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/CenterContainer/VBoxContainer/CenterContainer2/Quit_Level" to="." method="_on_Quit_Level_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/CenterContainer2/Quit_Level" to="." method="_on_Quit_Level_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

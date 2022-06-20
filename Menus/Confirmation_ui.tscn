@@ -187,6 +187,10 @@ anims/Close = SubResource( 1 )
 anims/Open = SubResource( 2 )
 anims/RESET = SubResource( 3 )
 
+[connection signal="mouse_entered" from="CanvasLayer/CenterContainer/CenterContainer/Position2D/VBoxContainer/HBoxContainer/Do_no_quit" to="." method="_on_Do_no_quit_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/CenterContainer/CenterContainer/Position2D/VBoxContainer/HBoxContainer/Do_no_quit" to="." method="_on_Do_no_quit_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer/CenterContainer/CenterContainer/Position2D/VBoxContainer/HBoxContainer/Do_no_quit" to="." method="_on_Do_no_quit_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/CenterContainer/CenterContainer/Position2D/VBoxContainer/HBoxContainer2/quit" to="." method="_on_quit_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/CenterContainer/CenterContainer/Position2D/VBoxContainer/HBoxContainer2/quit" to="." method="_on_quit_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer/CenterContainer/CenterContainer/Position2D/VBoxContainer/HBoxContainer2/quit" to="." method="_on_quit_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
