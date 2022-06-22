@@ -3,7 +3,7 @@ extends Node
 onready var music = AudioStreamPlayer.new()
 
 var music_tracks = {
-	
+	"Forward":"res://Music/forward.wav"
 	
 	
 	
@@ -40,11 +40,10 @@ func change_sound_db(val):
 
 
 func _ready():
-	pass
-	#sound.music = load(sound_effects["Gun_fire"])
-	#add_child(music)
-	#music.play
-	#print("Playing music")
+	music.stream = load(music_tracks["Forward"])
+	add_child(music)
+	music.play()
+	print("Playing music")
 
 func play_sound_effect(sfx,pitch_option):
 	var sound = AudioStreamPlayer.new()
