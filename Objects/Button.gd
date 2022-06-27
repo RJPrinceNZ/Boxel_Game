@@ -8,10 +8,6 @@ onready var btn_animation_player = get_parent().get_node("ButtonAnimationPlayer"
 onready var lgt_animation_player = get_parent().get_node("LightAnimationPlayer")
 onready var door_animation_player = get_parent().get_node("AnimationPlayer")
 
-func _ready():
-	
-	btn_animation_player.play("Button_Off")
-
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("Box") or body.is_in_group("Player"):
 		if num_object == 0:
@@ -26,7 +22,8 @@ func _on_Area2D_body_entered(body):
 func _on_Area2D_body_exited(body):
 	if body.is_in_group("Box") or body.is_in_group("Player"):
 		if num_object == 1:
-			SoundPlayer.play_sound_effect("Button_Unpress",true)
+			if not ShadowAnimation.current_animation == "Opening":
+				SoundPlayer.play_sound_effect("Button_Unpress",true)
 		num_object -= 1
 		if num_object <= 0:
 			btn_animation_player.play("Button_Off")

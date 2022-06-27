@@ -1,9 +1,11 @@
 extends Node
 
 onready var music = AudioStreamPlayer.new()
+var current_track
 
 var music_tracks = {
-	"Forward":"res://Music/forward.wav"
+	"Forward":"res://Music/forward.wav",
+	"Basic":"res://Music/basic.wav"
 	
 	
 	
@@ -38,12 +40,23 @@ func change_music_db(val):
 func change_sound_db(val):
 	sound_db = linear2db(val)
 
-
-func _ready():
-	music.stream = load(music_tracks["Forward"])
+func change_music(track):
+	current_track = track
+	music.stream = load(music_tracks[track])
 	add_child(music)
 	music.play()
 	print("Playing music")
+	yield(music,"finished")
+	change_music(current_track)
+
+func start():
+	current_track = "Basic"
+	music.stream = load(music_tracks["Basic"])
+	add_child(music)
+	music.play()
+	print("Playing music")
+	change_music(current_track)
+	
 
 func play_sound_effect(sfx,pitch_option):
 	var sound = AudioStreamPlayer.new()
