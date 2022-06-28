@@ -3,17 +3,20 @@ extends Node
 onready var music = AudioStreamPlayer.new()
 var current_track
 
-var music_tracks = {
+var music_tracks_menus = {
 	#Menu Tracks
-	"Forward":"res://Music/forward.wav",
-	"Basic":"res://Music/basic.wav",
+	"1":"res://Music/forward.wav",
+	"2":"res://Music/basic.wav"
 	
-	
-	
+	}
 	#Level Tracks
+var music_tracks_levels = {
 	
-	"Fireworks":"res://Music/fireworks.wav"
+	"1":"res://Music/fireworks.wav",
+	"2":"res://Music/campfire.wav"
+
 }
+
 
 
 var sound_effects = {
@@ -46,7 +49,7 @@ func change_sound_db(val):
 
 func change_music(track):
 	current_track = track
-	music.stream = load(music_tracks[track])
+	music.stream = load(music_tracks_menus[track])
 	add_child(music)
 	music.play()
 	print("Playing music")
@@ -55,12 +58,29 @@ func change_music(track):
 
 func start():
 	current_track = "Basic"
-	music.stream = load(music_tracks["Basic"])
+	music.stream = load(music_tracks_menus["Basic"])
 	add_child(music)
 	music.play()
 	print("Playing music")
 	change_music(current_track)
 	
+func play_music():
+	if PlayerStats.in_level == false:
+		randomize()
+		var track = load(music_tracks_menus[String(randi()%2)])
+		if not track == load(music_traniacks_menus[current_track]):
+			music.stream = load(music_tracks_menus)
+			music.play()
+			yield(music,"finished")
+			play_music()
+	if PlayerStats.in_level == true:
+		randomize()
+		var track = load(music_tracks_levels[String(randi()%2)])
+		if not track == load(music_tracks_levels[current_track]):
+			music.stream = load(music_tracks_levels)
+			music.play()
+			yield(music,"finished")
+			play_music()
 
 func play_sound_effect(sfx,pitch_option):
 	var sound = AudioStreamPlayer.new()

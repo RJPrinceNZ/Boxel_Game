@@ -11,11 +11,20 @@ var opened_before = false
 var game_menus_open = 0
 var is_launched = false
 var dark_background = false
-
+var in_level = false
 var escaped = false
 var potato = false
 var missed = false
 var firepower = false
+
+func update_level_status(status):
+	if status == true:
+		if not status == in_level:
+			in_level = status
+	if status == false:
+		if not status == in_level:
+			in_level = status
+	
 
 
 func change_level():
