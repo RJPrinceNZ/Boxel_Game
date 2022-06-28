@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/fireworks.wav-90d602448cc9f321dd096e0ba7f33a11.sample"
+
+[deps]
+
+source_file="res://Music/fireworks.wav"
+dest_files=[ "res://.import/fireworks.wav-90d602448cc9f321dd096e0ba7f33a11.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -4,11 +4,15 @@ onready var music = AudioStreamPlayer.new()
 var current_track
 
 var music_tracks = {
+	#Menu Tracks
 	"Forward":"res://Music/forward.wav",
-	"Basic":"res://Music/basic.wav"
+	"Basic":"res://Music/basic.wav",
 	
 	
 	
+	#Level Tracks
+	
+	"Fireworks":"res://Music/fireworks.wav"
 }
 
 
