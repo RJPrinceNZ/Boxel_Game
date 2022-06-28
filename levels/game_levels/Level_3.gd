@@ -6,8 +6,8 @@ func _ready():
 	PlayerStats.current_level = 3
 	PlayerStats.has_gun = false
 	GameMenu.active = true
-	if not SoundPlayer.current_track == "Forward":
-		SoundPlayer.change_music("Forward")
+#	if not SoundPlayer.current_track == "Forward":
+#		SoundPlayer.change_music("Forward")
 
 func _process(delta):
 	if PlayerStats.dark_background == true:

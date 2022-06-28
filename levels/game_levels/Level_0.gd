@@ -6,11 +6,8 @@ func _ready():
 	PlayerStats.current_level = 0
 	PlayerStats.has_gun = false
 	GameMenu.active = true
-	if PlayerStats.dark_background == true:
-		$Background.modulate = Color(0.4,0.4,0.4)
-		$SupportPland_decals.modulate = Color(0.4,0.4,0.4)
-	if not SoundPlayer.current_track == "Forwards":
-		SoundPlayer.change_music("Forwards")
+	#if not SoundPlayer.current_track == "Forwards":
+		#SoundPlayer.change_music("Forwards")
 
 func _process(delta):
 	if PlayerStats.dark_background == true:
