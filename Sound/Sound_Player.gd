@@ -2,6 +2,7 @@ extends Node
 
 onready var music = AudioStreamPlayer.new()
 var current_track = "2"
+var new_track = "1"
 
 var music_tracks_menus = {
 	#Menu Tracks
@@ -67,24 +68,27 @@ func play_music():
 	
 	if PlayerStats.in_level == false:
 		randomize()
-		var track = str(randi()%2+1)
-		print(track)
+		new_track = "2"
+		print(new_track)
 		print(current_track)
-		if not track == current_track:
-			current_track = track
-			music.stream = load(music_tracks_menus[track])
+		if not new_track == current_track:
+			current_track = new_track
+			music.stream = load(music_tracks_menus[new_track])
 			music.play()
-		else:
-			play_music()
+		if new_track == current_track:
+			retry()
+			
+			
+
 	if PlayerStats.in_level == true:
 		randomize()
-		var track = str(randi()%2+3)
-		if not track == current_track:
-			current_track = track
-			music.stream = load(music_tracks_levels[track])
+		new_track = str(randi()%2+3)
+		if not new_track == current_track:
+			current_track = new_track
+			music.stream = load(music_tracks_levels[new_track])
 			music.play()
-		else:
-			play_music()
+		if new_track == current_track:
+			retry()
 
 func play_sound_effect(sfx,pitch_option):
 	var sound = AudioStreamPlayer.new()
@@ -103,4 +107,23 @@ func _process(delta):
 	yield(music,"finished")
 	play_music()
 
+func retry():
+	if new_track == current_track:
+		if PlayerStats.in_level == false:
+			while new_track == current_track:
+				new_track = str(randi()%2+1)
+				print(new_track)
+			if not new_track == current_track:
+				current_track = new_track
+				music.stream = load(music_tracks_menus[new_track])
+				music.play()
+		if PlayerStats.in_level == true:
+			while new_track == current_track:
+				new_track = str(randi()%2+3)
+			if not new_track == current_track:
+				current_track = new_track
+				music.stream = load(music_tracks_levels[new_track])
+				music.play()
+	
+		
 #lists, while no recurive functions.
