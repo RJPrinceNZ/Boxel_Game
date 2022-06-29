@@ -14,7 +14,9 @@ func _ready():
 		ShadowAnimation.new_animation = "Opening"
 		ShadowAnimation.change_animation()
 	GameMenu.active = false
-	PlayerStats.in_level = false
+	if PlayerStats.in_level == true:
+		PlayerStats.in_level = false
+		SoundPlayer.play_music()
 	
 	
 func _process(delta):

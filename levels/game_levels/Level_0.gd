@@ -8,6 +8,9 @@ func _ready():
 	GameMenu.active = true
 	#if not SoundPlayer.current_track == "Forwards":
 		#SoundPlayer.change_music("Forwards")
+	if PlayerStats.in_level == false:
+		PlayerStats.in_level = true
+		SoundPlayer.play_music()
 
 func _process(delta):
 	if PlayerStats.dark_background == true:

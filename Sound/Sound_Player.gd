@@ -12,8 +12,8 @@ var music_tracks_menus = {
 	#Level Tracks
 var music_tracks_levels = {
 	
-	"1":"res://Music/fireworks.wav",
-	"2":"res://Music/campfire.wav"
+	"3":"res://Music/fireworks.wav",
+	"4":"res://Music/campfire.wav"
 
 }
 
@@ -54,8 +54,6 @@ func change_music(track):
 	music.stream = load(music_tracks_menus[track])
 	music.play()
 	print("Playing music")
-	yield(music,"finished")
-	change_music(current_track)
 
 func start():
 	current_track = "Basic"
@@ -68,28 +66,24 @@ func start():
 func play_music():
 	
 	if PlayerStats.in_level == false:
-		print("hello1")
 		randomize()
-		var track = load(music_tracks_menus[str(randi()%2+1)])
+		var track = str(randi()%2+1)
 		print(track)
-		if not track == load(music_tracks_menus[current_track]):
-			print("hello3")
+		print(current_track)
+		if not track == current_track:
 			current_track = track
-			music.stream = track
+			music.stream = load(music_tracks_menus[track])
 			music.play()
-			yield(music,"finished")
-			play_music()
 		else:
 			play_music()
 	if PlayerStats.in_level == true:
-		print("hello2")
 		randomize()
-		var track = load(music_tracks_levels[str(randi()%2+1)])
-		if not track == load(music_tracks_levels[current_track]):
+		var track = str(randi()%2+3)
+		if not track == current_track:
 			current_track = track
-			music.stream = track
+			music.stream = load(music_tracks_levels[track])
 			music.play()
-			yield(music,"finished")
+		else:
 			play_music()
 
 func play_sound_effect(sfx,pitch_option):
@@ -101,8 +95,12 @@ func play_sound_effect(sfx,pitch_option):
 		var pitch_change = rand_range(0.8,1.2)
 		sound.pitch_scale = pitch_change
 	sound.play()
-	print("played")
 	yield(sound,"finished")
 	sound.queue_free()
 
 
+func _process(delta):
+	yield(music,"finished")
+	play_music()
+
+#lists, while no recurive functions.
