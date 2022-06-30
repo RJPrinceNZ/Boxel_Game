@@ -42,6 +42,7 @@ var sound_effects = {
 
 
 func _ready():
+	print(linear2db(1))
 	randomize()
 	self.connect("track_finished",self,"play_music")
 	change_music_db(5)
@@ -51,11 +52,9 @@ var sound_db = 1
 var music_db = 1
 
 func change_music_db(val):
-	if val == 1:
-		music_db = 10
-	else:
-		music_db = linear2db(val)
+	music_db = linear2db(val)
 	music.volume_db = music_db
+	pass
 
 func change_sound_db(val):
 	sound_db = linear2db(val)
