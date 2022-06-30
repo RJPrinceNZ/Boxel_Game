@@ -51,7 +51,10 @@ var sound_db = 1
 var music_db = 1
 
 func change_music_db(val):
-	music_db = linear2db(val)
+	if val == 1:
+		music_db = 10
+	else:
+		music_db = linear2db(val)
 	music.volume_db = music_db
 
 func change_sound_db(val):
