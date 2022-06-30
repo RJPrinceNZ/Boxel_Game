@@ -4,9 +4,6 @@ onready var music = AudioStreamPlayer.new()
 var current_track = str(randi()%2+1)
 var new_track = str(randi()%2+1)
 
-var tracks_1 = [1,2]
-var tracks_2 = [3,4]
-
 var selection       
 signal track_finished
 
@@ -72,22 +69,41 @@ func start():
 	print("Playing music")
 	change_music(current_track)
 
-func _input(event):
-	if event is InputEventKey:
-		play_music()
+#func _input(event):
+	#if event is InputEventKey:
+		#play_music()
 
 func play_music():
 	print("play music")
 	if PlayerStats.in_level == false:
-		print("playing song")
-		music.stream = load(music_tracks_menus["2"])
-		#music.stream = load(sound_effects["Fling"])
-		music.play()
-		yield(music,"finished")
-		emit_signal("track_finished")
-		print("track finished signal")
+		new_track = str(randi()%2+1)
+		if not new_track == current_track:
+			current_track = new_track
+			music.stream = load(music_tracks_menus[current_track])
+			#music.stream = load(sound_effects["Fling"])
+			music.play()
+			yield(music,"finished")
+			emit_signal("track_finished")
+			print("track finished signal")
+		else:
+			emit_signal("track_finished")
+			print("number_invalid")
+			
 		
-		
+	if PlayerStats.in_level == true:
+		new_track = str(randi()%2+3)
+		if not new_track == current_track:
+			current_track = new_track
+			music.stream = load(music_tracks_levels[current_track])
+			#music.stream = load(sound_effects["Fling"])
+			music.play()
+			yield(music,"finished")
+			emit_signal("track_finished")
+			print("track finished signal")
+		else:
+			emit_signal("track_finished")
+			print("number_invalid")
+			
 #func play_music():
 #	if PlayerStats.in_level == false:
 #		if tracks_1.size() == 0:
@@ -139,6 +155,10 @@ func play_sound_effect(sfx,pitch_option):
 	if pitch_option == true:
 		var pitch_change = rand_range(0.8,1.2)
 		sound.pitch_scale = pitch_change
+	if sfx == "Walk":
+		sound.volume_db = linear2db(sound_db*0.5)
+	else:
+		sound.volume_db = linear2db(sound_db)
 	sound.play()
 	yield(sound,"finished")
 	sound.queue_free()
@@ -151,7 +171,3 @@ func play_sound_effect(sfx,pitch_option):
 #	else:
 #		#print("not_existing")
 #		play_music()
-
-	
-func rand_num(from,to):
-	return from + randi() % (to - from)

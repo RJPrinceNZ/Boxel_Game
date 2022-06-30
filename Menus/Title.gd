@@ -13,10 +13,11 @@ func _ready():
 	else:
 		ShadowAnimation.new_animation = "Opening"
 		ShadowAnimation.change_animation()
+		if PlayerStats.in_level == true:
+			PlayerStats.in_level = false
+			SoundPlayer.play_music()
 	GameMenu.active = false
-	if PlayerStats.in_level == true:
-		PlayerStats.in_level = false
-		SoundPlayer.play_music()
+	
 	
 	
 func _process(delta):
