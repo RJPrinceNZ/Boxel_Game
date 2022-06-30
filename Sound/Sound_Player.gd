@@ -44,6 +44,7 @@ var sound_effects = {
 func _ready():
 	randomize()
 	self.connect("track_finished",self,"play_music")
+	change_music_db(5)
 	add_child(music)
 	
 var sound_db = 1
@@ -51,6 +52,7 @@ var music_db = 1
 
 func change_music_db(val):
 	music_db = linear2db(val)
+	music.volume_db = music_db
 
 func change_sound_db(val):
 	sound_db = linear2db(val)
@@ -68,10 +70,7 @@ func start():
 	music.play()
 	print("Playing music")
 	change_music(current_track)
-
-#func _input(event):
-	#if event is InputEventKey:
-		#play_music()
+		
 
 func play_music():
 	print("play music")
@@ -156,9 +155,9 @@ func play_sound_effect(sfx,pitch_option):
 		var pitch_change = rand_range(0.8,1.2)
 		sound.pitch_scale = pitch_change
 	if sfx == "Walk":
-		sound.volume_db = linear2db(sound_db*0.5)
+		sound.volume_db = sound_db*0.5
 	else:
-		sound.volume_db = linear2db(sound_db)
+		sound.volume_db = sound_db
 	sound.play()
 	yield(sound,"finished")
 	sound.queue_free()
