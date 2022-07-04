@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Digital_Workplace.wav-de54934a4645da287d7aa9776dcb573c.sample"
+
+[deps]
+
+source_file="res://Music/Digital_Workplace.wav"
+dest_files=[ "res://.import/Digital_Workplace.wav-de54934a4645da287d7aa9776dcb573c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

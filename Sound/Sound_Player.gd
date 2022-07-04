@@ -17,7 +17,8 @@ var music_tracks_menus = {
 var music_tracks_levels = {
 	
 	"3":"res://Music/fireworks.wav",
-	"4":"res://Music/campfire.wav"
+	"4":"res://Music/campfire.wav",
+	"5":"res://Music/Digital_Workplace.wav"
 
 }
 
@@ -45,7 +46,7 @@ func _ready():
 	print(linear2db(1))
 	randomize()
 	self.connect("track_finished",self,"play_music")
-	change_music_db(5)
+	change_music_db(2)
 	add_child(music)
 	
 var sound_db = 1
@@ -92,7 +93,7 @@ func play_music():
 			
 		
 	if PlayerStats.in_level == true:
-		new_track = str(randi()%2+3)
+		new_track = str(randi()%3+3)
 		if not new_track == current_track:
 			current_track = new_track
 			music.stream = load(music_tracks_levels[current_track])
@@ -157,7 +158,7 @@ func play_sound_effect(sfx,pitch_option):
 		var pitch_change = rand_range(0.8,1.2)
 		sound.pitch_scale = pitch_change
 	if sfx == "Walk":
-		sound.volume_db = sound_db*0.5
+		sound.volume_db = sound_db
 	else:
 		sound.volume_db = sound_db
 	sound.play()

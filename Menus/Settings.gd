@@ -52,7 +52,7 @@ func _on_Music_toggle_toggled(button_pressed):
 	if $CenterContainer/HBoxContainer/VBoxContainer/HBoxContainer2/Music_toggle.pressed == true:
 		SoundPlayer.change_music_db(0)
 	if $CenterContainer/HBoxContainer/VBoxContainer/HBoxContainer2/Music_toggle.pressed == false:
-		SoundPlayer.change_music_db(PI)
+		SoundPlayer.change_music_db(2)
 
 
 func _on_Music_toggle_mouse_entered():
