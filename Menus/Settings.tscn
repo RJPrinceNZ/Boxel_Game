@@ -14,17 +14,17 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
-margin_left = 401.0
-margin_top = 80.0
-margin_right = 878.0
-margin_bottom = 639.0
+margin_left = 399.0
+margin_top = 110.0
+margin_right = 880.0
+margin_bottom = 610.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
-margin_right = 477.0
-margin_bottom = 559.0
+margin_right = 481.0
+margin_bottom = 500.0
 
 [node name="Label" type="Label" parent="CenterContainer/HBoxContainer/VBoxContainer"]
-margin_right = 477.0
+margin_right = 481.0
 margin_bottom = 112.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = ExtResource( 2 )
@@ -34,78 +34,78 @@ valign = 1
 
 [node name="Label2" type="Label" parent="CenterContainer/HBoxContainer/VBoxContainer"]
 margin_top = 116.0
-margin_right = 477.0
+margin_right = 481.0
 margin_bottom = 172.0
 custom_fonts/font = ExtResource( 1 )
 text = "# of potatos"
 align = 1
 valign = 1
 
-[node name="Label3" type="Label" parent="CenterContainer/HBoxContainer/VBoxContainer"]
+[node name="Sound" type="Label" parent="CenterContainer/HBoxContainer/VBoxContainer"]
 margin_top = 176.0
-margin_right = 477.0
-margin_bottom = 291.0
+margin_right = 481.0
+margin_bottom = 232.0
 custom_fonts/font = ExtResource( 1 )
-text = "Percentage of 
-meaninglessness"
+text = "Sound Volume = 100"
 align = 1
 valign = 1
 
-[node name="HSlider" type="HSlider" parent="CenterContainer/HBoxContainer/VBoxContainer"]
-margin_top = 295.0
-margin_right = 477.0
-margin_bottom = 311.0
-value = 1.0
+[node name="Sound_slider" type="HSlider" parent="CenterContainer/HBoxContainer/VBoxContainer"]
+margin_top = 236.0
+margin_right = 481.0
+margin_bottom = 252.0
+max_value = 200.0
+value = 100.0
 
 [node name="Label4" type="Label" parent="CenterContainer/HBoxContainer/VBoxContainer"]
-margin_top = 315.0
-margin_right = 477.0
-margin_bottom = 371.0
+margin_top = 256.0
+margin_right = 481.0
+margin_bottom = 312.0
 custom_fonts/font = ExtResource( 1 )
 text = "Burgers per second"
 align = 1
 valign = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/HBoxContainer/VBoxContainer"]
-margin_top = 375.0
-margin_right = 477.0
-margin_bottom = 465.0
+margin_top = 316.0
+margin_right = 481.0
+margin_bottom = 406.0
 alignment = 1
 
 [node name="TextureButton" type="TextureButton" parent="CenterContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
-margin_left = 7.0
-margin_right = 97.0
+margin_left = 9.0
+margin_right = 99.0
 margin_bottom = 90.0
 toggle_mode = true
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 3 )
 
 [node name="Label" type="Label" parent="CenterContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
-margin_left = 101.0
+margin_left = 103.0
 margin_top = 17.0
-margin_right = 469.0
+margin_right = 471.0
 margin_bottom = 73.0
 custom_fonts/font = ExtResource( 1 )
 text = "Contrast Mode"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/HBoxContainer/VBoxContainer"]
-margin_top = 469.0
-margin_right = 477.0
-margin_bottom = 559.0
+margin_top = 410.0
+margin_right = 481.0
+margin_bottom = 500.0
 alignment = 1
 
 [node name="Music_toggle" type="TextureButton" parent="CenterContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
-margin_left = 39.0
-margin_right = 129.0
+margin_left = 41.0
+margin_right = 131.0
 margin_bottom = 90.0
 toggle_mode = true
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 3 )
 
 [node name="Label" type="Label" parent="CenterContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
-margin_left = 133.0
+margin_left = 135.0
 margin_top = 17.0
-margin_right = 438.0
+margin_right = 440.0
 margin_bottom = 73.0
 custom_fonts/font = ExtResource( 1 )
 text = "Music Toggle"
@@ -131,6 +131,14 @@ custom_fonts/font = ExtResource( 1 )
 text = "< Back"
 underline = 2
 
+[node name="Button_test" type="Button" parent="."]
+margin_left = 105.0
+margin_top = 302.0
+margin_right = 335.0
+margin_bottom = 386.0
+text = "Test"
+
+[connection signal="value_changed" from="CenterContainer/HBoxContainer/VBoxContainer/Sound_slider" to="." method="_on_Sound_slider_value_changed"]
 [connection signal="mouse_entered" from="CenterContainer/HBoxContainer/VBoxContainer/HBoxContainer/TextureButton" to="." method="_on_TextureButton_mouse_entered"]
 [connection signal="mouse_exited" from="CenterContainer/HBoxContainer/VBoxContainer/HBoxContainer/TextureButton" to="." method="_on_TextureButton_mouse_exited"]
 [connection signal="toggled" from="CenterContainer/HBoxContainer/VBoxContainer/HBoxContainer/TextureButton" to="." method="_on_TextureButton_toggled"]
@@ -140,3 +148,4 @@ underline = 2
 [connection signal="mouse_entered" from="CenterContainer3/VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_mouse_entered"]
 [connection signal="mouse_exited" from="CenterContainer3/VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_mouse_exited"]
 [connection signal="pressed" from="CenterContainer3/VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Button_test" to="." method="_on_Button_test_pressed"]

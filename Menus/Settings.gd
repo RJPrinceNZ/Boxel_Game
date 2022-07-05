@@ -13,6 +13,7 @@ func _ready():
 	ShadowAnimation.new_animation = "Opening"
 	ShadowAnimation.change_animation()
 	GameMenu.active = false
+	$CenterContainer/HBoxContainer/VBoxContainer/Sound_slider.value = (SoundPlayer.vol)*100
 
 func _on_Button_pressed():
 	ShadowAnimation.new_animation = "Closing"
@@ -50,9 +51,9 @@ func _on_Button_mouse_exited():
 
 func _on_Music_toggle_toggled(button_pressed):
 	if $CenterContainer/HBoxContainer/VBoxContainer/HBoxContainer2/Music_toggle.pressed == true:
-		SoundPlayer.change_music_db(0)
+		MusicPlayer.change_music_db(0)
 	if $CenterContainer/HBoxContainer/VBoxContainer/HBoxContainer2/Music_toggle.pressed == false:
-		SoundPlayer.change_music_db(2)
+		MusicPlayer.change_music_db(2)
 
 
 func _on_Music_toggle_mouse_entered():
@@ -63,3 +64,11 @@ func _on_Music_toggle_mouse_entered():
 func _on_Music_toggle_mouse_exited():
 	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
 		SoundPlayer.play_sound_effect("Unhover_Button",false)
+
+
+func _on_Sound_slider_value_changed(value):
+	SoundPlayer.set_volume(value/100)
+
+
+func _on_Button_test_pressed():
+	SoundPlayer.play_sound_effect("Fling",false)

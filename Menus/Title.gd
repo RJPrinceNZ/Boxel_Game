@@ -107,3 +107,4 @@ func _on_TextureButton_mouse_entered():
 func _on_TextureButton_mouse_exited():
 	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
 		SoundPlayer.play_sound_effect("Unhover_Button",false)
+

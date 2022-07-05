@@ -1,6 +1,5 @@
-extends Node
+extends AudioStreamPlayer
 
-onready var music = AudioStreamPlayer.new()
 var current_track = str(randi()%2+1)
 var new_track = str(randi()%2+1)
 
@@ -47,30 +46,27 @@ func _ready():
 	randomize()
 	self.connect("track_finished",self,"play_music")
 	change_music_db(2)
-	add_child(music)
 	
-var sound_db = 1
+
 var music_db = 1
 
 func change_music_db(val):
 	music_db = linear2db(val)
-	music.volume_db = music_db
+	set_volume_db(music_db)
 	pass
 
-func change_sound_db(val):
-	sound_db = linear2db(val)
+
 
 func change_music(track):
 	current_track = track
-	music.stream = load(music_tracks_menus[track])
-	music.play()
+	set_stream(load(music_tracks_menus[track]))
+	play()
 	print("Playing music")
 
 func start():
 	current_track = "Basic"
-	music.stream = load(music_tracks_menus["2"])
-	add_child(music)
-	music.play()
+	set_stream(load(music_tracks_menus["2"]))
+	play()
 	print("Playing music")
 	change_music(current_track)
 		
@@ -81,10 +77,9 @@ func play_music():
 		new_track = str(randi()%2+1)
 		if not new_track == current_track:
 			current_track = new_track
-			music.stream = load(music_tracks_menus[current_track])
-			#music.stream = load(sound_effects["Fling"])
-			music.play()
-			yield(music,"finished")
+			set_stream(load(music_tracks_menus[current_track]))
+			play()
+			yield(self,"finished")
 			emit_signal("track_finished")
 			print("track finished signal")
 		else:
@@ -96,10 +91,9 @@ func play_music():
 		new_track = str(randi()%3+3)
 		if not new_track == current_track:
 			current_track = new_track
-			music.stream = load(music_tracks_levels[current_track])
-			#music.stream = load(sound_effects["Fling"])
-			music.play()
-			yield(music,"finished")
+			set_stream(load(music_tracks_levels[current_track]))
+			play()
+			yield (self,"finished")
 			emit_signal("track_finished")
 			print("track finished signal")
 		else:
@@ -147,23 +141,7 @@ func play_music():
 #		yield(new_music,"finished")
 #		new_music.queue_free()
 
-		
-
-func play_sound_effect(sfx,pitch_option):
-	var sound = AudioStreamPlayer.new()
-	sound.stream = load(sound_effects[sfx])
-	add_child(sound)
-	randomize()
-	if pitch_option == true:
-		var pitch_change = rand_range(0.8,1.2)
-		sound.pitch_scale = pitch_change
-	if sfx == "Walk":
-		sound.volume_db = sound_db
-	else:
-		sound.volume_db = sound_db
-	sound.play()
-	yield(sound,"finished")
-	sound.queue_free()
+	
 
 #func _process(delta):
 #	if is_instance_valid(music):

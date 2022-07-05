@@ -28,7 +28,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "Title_Opening":
 		new_animation = "Opening"
 		change_animation()
-		SoundPlayer.play_music()
+		MusicPlayer.play_music()
 	if anim_name == "Opening":
 		new_animation = "Open"
 		change_animation()
