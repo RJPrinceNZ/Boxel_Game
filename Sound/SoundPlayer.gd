@@ -14,23 +14,24 @@ var sound_effects = {
 	"Unhover_Button":"res://Sound/unhover_button.wav"
 	}
 
+var vol = 1
+var current_vol = linear2db(1)
 
-var vol = 2
-var current_vol = linear2db(2)
-
+func set_volume(value):
+	vol = value
+	current_vol = linear2db(value)
+	
 func play_sound_effect(sfx,pitch_option):
-	print("hello")
-	var sound = AudioStreamPlayer.new()
-	sound.stream = load(sound_effects[sfx])
-	sound.volume_db = current_vol
-	randomize()
+	var soundfx = AudioStreamPlayer.new()
+	soundfx.stream = load(sound_effects[sfx])
 	if pitch_option == true:
+		randomize()
 		var pitch_change = rand_range(0.8,1.2)
-		sound.pitch_scale = pitch_change
-	sound.play()
-	yield(sound,"finished")
-	sound.queue_free()
+		soundfx.pitch_scale = pitch_change
+	soundfx.set_volume_db(current_vol)
+	add_child(soundfx)
+	soundfx.play()
+	yield(soundfx,"finished")
+	print("end")
+	soundfx.queue_free()
 
-func set_volume(volume):
-	current_vol = linear2db(volume)
-	vol = volume

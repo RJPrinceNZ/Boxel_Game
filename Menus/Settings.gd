@@ -6,6 +6,7 @@ func _process(delta):
 	if changing == true:
 		if ShadowAnimation.finished_anim == true:
 			get_tree().change_scene("res://Menus/Title.tscn")
+	$CenterContainer/HBoxContainer/VBoxContainer/Sound.set_text("Sound Volume = " + str(SoundPlayer.vol*100))
 
 func _ready():
 	if PlayerStats.dark_background == true:

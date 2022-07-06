@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Font/Medium.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Font/Large.tres" type="DynamicFont" id=2]
 [ext_resource path="res://sprites/Ticked.png" type="Texture" id=3]
 [ext_resource path="res://Menus/Settings.gd" type="Script" id=4]
 [ext_resource path="res://sprites/Blank.png" type="Texture" id=5]
+[ext_resource path="res://Font/Medium_small.tres" type="DynamicFont" id=6]
 
 [node name="Settings" type="Node"]
 script = ExtResource( 4 )
@@ -131,12 +132,14 @@ custom_fonts/font = ExtResource( 1 )
 text = "< Back"
 underline = 2
 
-[node name="Button_test" type="Button" parent="."]
-margin_left = 105.0
-margin_top = 302.0
-margin_right = 335.0
-margin_bottom = 386.0
-text = "Test"
+[node name="Button_test" type="LinkButton" parent="."]
+margin_left = 143.0
+margin_top = 313.0
+margin_right = 303.0
+margin_bottom = 345.0
+custom_fonts/font = ExtResource( 6 )
+text = "> Test Sound <"
+underline = 2
 
 [connection signal="value_changed" from="CenterContainer/HBoxContainer/VBoxContainer/Sound_slider" to="." method="_on_Sound_slider_value_changed"]
 [connection signal="mouse_entered" from="CenterContainer/HBoxContainer/VBoxContainer/HBoxContainer/TextureButton" to="." method="_on_TextureButton_mouse_entered"]

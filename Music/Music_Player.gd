@@ -9,34 +9,16 @@ signal track_finished
 var music_tracks_menus = {
 	#Menu Tracks
 	"1":"res://Music/forward.wav",
-	"2":"res://Music/basic.wav"
+	"2":"res://Music/basic.wav",
+	"3":"res://Music/space.wav"
 	
 	}
 	#Level Tracks
 var music_tracks_levels = {
-	
-	"3":"res://Music/fireworks.wav",
-	"4":"res://Music/campfire.wav",
-	"5":"res://Music/Digital_Workplace.wav"
-
-}
-
-
-
-var sound_effects = {
-	"Gun_fire":"res://Sound/laserShoot.wav",
-	"Explosion":"res://Sound/explosion.wav",
-	"Jump":"res://Sound/jump.wav",
-	"Fling":"res://Sound/Flinged.wav",
-	"Door_Open":"res://Sound/dooropen.wav",
-	"Door_Close":"res://Sound/doorclose.wav",
-	"Button_Press":"res://Sound/buttonclick.wav",
-	"Button_Unpress":"res://Sound/buttonclick2.wav",
-	"Walk":"res://Sound/walk.wav",
-	"Hover_Button":"res://Sound/hover_button.wav",
-	"Unhover_Button":"res://Sound/unhover_button.wav"
-	
-	
+	"3":"res://Music/space.wav",
+	"4":"res://Music/fireworks.wav",
+	"5":"res://Music/campfire.wav",
+	"6":"res://Music/Digital_Workplace.wav"
 
 }
 
@@ -74,7 +56,7 @@ func start():
 func play_music():
 	print("play music")
 	if PlayerStats.in_level == false:
-		new_track = str(randi()%2+1)
+		new_track = str(randi()%3+1)
 		if not new_track == current_track:
 			current_track = new_track
 			set_stream(load(music_tracks_menus[current_track]))
@@ -88,7 +70,7 @@ func play_music():
 			
 		
 	if PlayerStats.in_level == true:
-		new_track = str(randi()%3+3)
+		new_track = str(randi()%4+3)
 		if not new_track == current_track:
 			current_track = new_track
 			set_stream(load(music_tracks_levels[current_track]))
