@@ -15,7 +15,7 @@ func _ready():
 		ShadowAnimation.change_animation()
 		if PlayerStats.in_level == true:
 			PlayerStats.in_level = false
-			SoundPlayer.play_music()
+			MusicPlayer.play_music()
 	GameMenu.active = false
 	
 	
