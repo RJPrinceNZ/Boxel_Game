@@ -6,7 +6,8 @@ func _process(delta):
 	if changing == true:
 		if ShadowAnimation.finished_anim == true:
 			get_tree().change_scene("res://Menus/Title.tscn")
-	$CenterContainer/HBoxContainer/VBoxContainer/Sound.set_text("Sound Volume = " + str(SoundPlayer.vol*100))
+	$CenterContainer/HBoxContainer/VBoxContainer/Sound.set_text("Sound Volume = " + str(SoundPlayer.vol*200))
+	$CenterContainer/HBoxContainer/VBoxContainer/Music.set_text("Music Volume = " + str(MusicPlayer.vol*200))
 
 func _ready():
 	if PlayerStats.dark_background == true:
@@ -15,6 +16,7 @@ func _ready():
 	ShadowAnimation.change_animation()
 	GameMenu.active = false
 	$CenterContainer/HBoxContainer/VBoxContainer/Sound_slider.value = (SoundPlayer.vol)*100
+	$CenterContainer/HBoxContainer/VBoxContainer/Music_slide.value = (MusicPlayer.vol)*100
 
 func _on_Button_pressed():
 	ShadowAnimation.new_animation = "Closing"
@@ -73,3 +75,7 @@ func _on_Sound_slider_value_changed(value):
 
 func _on_Button_test_pressed():
 	SoundPlayer.play_sound_effect("Fling",false)
+
+
+func _on_Music_slide_value_changed(value):
+	MusicPlayer.set_volume(value/100)

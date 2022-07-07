@@ -14,8 +14,8 @@ var sound_effects = {
 	"Unhover_Button":"res://Sound/unhover_button.wav"
 	}
 
-var vol = 1
-var current_vol = linear2db(1)
+var vol = 0.1
+var current_vol = linear2db(0.1)
 
 func set_volume(value):
 	vol = value
@@ -32,6 +32,5 @@ func play_sound_effect(sfx,pitch_option):
 	add_child(soundfx)
 	soundfx.play()
 	yield(soundfx,"finished")
-	print("end")
 	soundfx.queue_free()
 

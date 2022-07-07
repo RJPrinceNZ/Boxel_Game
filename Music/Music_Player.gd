@@ -24,20 +24,19 @@ var music_tracks_levels = {
 
 
 func _ready():
-	print(linear2db(1))
 	randomize()
 	self.connect("track_finished",self,"play_music")
-	change_music_db(2)
 	
 
-var music_db = 1
+var vol = 0.2
+var current_vol = linear2db(0.2)
 
-func change_music_db(val):
-	music_db = linear2db(val)
-	set_volume_db(music_db)
-	pass
+func set_volume(value):
+	vol = value
+	current_vol = linear2db(value)
 
-
+func _process(delta):
+	self.set_volume_db(current_vol)
 
 func change_music(track):
 	current_track = track
@@ -51,7 +50,7 @@ func start():
 	play()
 	print("Playing music")
 	change_music(current_track)
-		
+
 
 func play_music():
 	print("play music")
