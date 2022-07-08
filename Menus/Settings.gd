@@ -1,6 +1,11 @@
 extends Node
 
 var changing = false
+var current_rez = 1
+var rez_1 = Vector2(1280,720)
+var rez_2 = Vector2(1920,1080)
+
+
 
 func _process(delta):
 	if changing == true:
@@ -52,30 +57,31 @@ func _on_Button_mouse_exited():
 		SoundPlayer.play_sound_effect("Unhover_Button",false)
 
 
-func _on_Music_toggle_toggled(button_pressed):
-	if $CenterContainer/HBoxContainer/VBoxContainer/HBoxContainer2/Music_toggle.pressed == true:
-		MusicPlayer.change_music_db(0)
-	if $CenterContainer/HBoxContainer/VBoxContainer/HBoxContainer2/Music_toggle.pressed == false:
-		MusicPlayer.change_music_db(2)
-
-
-func _on_Music_toggle_mouse_entered():
-	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
-		SoundPlayer.play_sound_effect("Hover_Button",false)
-
-
-func _on_Music_toggle_mouse_exited():
-	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
-		SoundPlayer.play_sound_effect("Unhover_Button",false)
-
 
 func _on_Sound_slider_value_changed(value):
 	SoundPlayer.set_volume(value/100)
 
 
-func _on_Button_test_pressed():
-	SoundPlayer.play_sound_effect("Fling",false)
-
 
 func _on_Music_slide_value_changed(value):
 	MusicPlayer.set_volume(value/100)
+
+
+func _on_Left_pressed():
+	current_rez += -1
+	if current_rez < 1:
+		current_rez = 2
+	if current_rez == 1:
+		get_tree().get_root().set_size(rez_1)
+	if current_rez == 2:
+		get_tree().get_root().set_size(rez_2)
+
+func _on_Right_pressed():
+	current_rez += +1
+	if current_rez > 2:
+		current_rez = 1
+	if current_rez == 1:
+		get_tree().get_root().set_size(rez_1)
+	if current_rez == 2:
+		get_tree().get_root().set_size(rez_2)
+
