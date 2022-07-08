@@ -206,7 +206,6 @@ margin_bottom = 360.0
 
 [node name="Fade-Boxel" type="Sprite" parent="CenterContainer"]
 position = Vector2( -2040, 0 )
-scale = Vector2( 1.5, 1.5 )
 z_index = 20
 z_as_relative = false
 texture = ExtResource( 1 )

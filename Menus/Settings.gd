@@ -72,16 +72,16 @@ func _on_Left_pressed():
 	if current_rez < 1:
 		current_rez = 2
 	if current_rez == 1:
-		get_tree().get_root().set_size(rez_1)
+		OS.set_window_size(rez_1)
 	if current_rez == 2:
-		get_tree().get_root().set_size(rez_2)
+		OS.set_window_size(rez_2)
 
 func _on_Right_pressed():
 	current_rez += +1
 	if current_rez > 2:
 		current_rez = 1
 	if current_rez == 1:
-		get_tree().get_root().set_size(rez_1)
+		OS.set_window_size(rez_1)
 	if current_rez == 2:
-		get_tree().get_root().set_size(rez_2)
+		OS.set_window_size(rez_2)
 
