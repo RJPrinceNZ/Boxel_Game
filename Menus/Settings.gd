@@ -1,11 +1,26 @@
 extends Node
 
 var changing = false
-var current_rez = 1
-var rez_1 = Vector2(1280,720)
-var rez_2 = Vector2(1920,1080)
 
+onready var ResOptionButton = $CenterContainer/HBoxContainer/VBoxContainer/Resolution/OptionButton
 
+var Resolutions: Dictionary = {
+	"3840x2160":Vector2(3840,2160),
+	"2560x1440":Vector2(2560,1440),
+	"1920x1080":Vector2(1920,1080),
+	"1366x768":Vector2(1366,768),
+	"1536x864":Vector2(1536,864),
+	"1280x720":Vector2(1280,720),
+	"1440x900":Vector2(1440,900),
+	"1600x900":Vector2(1600,900),
+	"1024x600":Vector2(1024,600),
+	"800x600":Vector2(800,600)
+	
+	
+	
+	
+	
+}
 
 func _process(delta):
 	if changing == true:
@@ -15,6 +30,7 @@ func _process(delta):
 	$CenterContainer/HBoxContainer/VBoxContainer/Music.set_text("Music Volume = " + str(MusicPlayer.vol*200))
 
 func _ready():
+	AddResolutions()
 	if PlayerStats.dark_background == true:
 		$CenterContainer/HBoxContainer/VBoxContainer/HBoxContainer/TextureButton.pressed = true
 	ShadowAnimation.new_animation = "Opening"
@@ -22,6 +38,18 @@ func _ready():
 	GameMenu.active = false
 	$CenterContainer/HBoxContainer/VBoxContainer/Sound_slider.value = (SoundPlayer.vol)*100
 	$CenterContainer/HBoxContainer/VBoxContainer/Music_slide.value = (MusicPlayer.vol)*100
+
+func AddResolutions():
+	var current_rez = get_viewport().get_size()
+	
+	var Index = 0
+	
+	
+	for r in Resolutions:
+		ResOptionButton.add_item(r,Index)
+		if Resolutions[r] == current_rez:
+			ResOptionButton._select_int(Index)
+		Index += 1
 
 func _on_Button_pressed():
 	ShadowAnimation.new_animation = "Closing"
@@ -67,21 +95,10 @@ func _on_Music_slide_value_changed(value):
 	MusicPlayer.set_volume(value/100)
 
 
-func _on_Left_pressed():
-	current_rez += -1
-	if current_rez < 1:
-		current_rez = 2
-	if current_rez == 1:
-		OS.set_window_size(rez_1)
-	if current_rez == 2:
-		OS.set_window_size(rez_2)
 
-func _on_Right_pressed():
-	current_rez += +1
-	if current_rez > 2:
-		current_rez = 1
-	if current_rez == 1:
-		OS.set_window_size(rez_1)
-	if current_rez == 2:
-		OS.set_window_size(rez_2)
 
+
+func _on_OptionButton_item_selected(index):
+	var size = Resolutions.get(ResOptionButton.get_item_text(index))
+	OS.set_window_size(size)
+	get_tree().set_screen_stretch(SceneTree.STRETCH_MODE_VIEWPORT,SceneTree.STRETCH_ASPECT_KEEP,size)

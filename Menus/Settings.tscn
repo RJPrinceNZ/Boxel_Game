@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Font/Medium.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Font/Large.tres" type="DynamicFont" id=2]
 [ext_resource path="res://sprites/Ticked.png" type="Texture" id=3]
 [ext_resource path="res://Menus/Settings.gd" type="Script" id=4]
 [ext_resource path="res://sprites/Blank.png" type="Texture" id=5]
+[ext_resource path="res://Font/Small.tres" type="DynamicFont" id=6]
 [ext_resource path="res://sprites/background_slider.tres" type="StyleBox" id=7]
 [ext_resource path="res://sprites/Slider.png" type="Texture" id=8]
 
@@ -16,17 +17,17 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
-margin_left = 288.0
+margin_left = 399.0
 margin_top = 133.0
-margin_right = 991.0
+margin_right = 880.0
 margin_bottom = 587.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
-margin_right = 703.0
+margin_right = 481.0
 margin_bottom = 454.0
 
 [node name="Label" type="Label" parent="CenterContainer/HBoxContainer/VBoxContainer"]
-margin_right = 703.0
+margin_right = 481.0
 margin_bottom = 112.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = ExtResource( 2 )
@@ -36,7 +37,7 @@ valign = 1
 
 [node name="Music" type="Label" parent="CenterContainer/HBoxContainer/VBoxContainer"]
 margin_top = 116.0
-margin_right = 703.0
+margin_right = 481.0
 margin_bottom = 172.0
 custom_fonts/font = ExtResource( 1 )
 text = "Music Volume = 100"
@@ -45,7 +46,7 @@ valign = 1
 
 [node name="Music_slide" type="HSlider" parent="CenterContainer/HBoxContainer/VBoxContainer"]
 margin_top = 176.0
-margin_right = 703.0
+margin_right = 481.0
 margin_bottom = 206.0
 custom_icons/grabber_highlight = ExtResource( 8 )
 custom_icons/grabber = ExtResource( 8 )
@@ -58,7 +59,7 @@ value = 25.0
 
 [node name="Sound" type="Label" parent="CenterContainer/HBoxContainer/VBoxContainer"]
 margin_top = 210.0
-margin_right = 703.0
+margin_right = 481.0
 margin_bottom = 266.0
 custom_fonts/font = ExtResource( 1 )
 text = "Sound Volume = 100"
@@ -67,7 +68,7 @@ valign = 1
 
 [node name="Sound_slider" type="HSlider" parent="CenterContainer/HBoxContainer/VBoxContainer"]
 margin_top = 270.0
-margin_right = 703.0
+margin_right = 481.0
 margin_bottom = 300.0
 custom_icons/grabber_highlight = ExtResource( 8 )
 custom_icons/grabber = ExtResource( 8 )
@@ -80,52 +81,44 @@ value = 25.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/HBoxContainer/VBoxContainer"]
 margin_top = 304.0
-margin_right = 703.0
+margin_right = 481.0
 margin_bottom = 394.0
 alignment = 1
 
 [node name="TextureButton" type="TextureButton" parent="CenterContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
-margin_left = 120.0
-margin_right = 210.0
+margin_left = 9.0
+margin_right = 99.0
 margin_bottom = 90.0
 toggle_mode = true
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 3 )
 
 [node name="Label" type="Label" parent="CenterContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
-margin_left = 214.0
+margin_left = 103.0
 margin_top = 17.0
-margin_right = 582.0
+margin_right = 471.0
 margin_bottom = 73.0
 custom_fonts/font = ExtResource( 1 )
 text = "Contrast Mode"
 
 [node name="Resolution" type="HBoxContainer" parent="CenterContainer/HBoxContainer/VBoxContainer"]
 margin_top = 398.0
-margin_right = 703.0
+margin_right = 481.0
 margin_bottom = 454.0
-
-[node name="Left" type="LinkButton" parent="CenterContainer/HBoxContainer/VBoxContainer/Resolution"]
-margin_right = 28.0
-margin_bottom = 56.0
-custom_fonts/font = ExtResource( 1 )
-text = "<"
-underline = 2
+alignment = 1
 
 [node name="Resolution_Label" type="Label" parent="CenterContainer/HBoxContainer/VBoxContainer/Resolution"]
-margin_left = 32.0
-margin_right = 671.0
+margin_left = 84.0
+margin_right = 364.0
 margin_bottom = 56.0
 custom_fonts/font = ExtResource( 1 )
-text = "Resolution = 1920 x 1080"
+text = "Resolution:"
 
-[node name="Right" type="LinkButton" parent="CenterContainer/HBoxContainer/VBoxContainer/Resolution"]
-margin_left = 675.0
-margin_right = 703.0
+[node name="OptionButton" type="OptionButton" parent="CenterContainer/HBoxContainer/VBoxContainer/Resolution"]
+margin_left = 368.0
+margin_right = 397.0
 margin_bottom = 56.0
-custom_fonts/font = ExtResource( 1 )
-text = ">"
-underline = 2
+custom_fonts/font = ExtResource( 6 )
 
 [node name="CenterContainer3" type="CenterContainer" parent="."]
 margin_right = 181.0
@@ -153,8 +146,7 @@ underline = 2
 [connection signal="mouse_entered" from="CenterContainer/HBoxContainer/VBoxContainer/HBoxContainer/TextureButton" to="." method="_on_TextureButton_mouse_entered"]
 [connection signal="mouse_exited" from="CenterContainer/HBoxContainer/VBoxContainer/HBoxContainer/TextureButton" to="." method="_on_TextureButton_mouse_exited"]
 [connection signal="toggled" from="CenterContainer/HBoxContainer/VBoxContainer/HBoxContainer/TextureButton" to="." method="_on_TextureButton_toggled"]
-[connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer/Resolution/Left" to="." method="_on_Left_pressed"]
-[connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer/Resolution/Right" to="." method="_on_Right_pressed"]
+[connection signal="item_selected" from="CenterContainer/HBoxContainer/VBoxContainer/Resolution/OptionButton" to="." method="_on_OptionButton_item_selected"]
 [connection signal="mouse_entered" from="CenterContainer3/VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_mouse_entered"]
 [connection signal="mouse_exited" from="CenterContainer3/VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_mouse_exited"]
 [connection signal="pressed" from="CenterContainer3/VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_pressed"]
