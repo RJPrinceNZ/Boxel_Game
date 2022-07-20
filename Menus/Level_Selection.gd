@@ -11,7 +11,7 @@ var Locked = preload("res://sprites/Icon_Locked.png")
 func _ready():
 	if PlayerStats.in_level == true:
 		PlayerStats.in_level = false
-		SoundPlayer.play_music()
+		MusicPlayer.play_music()
 	#opening transition
 	changing = false
 	ShadowAnimation.new_animation = "Opening"
