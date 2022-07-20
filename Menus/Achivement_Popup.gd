@@ -10,21 +10,21 @@ func _ready():
 
 func achievement_get(achievement):
 	if achievement == "Escaped":
-		$CenterContainer/HBoxContainer/AchivementPopUp/Position2D/TextureRect.set_texture(Escaped)
-		$CenterContainer/HBoxContainer/AchivementPopUp/Position2D/Label.set_text("Achivement Unlocked: Escaped")
-		$CenterContainer/HBoxContainer/AchivementPopUp/Position2D/Position2D/Label2.set_text("You escaped the facility, but what is your next step?")
+		$CanvasLayer/ColorRect/HBoxContainer/VBoxContainer/HBoxContainer/TextureRect.set_texture(Escaped)
+		$CanvasLayer/ColorRect/HBoxContainer/Label.set_text("Achivement Unlocked: Escaped")
+		$CanvasLayer/ColorRect/HBoxContainer/Label2.set_text("You escaped the facility, but what is your next step?")
 	if achievement == "Potato":
-		$CenterContainer/HBoxContainer/AchivementPopUp/Position2D/TextureRect.set_texture(Potato)
-		$CenterContainer/HBoxContainer/AchivementPopUp/Position2D/Label.set_text("Achivement Unlocked: Potato")
-		$CenterContainer/HBoxContainer/AchivementPopUp/Position2D/Position2D/Label2.set_text("The potato! The classic food, but also a joke from where I'm from, eheh, it's funny. - RJ")
+		$CanvasLayer/ColorRect/HBoxContainer/VBoxContainer/HBoxContainer/TextureRect.set_texture(Potato)
+		$CanvasLayer/ColorRect/HBoxContainer/Label.set_text("Achivement Unlocked: Potato")
+		$CanvasLayer/ColorRect/HBoxContainer/Label2.set_text("The potato! The classic food, but also a joke from where I'm from, eheh, it's funny. - RJ")
 	if achievement == "Missed":
-		$CenterContainer/HBoxContainer/AchivementPopUp/Position2D/TextureRect.set_texture(Missed)
-		$CenterContainer/HBoxContainer/AchivementPopUp/Position2D/Label.set_text("Achivement Unlocked: You Missed")
-		$CenterContainer/HBoxContainer/AchivementPopUp/Position2D/Position2D/Label2.set_text("You wouldn't hit the apple on the head, you'd likely hit the potato off in the distance that was just sitting there for no reason.")
+		$CanvasLayer/ColorRect/HBoxContainer/VBoxContainer/HBoxContainer/TextureRect.set_texture(Missed)
+		$CanvasLayer/ColorRect/HBoxContainer/Label.set_text("Achivement Unlocked: You Missed")
+		$CanvasLayer/ColorRect/HBoxContainer/Label2.set_text("You wouldn't hit the apple on the head, you'd likely hit the potato off in the distance that was just sitting there for no reason.")
 	if achievement == "Firepower":
-		$CenterContainer/HBoxContainer/AchivementPopUp/Position2D/TextureRect.set_texture(Firepower)
-		$CenterContainer/HBoxContainer/AchivementPopUp/Position2D/Label.set_text("Achivement Unlocked: Firepower")
-		$CenterContainer/HBoxContainer/AchivementPopUp/Position2D/Position2D/Label2.set_text("This is some real firepower, wonder who made it? But for now, let the real puzzles begin.")
+		$CanvasLayer/ColorRect/HBoxContainer/VBoxContainer/HBoxContainer/TextureRect.set_texture(Firepower)
+		$CanvasLayer/ColorRect/HBoxContainer/Label.set_text("Achivement Unlocked: Firepower")
+		$CanvasLayer/ColorRect/HBoxContainer/Label2.set_text("This is some real firepower, wonder who made it? But for now, let the real puzzles begin.")
 	$AnimationPlayer.play("Opening")
 
 
