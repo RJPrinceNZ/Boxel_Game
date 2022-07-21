@@ -16,6 +16,7 @@ var escaped = false
 var potato = false
 var missed = false
 var firepower = false
+var resolution = Vector2(1280,720)
 
 func update_level_status(status):
 	if status == true:

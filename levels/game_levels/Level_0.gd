@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 func _ready():
 	ShadowAnimation.new_animation = "Opening"
@@ -14,8 +14,15 @@ func _ready():
 
 func _process(delta):
 	if PlayerStats.dark_background == true:
-		$Background.modulate = Color(0.4,0.4,0.4)
-		$SupportPland_decals.modulate = Color(0.4,0.4,0.4)
+		$CenterContainer/Node2D/Background.modulate = Color(0.4,0.4,0.4)
+		$CenterContainer/Node2D/SupportPland_decals.modulate = Color(0.4,0.4,0.4)
 	if PlayerStats.dark_background == false:
-		$Background.modulate = Color(1,1,1)
-		$SupportPland_decals.modulate = Color(1,1,1)
+		$CenterContainer/Node2D/Background.modulate = Color(1,1,1)
+		$CenterContainer/Node2D/SupportPland_decals.modulate = Color(1,1,1)
+	
+	var x = get_viewport().get_size().x
+	var y = get_viewport().get_size().y
+	var a = ((x/1280)+(y/720))/2
+	$CenterContainer/Node2D.scale = Vector2(a,a)
+	
+	

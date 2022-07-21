@@ -14,7 +14,6 @@ var Resolutions: Dictionary = {
 	"1440x900":Vector2(1440,900),
 	"1600x900":Vector2(1600,900),
 	"1024x600":Vector2(1024,600),
-	"800x600":Vector2(800,600)
 	
 	
 	

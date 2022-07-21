@@ -15,101 +15,179 @@
 
 [sub_resource type="Theme" id=1]
 
-[node name="Title" type="Node"]
+[node name="Title" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -640.0
+margin_top = -360.0
+margin_right = 640.0
+margin_bottom = 360.0
 script = ExtResource( 2 )
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
-anchor_right = 1.0
+[node name="CenterContainer2" type="CenterContainer" parent="."]
+anchor_top = 1.0
 anchor_bottom = 1.0
+rect_min_size = Vector2( 128, 128 )
+rect_scale = Vector2( 1, -1 )
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 110.0
-margin_top = 100.0
-margin_right = 1170.0
-margin_bottom = 620.0
-alignment = 1
+[node name="CenterContainer3" type="CenterContainer" parent="."]
+margin_left = 640.0
+margin_top = 360.0
+margin_right = 640.0
+margin_bottom = 360.0
 
-[node name="TextureRect" type="TextureRect" parent="CenterContainer/VBoxContainer2"]
-margin_right = 1060.0
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer3"]
+grow_horizontal = 2
+grow_vertical = 2
+use_top_left = true
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CenterContainer3/CenterContainer"]
+margin_left = -613.0
+margin_top = -218.0
+margin_right = 613.0
+margin_bottom = 218.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer3/CenterContainer/HBoxContainer3"]
+margin_right = 672.0
+margin_bottom = 436.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer3/CenterContainer/HBoxContainer3/VBoxContainer"]
+margin_right = 672.0
 margin_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource( 5 )
 stretch_mode = 4
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer2"]
+[node name="PlayContainer" type="CenterContainer" parent="CenterContainer3/CenterContainer/HBoxContainer3/VBoxContainer"]
 margin_top = 260.0
-margin_right = 1060.0
-margin_bottom = 388.0
+margin_right = 672.0
+margin_bottom = 410.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 0, 150 )
 
-[node name="Play" type="TextureButton" parent="CenterContainer/VBoxContainer2/HBoxContainer"]
-margin_right = 528.0
-margin_bottom = 128.0
+[node name="Play" type="TextureButton" parent="CenterContainer3/CenterContainer/HBoxContainer3/VBoxContainer/PlayContainer"]
+margin_left = 201.0
+margin_top = 11.0
+margin_right = 471.0
+margin_bottom = 139.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 270, 128 )
 size_flags_horizontal = 7
 size_flags_vertical = 7
 theme = SubResource( 1 )
 texture_normal = ExtResource( 3 )
 texture_hover = ExtResource( 7 )
+expand = true
 stretch_mode = 3
 
-[node name="Quit" type="TextureButton" parent="CenterContainer/VBoxContainer2/HBoxContainer"]
-margin_left = 532.0
-margin_right = 1060.0
-margin_bottom = 128.0
-texture_normal = ExtResource( 6 )
-texture_hover = ExtResource( 8 )
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/VBoxContainer2"]
-margin_top = 392.0
-margin_right = 1060.0
-margin_bottom = 520.0
+[node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer3/CenterContainer/HBoxContainer3"]
+margin_left = 676.0
+margin_right = 1226.0
+margin_bottom = 436.0
+grow_horizontal = 2
+grow_vertical = 2
 alignment = 1
 
-[node name="Settings" type="TextureButton" parent="CenterContainer/VBoxContainer2/HBoxContainer2"]
-margin_right = 528.0
-margin_bottom = 128.0
+[node name="SettingsContainer" type="CenterContainer" parent="CenterContainer3/CenterContainer/HBoxContainer3/VBoxContainer2"]
+margin_right = 550.0
+margin_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 550, 150 )
+
+[node name="Settings" type="TextureButton" parent="CenterContainer3/CenterContainer/HBoxContainer3/VBoxContainer2/SettingsContainer"]
+margin_left = 11.0
+margin_top = 11.0
+margin_right = 539.0
+margin_bottom = 139.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 528, 128 )
 texture_normal = ExtResource( 1 )
 texture_hover = ExtResource( 10 )
-
-[node name="Credits" type="TextureButton" parent="CenterContainer/VBoxContainer2/HBoxContainer2"]
-margin_left = 532.0
-margin_right = 1060.0
-margin_bottom = 128.0
-texture_normal = ExtResource( 4 )
-texture_hover = ExtResource( 9 )
+expand = true
 stretch_mode = 3
 
-[node name="CenterContainer2" type="CenterContainer" parent="."]
-anchor_top = 1.0
-anchor_bottom = 1.0
-margin_top = -104.0
-margin_right = 104.0
+[node name="CreditsContainer" type="CenterContainer" parent="CenterContainer3/CenterContainer/HBoxContainer3/VBoxContainer2"]
+margin_top = 154.0
+margin_right = 550.0
+margin_bottom = 282.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="CenterContainer" type="CenterContainer" parent="CenterContainer2"]
-margin_left = 52.0
-margin_top = 52.0
-margin_right = 52.0
-margin_bottom = 52.0
-use_top_left = true
+[node name="Credits" type="TextureButton" parent="CenterContainer3/CenterContainer/HBoxContainer3/VBoxContainer2/CreditsContainer"]
+margin_left = 42.0
+margin_right = 508.0
+margin_bottom = 128.0
+grow_vertical = 2
+rect_min_size = Vector2( 466, 128 )
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 9 )
+expand = true
+stretch_mode = 3
 
-[node name="TextureButton" type="TextureButton" parent="CenterContainer2/CenterContainer"]
-margin_left = -45.0
-margin_top = -45.0
-margin_right = 45.0
-margin_bottom = 45.0
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer3/CenterContainer/HBoxContainer3/VBoxContainer2"]
+margin_top = 286.0
+margin_right = 550.0
+margin_bottom = 436.0
+rect_min_size = Vector2( 550, 150 )
+alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer3/CenterContainer/HBoxContainer3/VBoxContainer2/HBoxContainer"]
+margin_left = 63.0
+margin_right = 213.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 150, 0 )
+
+[node name="TextureButton" type="TextureButton" parent="CenterContainer3/CenterContainer/HBoxContainer3/VBoxContainer2/HBoxContainer/CenterContainer"]
+margin_left = 30.0
+margin_top = 30.0
+margin_right = 120.0
+margin_bottom = 120.0
 texture_normal = ExtResource( 11 )
 texture_hover = ExtResource( 12 )
 
-[connection signal="mouse_entered" from="CenterContainer/VBoxContainer2/HBoxContainer/Play" to="." method="_on_Play_mouse_entered"]
-[connection signal="mouse_exited" from="CenterContainer/VBoxContainer2/HBoxContainer/Play" to="." method="_on_Play_mouse_exited"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer2/HBoxContainer/Play" to="." method="_on_Play_pressed"]
-[connection signal="mouse_entered" from="CenterContainer/VBoxContainer2/HBoxContainer/Quit" to="." method="_on_Quit_mouse_entered"]
-[connection signal="mouse_exited" from="CenterContainer/VBoxContainer2/HBoxContainer/Quit" to="." method="_on_Quit_mouse_exited"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer2/HBoxContainer/Quit" to="." method="_on_Quit_pressed"]
-[connection signal="mouse_entered" from="CenterContainer/VBoxContainer2/HBoxContainer2/Settings" to="." method="_on_Settings_mouse_entered"]
-[connection signal="mouse_exited" from="CenterContainer/VBoxContainer2/HBoxContainer2/Settings" to="." method="_on_Settings_mouse_exited"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer2/HBoxContainer2/Settings" to="." method="_on_Settings_pressed"]
-[connection signal="mouse_entered" from="CenterContainer/VBoxContainer2/HBoxContainer2/Credits" to="." method="_on_Credits_mouse_entered"]
-[connection signal="mouse_exited" from="CenterContainer/VBoxContainer2/HBoxContainer2/Credits" to="." method="_on_Credits_mouse_exited"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer2/HBoxContainer2/Credits" to="." method="_on_Credits_pressed"]
-[connection signal="mouse_entered" from="CenterContainer2/CenterContainer/TextureButton" to="." method="_on_TextureButton_mouse_entered"]
-[connection signal="mouse_exited" from="CenterContainer2/CenterContainer/TextureButton" to="." method="_on_TextureButton_mouse_exited"]
-[connection signal="pressed" from="CenterContainer2/CenterContainer/TextureButton" to="." method="_on_TextureButton_pressed"]
+[node name="QuitContainer" type="CenterContainer" parent="CenterContainer3/CenterContainer/HBoxContainer3/VBoxContainer2/HBoxContainer"]
+margin_left = 217.0
+margin_right = 487.0
+margin_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 270, 150 )
+
+[node name="Quit" type="TextureButton" parent="CenterContainer3/CenterContainer/HBoxContainer3/VBoxContainer2/HBoxContainer/QuitContainer"]
+margin_top = 11.0
+margin_right = 270.0
+margin_bottom = 139.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 270, 128 )
+texture_normal = ExtResource( 6 )
+texture_hover = ExtResource( 8 )
+expand = true
+stretch_mode = 3
+
+[connection signal="mouse_entered" from="CenterContainer3/CenterContainer/HBoxContainer3/VBoxContainer/PlayContainer/Play" to="." method="_on_Play_mouse_entered"]
+[connection signal="mouse_exited" from="CenterContainer3/CenterContainer/HBoxContainer3/VBoxContainer/PlayContainer/Play" to="." method="_on_Play_mouse_exited"]
+[connection signal="pressed" from="CenterContainer3/CenterContainer/HBoxContainer3/VBoxContainer/PlayContainer/Play" to="." method="_on_Play_pressed"]
+[connection signal="mouse_entered" from="CenterContainer3/CenterContainer/HBoxContainer3/VBoxContainer2/SettingsContainer/Settings" to="." method="_on_Settings_mouse_entered"]
+[connection signal="mouse_exited" from="CenterContainer3/CenterContainer/HBoxContainer3/VBoxContainer2/SettingsContainer/Settings" to="." method="_on_Settings_mouse_exited"]
+[connection signal="pressed" from="CenterContainer3/CenterContainer/HBoxContainer3/VBoxContainer2/SettingsContainer/Settings" to="." method="_on_Settings_pressed"]
+[connection signal="mouse_entered" from="CenterContainer3/CenterContainer/HBoxContainer3/VBoxContainer2/CreditsContainer/Credits" to="." method="_on_Credits_mouse_entered"]
+[connection signal="mouse_exited" from="CenterContainer3/CenterContainer/HBoxContainer3/VBoxContainer2/CreditsContainer/Credits" to="." method="_on_Credits_mouse_exited"]
+[connection signal="pressed" from="CenterContainer3/CenterContainer/HBoxContainer3/VBoxContainer2/CreditsContainer/Credits" to="." method="_on_Credits_pressed"]
+[connection signal="mouse_entered" from="CenterContainer3/CenterContainer/HBoxContainer3/VBoxContainer2/HBoxContainer/CenterContainer/TextureButton" to="." method="_on_TextureButton_mouse_entered"]
+[connection signal="mouse_exited" from="CenterContainer3/CenterContainer/HBoxContainer3/VBoxContainer2/HBoxContainer/CenterContainer/TextureButton" to="." method="_on_TextureButton_mouse_exited"]
+[connection signal="pressed" from="CenterContainer3/CenterContainer/HBoxContainer3/VBoxContainer2/HBoxContainer/CenterContainer/TextureButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="mouse_entered" from="CenterContainer3/CenterContainer/HBoxContainer3/VBoxContainer2/HBoxContainer/QuitContainer/Quit" to="." method="_on_Quit_mouse_entered"]
+[connection signal="mouse_exited" from="CenterContainer3/CenterContainer/HBoxContainer3/VBoxContainer2/HBoxContainer/QuitContainer/Quit" to="." method="_on_Quit_mouse_exited"]
+[connection signal="pressed" from="CenterContainer3/CenterContainer/HBoxContainer3/VBoxContainer2/HBoxContainer/QuitContainer/Quit" to="." method="_on_Quit_pressed"]
