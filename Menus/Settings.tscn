@@ -19,27 +19,19 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -20.0
-margin_top = -20.0
-margin_right = 20.0
-margin_bottom = 20.0
 
 [node name="CenterContainer" type="CenterContainer" parent="CenterContainer3"]
-margin_left = 20.0
-margin_top = 20.0
-margin_right = 20.0
-margin_bottom = 20.0
 use_top_left = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer3/CenterContainer"]
 margin_left = -241.0
-margin_top = -227.0
+margin_top = -274.0
 margin_right = 240.0
-margin_bottom = 227.0
+margin_bottom = 274.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer3/CenterContainer/HBoxContainer"]
 margin_right = 481.0
-margin_bottom = 454.0
+margin_bottom = 548.0
 
 [node name="Label" type="Label" parent="CenterContainer3/CenterContainer/HBoxContainer/VBoxContainer"]
 margin_right = 481.0
@@ -135,6 +127,28 @@ margin_right = 397.0
 margin_bottom = 56.0
 custom_fonts/font = ExtResource( 6 )
 
+[node name="FullScreen" type="HBoxContainer" parent="CenterContainer3/CenterContainer/HBoxContainer/VBoxContainer"]
+margin_top = 458.0
+margin_right = 481.0
+margin_bottom = 548.0
+alignment = 1
+
+[node name="Ful_Scr" type="TextureButton" parent="CenterContainer3/CenterContainer/HBoxContainer/VBoxContainer/FullScreen"]
+margin_left = 58.0
+margin_right = 148.0
+margin_bottom = 90.0
+toggle_mode = true
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="CenterContainer3/CenterContainer/HBoxContainer/VBoxContainer/FullScreen"]
+margin_left = 152.0
+margin_top = 17.0
+margin_right = 422.0
+margin_bottom = 73.0
+custom_fonts/font = ExtResource( 1 )
+text = "Full Screen"
+
 [node name="CenterContainer" type="CenterContainer" parent="."]
 margin_right = 181.0
 margin_bottom = 82.0
@@ -163,6 +177,7 @@ underline = 2
 [connection signal="mouse_exited" from="CenterContainer3/CenterContainer/HBoxContainer/VBoxContainer/HBoxContainer/TextureButton" to="." method="_on_TextureButton_mouse_exited"]
 [connection signal="toggled" from="CenterContainer3/CenterContainer/HBoxContainer/VBoxContainer/HBoxContainer/TextureButton" to="." method="_on_TextureButton_toggled"]
 [connection signal="item_selected" from="CenterContainer3/CenterContainer/HBoxContainer/VBoxContainer/Resolution/OptionButton" to="." method="_on_OptionButton_item_selected"]
+[connection signal="toggled" from="CenterContainer3/CenterContainer/HBoxContainer/VBoxContainer/FullScreen/Ful_Scr" to="." method="_on_FulScr_toggled"]
 [connection signal="mouse_entered" from="CenterContainer/VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_mouse_entered"]
 [connection signal="mouse_exited" from="CenterContainer/VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_mouse_exited"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_pressed"]

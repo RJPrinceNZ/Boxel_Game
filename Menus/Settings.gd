@@ -39,6 +39,9 @@ func _ready():
 	AddResolutions()
 	if PlayerStats.dark_background == true:
 		$CenterContainer/HBoxContainer/VBoxContainer/HBoxContainer/TextureButton.pressed = true
+	if PlayerStats.fullscreen == true:
+		$CenterContainer3/CenterContainer/HBoxContainer/VBoxContainer/FullScreen/Ful_Scr.pressed = true
+		
 	ShadowAnimation.new_animation = "Opening"
 	ShadowAnimation.change_animation()
 	GameMenu.active = false
@@ -102,10 +105,16 @@ func _on_Music_slide_value_changed(value):
 	MusicPlayer.set_volume(value/100)
 
 
-
-
-
 func _on_OptionButton_item_selected(index):
 	var size = Resolutions.get(ResOptionButton.get_item_text(index))
 	OS.set_window_size(size)
 	get_tree().set_screen_stretch(SceneTree.STRETCH_MODE_VIEWPORT,SceneTree.STRETCH_ASPECT_KEEP,size)
+
+
+func _on_FulScr_toggled(button_pressed):
+	if $CenterContainer3/CenterContainer/HBoxContainer/VBoxContainer/FullScreen/Ful_Scr.pressed == true:
+		OS.window_fullscreen = true
+		PlayerStats.fullscreen = true
+	if $CenterContainer3/CenterContainer/HBoxContainer/VBoxContainer/FullScreen/Ful_Scr.pressed == false:
+		OS.window_fullscreen = false
+		PlayerStats.fullscreen = false

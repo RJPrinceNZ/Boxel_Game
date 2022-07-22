@@ -4,7 +4,7 @@ extends Node
 var changing_tree = "idle"
 var changing = false
 var level = 0
-var level_array = "CenterContainer/Level_container/levels_Array"
+var level_array = "CenterContainer3/CenterContainer/Level_container/levels_Array"
 var Locked = preload("res://sprites/Icon_Locked.png")
 
 
@@ -20,6 +20,12 @@ func _ready():
 	GameMenu.active = false
 
 func _process(delta):
+	var x = get_viewport().get_size().x
+	var y = get_viewport().get_size().y
+	var a = ((x/1280)+(y/720))/2
+	$CenterContainer3.rect_scale = Vector2(a,a)
+	$CenterContainer2.rect_scale = Vector2(a,a)
+	
 	if PlayerStats.highest_level < 1:
 		var Button_1 = get_node(level_array + "/Level_0_3/Level_1/CenterContainer/Button_1")
 		Button_1.set_disabled(true)
