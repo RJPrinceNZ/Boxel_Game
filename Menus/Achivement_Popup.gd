@@ -8,11 +8,18 @@ var Firepower = preload("res://sprites/Icon_Achivement_Firepower.png")
 func _ready():
 	$AnimationPlayer.play("Closed")
 
+func _process(delta):
+	var x = get_viewport().get_size().x
+	var y = get_viewport().get_size().y
+	var a = ((x/1280)+(y/720))/2
+	$CanvasLayer.scale = Vector2(a,a)
+	
+
 func achievement_get(achievement):
 	if achievement == "Escaped":
 		$CanvasLayer/ColorRect/HBoxContainer/VBoxContainer/HBoxContainer/TextureRect.set_texture(Escaped)
 		$CanvasLayer/ColorRect/HBoxContainer/Label.set_text("Achivement Unlocked: Escaped")
-		$CanvasLayer/ColorRect/HBoxContainer/Label2.set_text("You escaped the facility, but what is your next step?")
+		$CanvasLayer/CenterContainer2/CenterContainer/ColorRect/HBoxContainer/Label2.set_text("You escaped the facility, but what is your next step?")
 	if achievement == "Potato":
 		$CanvasLayer/ColorRect/HBoxContainer/VBoxContainer/HBoxContainer/TextureRect.set_texture(Potato)
 		$CanvasLayer/ColorRect/HBoxContainer/Label.set_text("Achivement Unlocked: Potato")

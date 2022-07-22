@@ -32,7 +32,7 @@ func _process(delta):
 	var y = get_viewport().get_size().y
 	var a = ((x/1280)+(y/720))/2
 	$CenterContainer3.rect_scale = Vector2(a,a)
-	$CenterContainer.rect_scale = Vector2(a,a)
+	$CenterContainer/CanvasLayer.scale = Vector2(a,a)
 	
 	
 func _ready():

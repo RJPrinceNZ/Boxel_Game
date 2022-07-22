@@ -7,6 +7,7 @@
 [node name="Credits" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 script = ExtResource( 3 )
 
 [node name="CenterContainer3" type="CenterContainer" parent="."]
@@ -75,19 +76,21 @@ align = 1
 
 [node name="CenterContainer2" type="CenterContainer" parent="."]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer2"]
+[node name="CanvasLayer" type="CanvasLayer" parent="CenterContainer2"]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer2/CanvasLayer"]
 margin_right = 200.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 200, 100 )
 alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer2/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer2/CanvasLayer/VBoxContainer"]
 margin_top = 22.0
 margin_right = 200.0
 margin_bottom = 78.0
 alignment = 1
 
-[node name="Button" type="LinkButton" parent="CenterContainer2/VBoxContainer/HBoxContainer"]
+[node name="Button" type="LinkButton" parent="CenterContainer2/CanvasLayer/VBoxContainer/HBoxContainer"]
 margin_left = 24.0
 margin_right = 175.0
 margin_bottom = 56.0
@@ -100,6 +103,6 @@ underline = 2
 [connection signal="mouse_entered" from="CenterContainer3/CenterContainer/HBoxContainer/VBoxContainer/CenterContainer/LinkButton" to="." method="_on_LinkButton_mouse_entered"]
 [connection signal="mouse_exited" from="CenterContainer3/CenterContainer/HBoxContainer/VBoxContainer/CenterContainer/LinkButton" to="." method="_on_LinkButton_mouse_exited"]
 [connection signal="pressed" from="CenterContainer3/CenterContainer/HBoxContainer/VBoxContainer/CenterContainer/LinkButton" to="." method="_on_LinkButton_pressed"]
-[connection signal="mouse_entered" from="CenterContainer2/VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_mouse_entered"]
-[connection signal="mouse_exited" from="CenterContainer2/VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_mouse_exited"]
-[connection signal="pressed" from="CenterContainer2/VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="mouse_entered" from="CenterContainer2/CanvasLayer/VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_mouse_entered"]
+[connection signal="mouse_exited" from="CenterContainer2/CanvasLayer/VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_mouse_exited"]
+[connection signal="pressed" from="CenterContainer2/CanvasLayer/VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_pressed"]
