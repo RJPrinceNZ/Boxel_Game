@@ -7,6 +7,12 @@ func _process(delta):
 		if ShadowAnimation.finished_anim == true:
 			get_tree().change_scene("res://Menus/Title.tscn")
 
+	var x = get_viewport().get_size().x
+	var y = get_viewport().get_size().y
+	var a = ((x/1280)+(y/720))/2
+	$CenterContainer3.rect_scale = Vector2(a,a)
+	$CenterContainer2.rect_scale = Vector2(a,a)
+
 
 
 func _ready():

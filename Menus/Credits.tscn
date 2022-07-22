@@ -4,24 +4,39 @@
 [ext_resource path="res://Font/Medium.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Menus/Credits.gd" type="Script" id=3]
 
-[node name="Credits" type="Node"]
+[node name="Credits" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -640.0
+margin_top = -360.0
+margin_right = 640.0
+margin_bottom = 360.0
 script = ExtResource( 3 )
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="CenterContainer3" type="CenterContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+use_top_left = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
-margin_left = 412.0
-margin_top = 96.0
-margin_right = 868.0
-margin_bottom = 624.0
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer3"]
+margin_left = -228.0
+margin_top = -264.0
+margin_right = 228.0
+margin_bottom = 264.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer3/CenterContainer"]
 margin_right = 456.0
 margin_bottom = 528.0
 
-[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer3/CenterContainer/HBoxContainer"]
+margin_right = 456.0
+margin_bottom = 528.0
+
+[node name="Label" type="Label" parent="CenterContainer3/CenterContainer/HBoxContainer/VBoxContainer"]
 margin_right = 456.0
 margin_bottom = 112.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
@@ -29,7 +44,7 @@ custom_fonts/font = ExtResource( 1 )
 text = "CREDITS"
 align = 1
 
-[node name="Label2" type="Label" parent="CenterContainer/HBoxContainer/VBoxContainer"]
+[node name="Label2" type="Label" parent="CenterContainer3/CenterContainer/HBoxContainer/VBoxContainer"]
 margin_top = 116.0
 margin_right = 456.0
 margin_bottom = 172.0
@@ -38,12 +53,12 @@ text = "Devloped by:"
 align = 1
 autowrap = true
 
-[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/HBoxContainer/VBoxContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer3/CenterContainer/HBoxContainer/VBoxContainer"]
 margin_top = 176.0
 margin_right = 456.0
 margin_bottom = 232.0
 
-[node name="LinkButton" type="LinkButton" parent="CenterContainer/HBoxContainer/VBoxContainer/CenterContainer"]
+[node name="LinkButton" type="LinkButton" parent="CenterContainer3/CenterContainer/HBoxContainer/VBoxContainer/CenterContainer"]
 margin_left = 81.0
 margin_right = 375.0
 margin_bottom = 56.0
@@ -52,7 +67,7 @@ grow_vertical = 2
 custom_fonts/font = ExtResource( 2 )
 text = "RJPrinceNZ"
 
-[node name="Label3" type="Label" parent="CenterContainer/HBoxContainer/VBoxContainer"]
+[node name="Label3" type="Label" parent="CenterContainer3/CenterContainer/HBoxContainer/VBoxContainer"]
 margin_top = 236.0
 margin_right = 456.0
 margin_bottom = 528.0
@@ -67,6 +82,8 @@ align = 1
 [node name="CenterContainer2" type="CenterContainer" parent="."]
 margin_right = 181.0
 margin_bottom = 82.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer2"]
 margin_left = 15.0
@@ -81,13 +98,15 @@ margin_bottom = 56.0
 [node name="Button" type="LinkButton" parent="CenterContainer2/VBoxContainer/HBoxContainer"]
 margin_right = 151.0
 margin_bottom = 56.0
+focus_mode = 2
+mouse_filter = 1
 custom_fonts/font = ExtResource( 2 )
 text = "< Back"
 underline = 2
 
-[connection signal="mouse_entered" from="CenterContainer/HBoxContainer/VBoxContainer/CenterContainer/LinkButton" to="." method="_on_LinkButton_mouse_entered"]
-[connection signal="mouse_exited" from="CenterContainer/HBoxContainer/VBoxContainer/CenterContainer/LinkButton" to="." method="_on_LinkButton_mouse_exited"]
-[connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer/CenterContainer/LinkButton" to="." method="_on_LinkButton_pressed"]
+[connection signal="mouse_entered" from="CenterContainer3/CenterContainer/HBoxContainer/VBoxContainer/CenterContainer/LinkButton" to="." method="_on_LinkButton_mouse_entered"]
+[connection signal="mouse_exited" from="CenterContainer3/CenterContainer/HBoxContainer/VBoxContainer/CenterContainer/LinkButton" to="." method="_on_LinkButton_mouse_exited"]
+[connection signal="pressed" from="CenterContainer3/CenterContainer/HBoxContainer/VBoxContainer/CenterContainer/LinkButton" to="." method="_on_LinkButton_pressed"]
 [connection signal="mouse_entered" from="CenterContainer2/VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_mouse_entered"]
 [connection signal="mouse_exited" from="CenterContainer2/VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_mouse_exited"]
 [connection signal="pressed" from="CenterContainer2/VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_pressed"]

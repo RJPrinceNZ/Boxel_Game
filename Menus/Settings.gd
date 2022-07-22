@@ -2,7 +2,7 @@ extends Node
 
 var changing = false
 
-onready var ResOptionButton = $CenterContainer/HBoxContainer/VBoxContainer/Resolution/OptionButton
+onready var ResOptionButton = $CenterContainer3/CenterContainer/HBoxContainer/VBoxContainer/Resolution/OptionButton
 
 var Resolutions: Dictionary = {
 	"3840x2160":Vector2(3840,2160),
@@ -13,7 +13,7 @@ var Resolutions: Dictionary = {
 	"1280x720":Vector2(1280,720),
 	"1440x900":Vector2(1440,900),
 	"1600x900":Vector2(1600,900),
-	"1024x600":Vector2(1024,600),
+	"1024x600":Vector2(1024,600)
 	
 	
 	
@@ -25,9 +25,16 @@ func _process(delta):
 	if changing == true:
 		if ShadowAnimation.finished_anim == true:
 			get_tree().change_scene("res://Menus/Title.tscn")
-	$CenterContainer/HBoxContainer/VBoxContainer/Sound.set_text("Sound Volume = " + str(SoundPlayer.vol*200))
-	$CenterContainer/HBoxContainer/VBoxContainer/Music.set_text("Music Volume = " + str(MusicPlayer.vol*200))
-
+	$CenterContainer3/CenterContainer/HBoxContainer/VBoxContainer/Sound.set_text("Sound Volume = " + str(SoundPlayer.vol*200))
+	$CenterContainer3/CenterContainer/HBoxContainer/VBoxContainer/Music.set_text("Music Volume = " + str(MusicPlayer.vol*200))
+	
+	var x = get_viewport().get_size().x
+	var y = get_viewport().get_size().y
+	var a = ((x/1280)+(y/720))/2
+	$CenterContainer3.rect_scale = Vector2(a,a)
+	$CenterContainer.rect_scale = Vector2(a,a)
+	
+	
 func _ready():
 	AddResolutions()
 	if PlayerStats.dark_background == true:
@@ -35,8 +42,9 @@ func _ready():
 	ShadowAnimation.new_animation = "Opening"
 	ShadowAnimation.change_animation()
 	GameMenu.active = false
-	$CenterContainer/HBoxContainer/VBoxContainer/Sound_slider.value = (SoundPlayer.vol)*100
-	$CenterContainer/HBoxContainer/VBoxContainer/Music_slide.value = (MusicPlayer.vol)*100
+	$CenterContainer3/CenterContainer/HBoxContainer/VBoxContainer/Sound_slider.value = (SoundPlayer.vol)*100
+	$CenterContainer3/CenterContainer/HBoxContainer/VBoxContainer/Music_slide.value = (MusicPlayer.vol)*100
+	
 
 func AddResolutions():
 	var current_rez = get_viewport().get_size()
@@ -57,10 +65,10 @@ func _on_Button_pressed():
 
 
 func _on_TextureButton_toggled(button_pressed):
-	if $CenterContainer/HBoxContainer/VBoxContainer/HBoxContainer/TextureButton.pressed == true:
+	if $CenterContainer3/CenterContainer/HBoxContainer/VBoxContainer/HBoxContainer/TextureButton.pressed == true:
 		PlayerStats.dark_background = true
 		print("dark_mode")
-	if $CenterContainer/HBoxContainer/VBoxContainer/HBoxContainer/TextureButton.pressed == false:
+	if $CenterContainer3/CenterContainer/HBoxContainer/VBoxContainer/HBoxContainer/TextureButton.pressed == false:
 		PlayerStats.dark_background = false
 		print("light_mode")
 
