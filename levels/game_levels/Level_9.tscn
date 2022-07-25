@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=2]
+[gd_scene load_steps=56 format=2]
 
 [ext_resource path="res://levels/SupportPland_decals.tscn" type="PackedScene" id=1]
 [ext_resource path="res://levels/Background.tscn" type="PackedScene" id=2]
@@ -10,7 +10,7 @@
 [ext_resource path="res://Objects/Object_wall.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Objects/Enter_Exit_Doors.tscn" type="PackedScene" id=9]
 [ext_resource path="res://levels/game_levels/Level_9.gd" type="Script" id=10]
-
+[ext_resource path="res://UI and Camera/Camera.tscn" type="PackedScene" id=11]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=1]
 
@@ -768,7 +768,15 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 
-[node name="Level_9" type="Node2D"]
+[node name="Level_9" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -640.0
+margin_top = -360.0
+margin_right = 640.0
+margin_bottom = 360.0
 script = ExtResource( 10 )
 
 [node name="Background" parent="." instance=ExtResource( 2 )]
@@ -786,9 +794,6 @@ position = Vector2( -66, 4 )
 [node name="Door" parent="Door_button8" index="1"]
 position = Vector2( 8, -56 )
 
-[node name="Door-1png" parent="Door_button8/Door" index="0"]
-frame = 0
-
 [node name="AnimationTree" parent="Door_button8" index="4"]
 parameters/playback = SubResource( 1 )
 
@@ -804,9 +809,6 @@ position = Vector2( -66, 4 )
 [node name="Door" parent="Door_button7" index="1"]
 position = Vector2( -752, 72 )
 
-[node name="Door-1png" parent="Door_button7/Door" index="0"]
-frame = 0
-
 [node name="AnimationTree" parent="Door_button7" index="4"]
 parameters/playback = SubResource( 2 )
 
@@ -821,9 +823,6 @@ position = Vector2( -326, -260 )
 
 [node name="Door" parent="Door_button6" index="1"]
 position = Vector2( 0, -256 )
-
-[node name="Door-1png" parent="Door_button6/Door" index="0"]
-frame = 0
 
 [node name="AnimationPlayer" parent="Door_button6" index="2"]
 anims/Closed = SubResource( 3 )
@@ -855,9 +854,6 @@ position = Vector2( -326, -260 )
 [node name="Door" parent="Door_button5" index="1"]
 position = Vector2( -640, -128 )
 
-[node name="Door-1png" parent="Door_button5/Door" index="0"]
-frame = 0
-
 [node name="AnimationPlayer" parent="Door_button5" index="2"]
 anims/Closed = SubResource( 13 )
 anims/Closing = SubResource( 14 )
@@ -885,9 +881,6 @@ position = Vector2( 976, 512 )
 [node name="Button" parent="Door_button4" index="0"]
 position = Vector2( -326, -260 )
 
-[node name="Door-1png" parent="Door_button4/Door" index="0"]
-frame = 0
-
 [node name="AnimationTree" parent="Door_button4" index="4"]
 parameters/playback = SubResource( 23 )
 
@@ -896,9 +889,6 @@ position = Vector2( 400, 512 )
 
 [node name="Button" parent="Door_button2" index="0"]
 position = Vector2( 198, -260 )
-
-[node name="Door-1png" parent="Door_button2/Door" index="0"]
-frame = 0
 
 [node name="AnimationPlayer" parent="Door_button2" index="2"]
 anims/Closed = SubResource( 24 )
@@ -927,9 +917,6 @@ position = Vector2( 198, -260 )
 [node name="Door" parent="Door_button" index="1"]
 position = Vector2( 704, -128 )
 
-[node name="Door-1png" parent="Door_button/Door" index="0"]
-frame = 0
-
 [node name="AnimationTree" parent="Door_button" index="4"]
 parameters/playback = SubResource( 34 )
 
@@ -944,9 +931,6 @@ position = Vector2( 198, -260 )
 
 [node name="Door" parent="Door_button3" index="1"]
 position = Vector2( -192, -256 )
-
-[node name="Door-1png" parent="Door_button3/Door" index="0"]
-frame = 0
 
 [node name="AnimationPlayer" parent="Door_button3" index="2"]
 anims/Closed = SubResource( 35 )
@@ -996,6 +980,8 @@ position = Vector2( 656, 624 )
 
 [node name="Object_wall" parent="." instance=ExtResource( 8 )]
 position = Vector2( 848, 384 )
+
+[node name="Camera" parent="." instance=ExtResource( 11 )]
 
 [editable path="Door_button8"]
 [editable path="Door_button7"]

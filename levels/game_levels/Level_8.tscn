@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://levels/Land_tiles.tscn" type="PackedScene" id=1]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=2]
@@ -12,7 +12,7 @@
 [ext_resource path="res://levels/game_levels/Level_8.gd" type="Script" id=10]
 [ext_resource path="res://Objects/Text_file.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Objects/Potato.tscn" type="PackedScene" id=12]
-
+[ext_resource path="res://UI and Camera/Camera.tscn" type="PackedScene" id=13]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=3]
 
@@ -609,7 +609,15 @@ tracks/0/keys = {
 "values": [ 0, 1, 0, 2, 0 ]
 }
 
-[node name="Level_8" type="Node2D"]
+[node name="Level_8" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -640.0
+margin_top = -360.0
+margin_right = 640.0
+margin_bottom = 360.0
 script = ExtResource( 10 )
 
 [node name="Background" parent="." instance=ExtResource( 4 )]
@@ -624,9 +632,6 @@ position = Vector2( 1104, 608 )
 [node name="Button" parent="Door_button" index="0"]
 position = Vector2( 58, -100 )
 
-[node name="Door-1png" parent="Door_button/Door" index="0"]
-frame = 0
-
 [node name="AnimationTree" parent="Door_button" index="4"]
 parameters/playback = SubResource( 3 )
 
@@ -638,9 +643,6 @@ position = Vector2( -998, -356 )
 
 [node name="Door" parent="Door_button2" index="1"]
 position = Vector2( -158, -512 )
-
-[node name="Door-1png" parent="Door_button2/Door" index="0"]
-frame = 0
 
 [node name="AnimationPlayer" parent="Door_button2" index="2"]
 anims/Closed = SubResource( 4 )
@@ -672,9 +674,6 @@ position = Vector2( -192, -484 )
 [node name="Door" parent="Door_button3" index="1"]
 position = Vector2( -902, -160 )
 
-[node name="Door-1png" parent="Door_button3/Door" index="0"]
-frame = 0
-
 [node name="AnimationPlayer" parent="Door_button3" index="2"]
 anims/Closed = SubResource( 14 )
 anims/Closing = SubResource( 15 )
@@ -704,9 +703,6 @@ position = Vector2( -928, -228 )
 
 [node name="Door" parent="Door_button4" index="1"]
 position = Vector2( -160, -256 )
-
-[node name="Door-1png" parent="Door_button4/Door" index="0"]
-frame = 0
 
 [node name="AnimationPlayer" parent="Door_button4" index="2"]
 anims/Closed = SubResource( 24 )
@@ -773,6 +769,8 @@ position = Vector2( 1034, 360 )
 
 [node name="Potato" parent="." instance=ExtResource( 12 )]
 position = Vector2( 404, 126 )
+
+[node name="Camera" parent="." instance=ExtResource( 13 )]
 
 [editable path="Door_button"]
 [editable path="Door_button2"]

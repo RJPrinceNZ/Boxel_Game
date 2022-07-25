@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Objects/Door.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Enter_Exit_Doors.tscn" type="PackedScene" id=2]
@@ -10,12 +10,21 @@
 [ext_resource path="res://levels/SupportPland_decals.tscn" type="PackedScene" id=8]
 [ext_resource path="res://UI and Camera/Game_Ui.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Objects/Text_file.tscn" type="PackedScene" id=10]
+[ext_resource path="res://UI and Camera/Camera.tscn" type="PackedScene" id=11]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=1]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=2]
 
-[node name="Level 3" type="Node2D"]
+[node name="Level 3" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -640.0
+margin_top = -360.0
+margin_right = 640.0
+margin_bottom = 360.0
 script = ExtResource( 6 )
 
 [node name="Background" parent="." instance=ExtResource( 7 )]
@@ -79,6 +88,8 @@ tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 
 [node name="Game_Ui" parent="." instance=ExtResource( 9 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
+
+[node name="Camera" parent="." instance=ExtResource( 11 )]
 
 [editable path="Door_button"]
 [editable path="Door_button2"]
