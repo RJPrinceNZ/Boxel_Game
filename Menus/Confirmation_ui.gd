@@ -1,13 +1,18 @@
-extends Node2D
+extends Control
 
 var changing = false
-onready var text_label = $CanvasLayer/CenterContainer/CenterContainer/Position2D/VBoxContainer/Label
+onready var text_label = $CanvasLayer/CenterContainer3/CenterContainer/CenterContainer/Position2D/VBoxContainer/Label
 
 func _ready():
 	PlayerStats.game_menus_open += 1
 	$AnimationPlayer.play("Open")
 
 func _process(delta):
+	var x = get_viewport().get_size().x
+	var y = get_viewport().get_size().y
+	var a = ((x/1280)+(y/720))/2
+	$CanvasLayer/CenterContainer3.rect_scale = Vector2(a,a)
+	
 	if GameMenu.changing_tree == "Title":
 		text_label.set_text("Are you sure you want to quit to Main Menu? Your progress in Levels will not be saved.")
 	if GameMenu.changing_tree == "Level":

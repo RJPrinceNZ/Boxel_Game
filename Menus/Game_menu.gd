@@ -14,6 +14,13 @@ onready var confirm = preload("res://Menus/Confirmation_ui.tscn")
 #	$AnimationPlayer.play("Closed")
 
 func _process(delta):
+	var x = get_viewport().get_size().x
+	var y = get_viewport().get_size().y
+	var a = ((x/1280)+(y/720))/2
+	$CanvasLayer.scale = Vector2(a,a)
+	$CanvasLayer/ColorRect.rect_min_size = Vector2(250,2*y)
+	
+	
 	#Disabled if active variable is false, which is is only true if in a level
 	if active == false:
 		$AnimationPlayer.play("Closed")
@@ -62,7 +69,6 @@ func _on_Quit_Level_pressed():
 	if has_menu_open == false:
 		has_menu_open = true
 		var new_confirm = confirm.instance()
-		new_confirm.global_transform = $CenterContainer/Position2D.global_transform
 		add_child(new_confirm)
 		changing_tree = "Level"
 
@@ -76,7 +82,6 @@ func _on_Quit_Menu_pressed():
 	if has_menu_open == false:
 		has_menu_open = true
 		var new_confirm = confirm.instance()
-		new_confirm.global_transform = $CenterContainer/Position2D.global_transform
 		add_child(new_confirm)
 		changing_tree = "Title"
 

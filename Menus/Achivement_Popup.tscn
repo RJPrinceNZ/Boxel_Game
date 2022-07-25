@@ -244,7 +244,7 @@ anchor_right = 1.0
 grow_horizontal = 2
 rect_min_size = Vector2( 0, 150 )
 mouse_filter = 2
-color = Color( 0, 0, 0, 0 )
+color = Color( 0, 0, 0, 0.392157 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/ColorRect"]
 margin_left = 11.0
@@ -278,7 +278,6 @@ expand = true
 stretch_mode = 4
 
 [node name="Label" type="Label" parent="CanvasLayer/ColorRect/HBoxContainer"]
-modulate = Color( 1, 1, 1, 0 )
 margin_left = 104.0
 margin_right = 854.0
 margin_bottom = 56.0
@@ -290,7 +289,6 @@ autowrap = true
 uppercase = true
 
 [node name="Label2" type="Label" parent="CanvasLayer/ColorRect/HBoxContainer"]
-modulate = Color( 1, 1, 1, 0 )
 margin_left = 858.0
 margin_top = 10.0
 margin_right = 1258.0
