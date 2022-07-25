@@ -15,6 +15,8 @@ func _ready():
 
 	
 func _physics_process(delta):
+	if ShadowAnimation.finished_anim == false:
+		queue_free()
 	position += transform.x * v * delta
 
 func _on_Life_time_timeout():

@@ -17,7 +17,7 @@ func _on_Area2D_body_entered(body):
 			$AnimationPlayer.play("Launch")
 			SoundPlayer.play_sound_effect("Fling",true)
 			if body.is_in_group("Box"):
-				body.apply_central_impulse(Vector2(x_value*0.5,-1) * 1200)
+				body.apply_central_impulse(Vector2(x_value*0.84,-1) * 950)
 			if body.is_in_group("Player"):
 				body.velocity = Vector2(x_value*700,-700)
 				PlayerStats.is_launched = true

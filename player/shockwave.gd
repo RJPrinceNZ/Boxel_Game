@@ -26,7 +26,7 @@ func _physics_process(delta):
 		$ShockwaveGun.flip_v = false
 	else:
 		$ShockwaveGun.flip_v = true
-	if Input.is_action_just_pressed("fire") and on_cool_down == false and can_fire == true and PlayerStats.ui_block == false and PlayerStats.game_menus_open < 1:
+	if Input.is_action_just_pressed("fire") and ShadowAnimation.finished_anim == true and on_cool_down == false and can_fire == true and PlayerStats.ui_block == false and PlayerStats.game_menus_open < 1:
 		on_cool_down = true
 		$AnimationPlayer.play("FIRE")
 		var new_bullet = bullet.instance()
