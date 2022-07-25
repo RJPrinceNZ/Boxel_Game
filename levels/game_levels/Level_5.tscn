@@ -922,8 +922,6 @@ position = Vector2( 969, 274 )
 position = Vector2( 302, 616 )
 
 [node name="Game_Ui" parent="." instance=ExtResource( 9 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
 
 [node name="Camera" parent="." instance=ExtResource( 12 )]
 

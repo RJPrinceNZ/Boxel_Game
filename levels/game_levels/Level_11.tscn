@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://levels/Background.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Objects/Enter_Exit_Doors.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Objects/Text_file.tscn" type="PackedScene" id=10]
 [ext_resource path="res://UI and Camera/Camera.tscn" type="PackedScene" id=11]
+[ext_resource path="res://UI and Camera/Game_Ui.tscn" type="PackedScene" id=12]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Idle"
@@ -150,6 +151,8 @@ position = Vector2( -991, 480 )
 position = Vector2( 286, 616 )
 
 [node name="Camera" parent="." instance=ExtResource( 11 )]
+
+[node name="Game_Ui" parent="." instance=ExtResource( 12 )]
 
 [editable path="Launcher2"]
 [editable path="Door_button"]

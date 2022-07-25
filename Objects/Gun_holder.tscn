@@ -4,6 +4,7 @@
 [ext_resource path="res://sprites/Object_Holder-1.png.png" type="Texture" id=2]
 [ext_resource path="res://Objects/Gun_holder.gd" type="Script" id=3]
 
+
 [sub_resource type="Animation" id=1]
 resource_name = "Idle"
 length = 1.2

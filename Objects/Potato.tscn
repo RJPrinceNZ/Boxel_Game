@@ -3,6 +3,7 @@
 [ext_resource path="res://sprites/Potato.png" type="Texture" id=1]
 [ext_resource path="res://Objects/Potato.gd" type="Script" id=2]
 
+
 [sub_resource type="CircleShape2D" id=1]
 radius = 37.0
 

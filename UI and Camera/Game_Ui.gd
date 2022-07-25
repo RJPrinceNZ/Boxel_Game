@@ -1,4 +1,5 @@
 extends Control
 
 func _on_TextureButton_pressed():
-	PlayerStats.level_reset()
+	if ShadowAnimation.finished_anim == true:
+			PlayerStats.level_reset()
