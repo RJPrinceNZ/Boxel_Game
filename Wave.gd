@@ -2,8 +2,7 @@ extends Node2D
 
 onready var root_node = get_tree().root.get_child(0)
 onready var explosion = preload("res://player/Explosion.tscn")
-var a = 0
-var v = 200*a
+var v = 200
 var is_fired = true
 var angle
 var disappearing = false
@@ -17,9 +16,6 @@ func _ready():
 	
 func _physics_process(delta):
 	position += transform.x * v * delta
-	var x = get_viewport().get_size().x
-	var y = get_viewport().get_size().y
-	a = ((x/1280)+(y/720))/2
 
 func _on_Life_time_timeout():
 	var disappearing = true
