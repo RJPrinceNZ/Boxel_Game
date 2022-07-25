@@ -12,6 +12,8 @@ var can_walk_r = true
 var can_walk_l = true
 var can_walk_sound = true
 
+var a = 0
+
 enum state {IDLE, WALKING, STARTJUMP, JUMP_MID, FALL, JUMP, JUMPFINISH}
 
 onready var player_state = state.IDLE
@@ -52,7 +54,7 @@ func update_animation(anim):
 func handle_state(player_state):
 	match(player_state):
 		state.STARTJUMP:
-			velocity.y = jump_speed
+			velocity.y = jump_speed * a
 
 func get_input():
 	var dir = Input.get_action_strength("right") - Input.get_action_strength("left")
@@ -63,20 +65,25 @@ func get_input():
 			dir = Input.get_action_strength("right")
 
 		if dir != 0:
-			velocity.x = move_toward(velocity.x, dir*speed, acceration)
+			velocity.x = move_toward(velocity.x, a*dir*speed, a*acceration)
 			if is_on_floor():
 				if can_walk_sound == true:
 					can_walk_sound = false
 					$WalkSoundTimer.start()
 					SoundPlayer.play_sound_effect("Walk",true)
 		else:
-			velocity.x = move_toward(velocity.x, 0, friction)
+			velocity.x = move_toward(velocity.x, 0, a*friction)
 			
 			
 
 
 
 func _physics_process(delta):
+	var x = get_viewport().get_size().x
+	var y = get_viewport().get_size().y
+	a = ((x/1280)+(y/720))/2
+	
+	
 	if is_on_wall() == true or is_on_floor() == true and $LaunchTimer.is_stopped():
 		PlayerStats.is_launched = false
 	
@@ -104,8 +111,8 @@ func _physics_process(delta):
 	handle_state(player_state)
 	update_animation(player_state)
 	
-	velocity.y += gravity * delta
-	velocity = move_and_slide(velocity, Vector2.UP, false, 4, PI/4, false)
+	velocity.y += gravity * delta * a
+	velocity = move_and_slide(velocity,Vector2.UP, false, 4, PI/4, false)
 	
 	for index in get_slide_count():
 		var collision = get_slide_collision(index)
