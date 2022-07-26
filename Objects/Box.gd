@@ -40,7 +40,6 @@ func _input(event):
 func _on_Area2D_area_entered(area):
 	if area.is_in_group("Explosion"):
 		var hit_direction = (global_position - area.global_position).normalized()
-		print(hit_direction)
 		if hit_recent == false:
 			hit_recent = true
 			$Collision_timer.start()

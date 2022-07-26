@@ -9,3 +9,7 @@ func _ready():
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "Explosion":
 		queue_free()
+
+func _process(delta):
+	if ShadowAnimation.finished_anim == false:
+		queue_free()
