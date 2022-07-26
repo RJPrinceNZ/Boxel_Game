@@ -9,6 +9,7 @@ func _process(delta):
 
 func _on_Exit_Area_body_entered(body):
 	if body.is_in_group("Player"):
+		PlayerStats.loaded = false
 		ShadowAnimation.new_animation = "Closing"
 		ShadowAnimation.change_animation()
 		changing = true 

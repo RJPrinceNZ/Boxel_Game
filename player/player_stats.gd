@@ -18,6 +18,7 @@ var missed = false
 var firepower = false
 var resolution = Vector2(1280,720)
 var fullscreen = false
+var loaded = true
 
 func update_level_status(status):
 	if status == true:

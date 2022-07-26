@@ -191,6 +191,7 @@ func _on_Left_arrow_mouse_exited():
 
 func _on_Right_arrow_mouse_entered():
 	PlayerStats.ui_block = true
+	print("hello")
 
 
 func _on_Right_arrow_mouse_exited():

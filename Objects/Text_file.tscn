@@ -6,7 +6,6 @@
 [ext_resource path="res://sprites/text_file_text_box_arrow-1.png.png" type="Texture" id=4]
 [ext_resource path="res://Font/Small.tres" type="DynamicFont" id=5]
 
-
 [sub_resource type="Animation" id=1]
 resource_name = "Idle"
 length = 1.2
@@ -90,6 +89,7 @@ margin_left = -121.0
 margin_top = -2.0
 margin_right = -49.0
 margin_bottom = 70.0
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 4 )
 flip_v = true
 
@@ -98,6 +98,7 @@ margin_left = 92.0
 margin_top = -3.0
 margin_right = 164.0
 margin_bottom = 69.0
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 4 )
 flip_h = true
 

@@ -3,7 +3,6 @@
 [ext_resource path="res://Objects/Enter_Exit_Doors.gd" type="Script" id=1]
 [ext_resource path="res://sprites/Enter_Exit Door-1.png-1.png.png" type="Texture" id=2]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 18, 22 )
 
