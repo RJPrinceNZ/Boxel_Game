@@ -29,6 +29,8 @@ func _process(delta):
 		max_page = 6
 	if PlayerStats.current_level == 11:
 		max_page = 4
+	if PlayerStats.current_level == 12:
+		max_page = 3
 
 	if reading == false:
 		if anim_play == false or not current_anim == "idle":
@@ -147,7 +149,13 @@ func _process(delta):
 				$Position2D/Text_box/Label.set_text("Warning, unless you are a reinforced robot, do not stand on the launcher,")
 			if current_page == 4:
 				$Position2D/Text_box/Label.set_text("or you will sustain serious damage. - RJ")
-
+		if PlayerStats.current_level == 12:
+			if current_page == 1:
+				$Position2D/Text_box/Label.set_text("Note to all personnel, robots are very heavy and tough.")
+			if current_page == 2:
+				$Position2D/Text_box/Label.set_text("They will more likely break concrete if you drop them, and wont go far if you launcher them.")
+			if current_page == 3:
+				$Position2D/Text_box/Label.set_text("Be happy that the building is renforced otherwise you would be paying for breaking floors.")
 func _on_AnimationPlayer_animation_finished(anim_name):
 	anim_play = false
 	
