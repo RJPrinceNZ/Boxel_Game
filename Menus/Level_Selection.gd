@@ -5,6 +5,7 @@ var changing_tree = "idle"
 var changing = false
 var level = 0
 var level_array = "CenterContainer3/CenterContainer/Level_container/levels_Array"
+
 var Locked = preload("res://sprites/Icon_Locked.png")
 
 
@@ -71,6 +72,10 @@ func _process(delta):
 		Button_11.set_disabled(true)
 		var Icon_11 = get_node(level_array + "/Level_8_11/Level_11/TextureRect_11")
 		Icon_11.set_texture(Locked)
+		var Button_12 = get_node(level_array + "/Level_12_15/Level_12/CenterContainer/Button_12")
+		Button_12.set_disabled(true)
+		var Icon_12 = get_node(level_array + "/Level_12_15/Level_12/TextureRect_12")
+		Icon_12.set_texture(Locked)
 		
 	elif PlayerStats.highest_level < 2:
 		var Button_2 = get_node(level_array + "/Level_0_3/Level_2/CenterContainer/Button_2")
@@ -113,6 +118,10 @@ func _process(delta):
 		Button_11.set_disabled(true)
 		var Icon_11 = get_node(level_array + "/Level_8_11/Level_11/TextureRect_11")
 		Icon_11.set_texture(Locked)
+		var Button_12 = get_node(level_array + "/Level_12_15/Level_12/CenterContainer/Button_12")
+		Button_12.set_disabled(true)
+		var Icon_12 = get_node(level_array + "/Level_12_15/Level_12/TextureRect_12")
+		Icon_12.set_texture(Locked)
 		
 	elif PlayerStats.highest_level < 3:
 		var Button_3 = get_node(level_array + "/Level_0_3/Level_3/CenterContainer/Button_3")
@@ -133,7 +142,7 @@ func _process(delta):
 		Icon_6.set_texture(Locked)
 		var Button_7 = get_node(level_array + "/Level_4_7/Level_7/CenterContainer/Button_7")
 		Button_7.set_disabled(true)
-		var Icon_7 = get_node(level_array + "Level_4_7/Level_7/TextureRect_7")
+		var Icon_7 = get_node(level_array + "/Level_4_7/Level_7/TextureRect_7")
 		Icon_7.set_texture(Locked)
 		var Button_8 = get_node(level_array + "/Level_8_11/Level_8/CenterContainer/Button_8")
 		Button_8.set_disabled(true)
@@ -151,6 +160,10 @@ func _process(delta):
 		Button_11.set_disabled(true)
 		var Icon_11 = get_node(level_array + "/Level_8_11/Level_11/TextureRect_11")
 		Icon_11.set_texture(Locked)
+		var Button_12 = get_node(level_array + "/Level_12_15/Level_12/CenterContainer/Button_12")
+		Button_12.set_disabled(true)
+		var Icon_12 = get_node(level_array + "/Level_12_15/Level_12/TextureRect_12")
+		Icon_12.set_texture(Locked)
 		
 	elif PlayerStats.highest_level < 4:
 		var Button_4 = get_node(level_array + "/Level_4_7/Level_4/CenterContainer/Button_4")
@@ -185,6 +198,10 @@ func _process(delta):
 		Button_11.set_disabled(true)
 		var Icon_11 = get_node(level_array + "/Level_8_11/Level_11/TextureRect_11")
 		Icon_11.set_texture(Locked)
+		var Button_12 = get_node(level_array + "/Level_12_15/Level_12/CenterContainer/Button_12")
+		Button_12.set_disabled(true)
+		var Icon_12 = get_node(level_array + "/Level_12_15/Level_12/TextureRect_12")
+		Icon_12.set_texture(Locked)
 		
 	elif PlayerStats.highest_level < 5:
 		var Button_5 = get_node(level_array + "/Level_4_7/Level_5/CenterContainer/Button_5")
@@ -215,6 +232,10 @@ func _process(delta):
 		Button_11.set_disabled(true)
 		var Icon_11 = get_node(level_array + "/Level_8_11/Level_11/TextureRect_11")
 		Icon_11.set_texture(Locked)
+		var Button_12 = get_node(level_array + "/Level_12_15/Level_12/CenterContainer/Button_12")
+		Button_12.set_disabled(true)
+		var Icon_12 = get_node(level_array + "/Level_12_15/Level_12/TextureRect_12")
+		Icon_12.set_texture(Locked)
 		
 	elif PlayerStats.highest_level < 6:
 		var Button_6 = get_node(level_array + "/Level_4_7/Level_6/CenterContainer/Button_6")
@@ -241,6 +262,10 @@ func _process(delta):
 		Button_11.set_disabled(true)
 		var Icon_11 = get_node(level_array + "/Level_8_11/Level_11/TextureRect_11")
 		Icon_11.set_texture(Locked)
+		var Button_12 = get_node(level_array + "/Level_12_15/Level_12/CenterContainer/Button_12")
+		Button_12.set_disabled(true)
+		var Icon_12 = get_node(level_array + "/Level_12_15/Level_12/TextureRect_12")
+		Icon_12.set_texture(Locked)
 		
 	elif PlayerStats.highest_level < 7:
 		var Button_7 = get_node(level_array + "Level_4_7/Level_7/CenterContainer/Button_7")
@@ -263,6 +288,10 @@ func _process(delta):
 		Button_11.set_disabled(true)
 		var Icon_11 = get_node(level_array + "/Level_8_11/Level_11/TextureRect_11")
 		Icon_11.set_texture(Locked)
+		var Button_12 = get_node(level_array + "/Level_12_15/Level_12/CenterContainer/Button_12")
+		Button_12.set_disabled(true)
+		var Icon_12 = get_node(level_array + "/Level_12_15/Level_12/TextureRect_12")
+		Icon_12.set_texture(Locked)
 		
 	elif PlayerStats.highest_level < 8:
 		var Button_8 = get_node(level_array + "/Level_8_11/Level_8/CenterContainer/Button_8")
@@ -281,6 +310,10 @@ func _process(delta):
 		Button_11.set_disabled(true)
 		var Icon_11 = get_node(level_array + "/Level_8_11/Level_11/TextureRect_11")
 		Icon_11.set_texture(Locked)
+		var Button_12 = get_node(level_array + "/Level_12_15/Level_12/CenterContainer/Button_12")
+		Button_12.set_disabled(true)
+		var Icon_12 = get_node(level_array + "/Level_12_15/Level_12/TextureRect_12")
+		Icon_12.set_texture(Locked)
 		
 	elif PlayerStats.highest_level < 9:
 		var Button_9 = get_node(level_array + "/Level_8_11/Level_9/CenterContainer/Button_9")
@@ -295,6 +328,10 @@ func _process(delta):
 		Button_11.set_disabled(true)
 		var Icon_11 = get_node(level_array + "/Level_8_11/Level_11/TextureRect_11")
 		Icon_11.set_texture(Locked)
+		var Button_12 = get_node(level_array + "/Level_12_15/Level_12/CenterContainer/Button_12")
+		Button_12.set_disabled(true)
+		var Icon_12 = get_node(level_array + "/Level_12_15/Level_12/TextureRect_12")
+		Icon_12.set_texture(Locked)
 		
 	elif PlayerStats.highest_level < 10:
 		var Button_10 = get_node(level_array + "/Level_8_11/Level_10/CenterContainer/Button_10")
@@ -305,12 +342,27 @@ func _process(delta):
 		Button_11.set_disabled(true)
 		var Icon_11 = get_node(level_array + "/Level_8_11/Level_11/TextureRect_11")
 		Icon_11.set_texture(Locked)
+		var Button_12 = get_node(level_array + "/Level_12_15/Level_12/CenterContainer/Button_12")
+		Button_12.set_disabled(true)
+		var Icon_12 = get_node(level_array + "/Level_12_15/Level_12/TextureRect_12")
+		Icon_12.set_texture(Locked)
 		
 	elif PlayerStats.highest_level < 11:
 		var Button_11 = get_node(level_array + "/Level_8_11/Level_11/CenterContainer/Button_11")
 		Button_11.set_disabled(true)
 		var Icon_11 = get_node(level_array + "/Level_8_11/Level_11/TextureRect_11")
 		Icon_11.set_texture(Locked)
+		var Button_12 = get_node(level_array + "/Level_12_15/Level_12/CenterContainer/Button_12")
+		Button_12.set_disabled(true)
+		var Icon_12 = get_node(level_array + "/Level_12_15/Level_12/TextureRect_12")
+		Icon_12.set_texture(Locked)
+	
+	
+	elif PlayerStats.highest_level < 12:
+		var Button_12 = get_node(level_array + "/Level_12_15/Level_12/CenterContainer/Button_12")
+		Button_12.set_disabled(true)
+		var Icon_12 = get_node(level_array + "/Level_12_15/Level_12/TextureRect_12")
+		Icon_12.set_texture(Locked)
 
 	#The Part above disables level selection buttons, the part beneath activates the transition.
 	if changing == true:
@@ -551,3 +603,23 @@ func _on_Button_Exit_mouse_entered():
 func _on_Button_Exit_mouse_exited():
 	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
 		SoundPlayer.play_sound_effect("Unhover_Button",false)
+
+
+func _on_Button_12_pressed():
+	level = 11
+	ShadowAnimation.new_animation = "Closing"
+	ShadowAnimation.change_animation()
+	changing_tree = "Level"
+	changing = true
+
+
+func _on_Button_12_mouse_entered():
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		if get_node(level_array + "/Level_12_15/Level_12/CenterContainer/Button_12").disabled == false:
+			SoundPlayer.play_sound_effect("Hover_Button",false)
+
+
+func _on_Button_12_mouse_exited():
+	if not ShadowAnimation.current_animation == "Title_Opening" and not ShadowAnimation.current_animation == "Closing":
+		if get_node(level_array + "/Level_12_15/Level_12/CenterContainer/Button_12").disabled == false:
+			SoundPlayer.play_sound_effect("Unhover_Button",false)
