@@ -268,9 +268,9 @@ func _process(delta):
 		Icon_12.set_texture(Locked)
 		
 	elif PlayerStats.highest_level < 7:
-		var Button_7 = get_node(level_array + "Level_4_7/Level_7/CenterContainer/Button_7")
+		var Button_7 = get_node(level_array + "/Level_4_7/Level_7/CenterContainer/Button_7")
 		Button_7.set_disabled(true)
-		var Icon_7 = get_node(level_array + "Level_4_7/Level_7/TextureRect_7")
+		var Icon_7 = get_node(level_array + "/Level_4_7/Level_7/TextureRect_7")
 		Icon_7.set_texture(Locked)
 		var Button_8 = get_node(level_array + "/Level_8_11/Level_8/CenterContainer/Button_8")
 		Button_8.set_disabled(true)

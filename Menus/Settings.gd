@@ -1,6 +1,7 @@
 extends Node
 
 var changing = false
+var current_rez = Vector2(1280,720)
 
 onready var ResOptionButton = $CenterContainer3/CenterContainer/HBoxContainer/VBoxContainer/Resolution/OptionButton
 
@@ -108,7 +109,8 @@ func _on_Music_slide_value_changed(value):
 func _on_OptionButton_item_selected(index):
 	var size = Resolutions.get(ResOptionButton.get_item_text(index))
 	OS.set_window_size(size)
-	get_tree().set_screen_stretch(SceneTree.STRETCH_MODE_VIEWPORT,SceneTree.STRETCH_ASPECT_KEEP,size)
+	get_tree().set_screen_stretch(SceneTree.STRETCH_MODE_2D,SceneTree.STRETCH_ASPECT_KEEP,size)
+	#doesn't work with large resolutions
 
 
 func _on_FulScr_toggled(button_pressed):

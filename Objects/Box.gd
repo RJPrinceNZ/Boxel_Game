@@ -17,9 +17,9 @@ func _physics_process(delta):
 		linear_velocity=Vector2.ZERO
 		angular_velocity=0
 		if point.global_position.y > lowest_point.global_position.y:
-			self.position = Vector2(point.global_position.x,lowest_point.global_position.y)
+			self.global_position = Vector2(point.global_position.x,lowest_point.global_position.y)
 		else:
-			self.position = point.global_position
+			self.global_position = point.global_position
 
 func _input(event):
 	if Input.is_action_just_pressed("pick_up") and PlayerStats.can_pick == true:
