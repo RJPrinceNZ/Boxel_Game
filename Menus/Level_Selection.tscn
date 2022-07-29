@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Menus/Level_Selection.gd" type="Script" id=1]
 [ext_resource path="res://Font/Medium.tres" type="DynamicFont" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://sprites/Level_Icons/Level_Button_11.png" type="Texture" id=15]
 [ext_resource path="res://Font/Small_medium.tres" type="DynamicFont" id=16]
 [ext_resource path="res://sprites/Level_Icons/Level_Button_12.png" type="Texture" id=17]
+[ext_resource path="res://sprites/texture-less.tres" type="StyleBox" id=18]
 
 [node name="Level_Selection" type="Control"]
 anchor_right = 1.0
@@ -85,6 +86,7 @@ margin_top = 25.0
 margin_right = 168.0
 margin_bottom = 65.0
 custom_fonts/font = ExtResource( 16 )
+custom_styles/focus = ExtResource( 18 )
 text = "Level 00>"
 underline = 2
 
@@ -109,6 +111,7 @@ margin_top = 25.0
 margin_right = 168.0
 margin_bottom = 65.0
 custom_fonts/font = ExtResource( 16 )
+custom_styles/focus = ExtResource( 18 )
 text = "Level 01>"
 underline = 2
 
@@ -133,6 +136,7 @@ margin_top = 25.0
 margin_right = 168.0
 margin_bottom = 65.0
 custom_fonts/font = ExtResource( 16 )
+custom_styles/focus = ExtResource( 18 )
 text = "Level 02>"
 underline = 2
 
@@ -157,6 +161,7 @@ margin_top = 25.0
 margin_right = 168.0
 margin_bottom = 65.0
 custom_fonts/font = ExtResource( 16 )
+custom_styles/focus = ExtResource( 18 )
 text = "Level 03>"
 underline = 2
 
@@ -186,6 +191,7 @@ margin_top = 25.0
 margin_right = 168.0
 margin_bottom = 65.0
 custom_fonts/font = ExtResource( 16 )
+custom_styles/focus = ExtResource( 18 )
 text = "Level 04>"
 underline = 2
 
@@ -210,6 +216,7 @@ margin_top = 25.0
 margin_right = 168.0
 margin_bottom = 65.0
 custom_fonts/font = ExtResource( 16 )
+custom_styles/focus = ExtResource( 18 )
 text = "Level 05>"
 underline = 2
 
@@ -234,6 +241,7 @@ margin_top = 25.0
 margin_right = 168.0
 margin_bottom = 65.0
 custom_fonts/font = ExtResource( 16 )
+custom_styles/focus = ExtResource( 18 )
 text = "Level 06>"
 underline = 2
 
@@ -258,6 +266,7 @@ margin_top = 25.0
 margin_right = 168.0
 margin_bottom = 65.0
 custom_fonts/font = ExtResource( 16 )
+custom_styles/focus = ExtResource( 18 )
 text = "Level 07>"
 underline = 2
 
@@ -287,6 +296,7 @@ margin_top = 25.0
 margin_right = 168.0
 margin_bottom = 65.0
 custom_fonts/font = ExtResource( 16 )
+custom_styles/focus = ExtResource( 18 )
 text = "Level 08>"
 underline = 2
 
@@ -311,6 +321,7 @@ margin_top = 25.0
 margin_right = 168.0
 margin_bottom = 65.0
 custom_fonts/font = ExtResource( 16 )
+custom_styles/focus = ExtResource( 18 )
 text = "Level 09>"
 underline = 2
 
@@ -334,6 +345,7 @@ margin_top = 25.0
 margin_right = 168.0
 margin_bottom = 65.0
 custom_fonts/font = ExtResource( 16 )
+custom_styles/focus = ExtResource( 18 )
 text = "Level 10>"
 underline = 2
 
@@ -357,6 +369,7 @@ margin_top = 25.0
 margin_right = 168.0
 margin_bottom = 65.0
 custom_fonts/font = ExtResource( 16 )
+custom_styles/focus = ExtResource( 18 )
 text = "Level 11>"
 underline = 2
 
@@ -387,6 +400,7 @@ margin_top = 25.0
 margin_right = 168.0
 margin_bottom = 65.0
 custom_fonts/font = ExtResource( 16 )
+custom_styles/focus = ExtResource( 18 )
 text = "Level 12>"
 underline = 2
 
@@ -415,6 +429,7 @@ margin_right = 175.0
 margin_bottom = 56.0
 mouse_filter = 1
 custom_fonts/font = ExtResource( 2 )
+custom_styles/focus = ExtResource( 18 )
 text = "< Back"
 underline = 2
 
