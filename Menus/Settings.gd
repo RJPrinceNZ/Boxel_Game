@@ -109,6 +109,9 @@ func _on_Music_slide_value_changed(value):
 func _on_OptionButton_item_selected(index):
 	var size = Resolutions.get(ResOptionButton.get_item_text(index))
 	OS.set_window_size(size)
+	if OS.get_screen_size() < OS.get_window_size():
+		size = OS.get_window_size()
+		OS.set_window_size(size)
 	get_tree().set_screen_stretch(SceneTree.STRETCH_MODE_VIEWPORT,SceneTree.STRETCH_ASPECT_KEEP,size)
 	#doesn't work with large resolutions
 
@@ -117,9 +120,12 @@ func _on_FulScr_toggled(button_pressed):
 	if $CenterContainer3/CenterContainer/HBoxContainer/VBoxContainer/FullScreen/Ful_Scr.pressed == true:
 		OS.window_fullscreen = true
 		PlayerStats.fullscreen = true
+		if OS.get_screen_size() < OS.get_window_size():
+			var size = OS.get_window_size()
+			OS.set_window_size(size)
 	if $CenterContainer3/CenterContainer/HBoxContainer/VBoxContainer/FullScreen/Ful_Scr.pressed == false:
 		OS.window_fullscreen = false
 		PlayerStats.fullscreen = false
 		if OS.get_screen_size() < OS.get_window_size():
-			var size = Vector2(1920,1080)
+			var size = OS.get_window_size()
 			OS.set_window_size(size)
