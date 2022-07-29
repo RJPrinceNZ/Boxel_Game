@@ -113,6 +113,7 @@ func _on_OptionButton_item_selected(index):
 		size = OS.get_window_size()
 		OS.set_window_size(size)
 	get_tree().set_screen_stretch(SceneTree.STRETCH_MODE_VIEWPORT,SceneTree.STRETCH_ASPECT_KEEP,size)
+	print(OS.get_window_size())
 	#doesn't work with large resolutions
 
 
