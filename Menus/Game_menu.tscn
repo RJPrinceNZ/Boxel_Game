@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
+[ext_resource path="res://sprites/texture-less.tres" type="StyleBox" id=1]
 [ext_resource path="res://Menus/Game_menu.gd" type="Script" id=2]
 [ext_resource path="res://Font/Small.tres" type="DynamicFont" id=3]
 
@@ -385,6 +386,7 @@ margin_bottom = 16.0
 grow_horizontal = 2
 grow_vertical = 2
 custom_fonts/font = ExtResource( 3 )
+custom_styles/focus = ExtResource( 1 )
 text = "Quit to Main Menu>"
 underline = 2
 
@@ -400,6 +402,7 @@ margin_left = 43.0
 margin_right = 206.0
 margin_bottom = 16.0
 custom_fonts/font = ExtResource( 3 )
+custom_styles/focus = ExtResource( 1 )
 text = "Quit to Level Selection>"
 underline = 2
 
